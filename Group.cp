@@ -1,0 +1,1 @@
+#include "BarObjects.hpp"GroupType::GroupType(unsigned long num) {	if (num == 0) {		sprintf(name,"Control");		sprintf(tag,"Ctrl");	}		else if (num == 1) {		sprintf(name,"Experimental");		sprintf(tag,"Rx");	}		else {			sprintf(name,"Group %ld",num+1);		sprintf(tag,"%c",(char)num + 'a');	}	}
