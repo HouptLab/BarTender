@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* DailyData.xib */; };
+		200A742C16D03BF900C50838 /* BCMeanValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742A16D03BF800C50838 /* BCMeanValue.m */; };
+		200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */; };
+		2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030A62315A61AFB00233EA7 /* BarSummaryData.m */; };
+		20443B5415E569EF00C7338E /* scale64.png in Resources */ = {isa = PBXBuildFile; fileRef = 20443B5315E569EF00C7338E /* scale64.png */; };
+		20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */; };
+		205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F2244164EEA7700975B47 /* DailyDataTableView.m */; };
+		206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 206461EB0FF40B7000349949 /* BartenderNotes.rtf */; };
+		206758ED0FE8349800B1B7B9 /* cancel64.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758E90FE8349800B1B7B9 /* cancel64.png */; };
+		206758EE0FE8349800B1B7B9 /* comment64.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758EA0FE8349800B1B7B9 /* comment64.png */; };
+		206758EF0FE8349800B1B7B9 /* phase.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758EB0FE8349800B1B7B9 /* phase.png */; };
+		206758F00FE8349800B1B7B9 /* save64.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758EC0FE8349800B1B7B9 /* save64.png */; };
+		206758F40FE836F500B1B7B9 /* BarTenderLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758F30FE836F500B1B7B9 /* BarTenderLogo.png */; };
+		206759090FE8423600B1B7B9 /* ExptsToBeWeighedOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 206759080FE8423600B1B7B9 /* ExptsToBeWeighedOff.png */; };
+		2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2067590D0FE847A800B1B7B9 /* WeighOff.png */; };
+		206759100FE847A800B1B7B9 /* WeighON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2067590E0FE847A800B1B7B9 /* WeighON.png */; };
+		206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */; };
+		20723B6116CECBDB002F98D5 /* oldTimerCode in Resources */ = {isa = PBXBuildFile; fileRef = 20723B6016CECBDB002F98D5 /* oldTimerCode */; };
+		2074560715B37F3F008312B4 /* BCTableHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2074560615B37F3F008312B4 /* BCTableHtmlFormatter.m */; };
+		207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207458E015B4FE37008312B4 /* BCDailyDataWebView.m */; };
+		207AA6251610C8C1002FACB5 /* duplicate icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 207AA6241610C8C1002FACB5 /* duplicate icon.png */; };
+		208787DB16C209FB004998D1 /* FadeOutText.m in Sources */ = {isa = PBXBuildFile; fileRef = 208787DA16C209FB004998D1 /* FadeOutText.m */; };
+		208787DD16C20E39004998D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208787DC16C20E39004998D1 /* QuartzCore.framework */; };
+		208787E016C20F0A004998D1 /* BCBarcodeLabelsWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 208787DE16C20F0A004998D1 /* BCBarcodeLabelsWebView.m */; };
+		208F89AB15F00D57009210FB /* carryOver64.png in Resources */ = {isa = PBXBuildFile; fileRef = 208F89AA15F00D57009210FB /* carryOver64.png */; };
+		208F8AA715F015FF009210FB /* BartenderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F8AA615F015FF009210FB /* BartenderAppDelegate.m */; };
+		20913289164AEC97007EB75E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20913288164AEC97007EB75E /* WebKit.framework */; };
+		2092D64215E2BC3900572E35 /* BarBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2092D64115E2BC3900572E35 /* BarBalance.m */; };
+		2092D66F15E2C28800572E35 /* BCAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2092D66E15E2C28800572E35 /* BCAlert.m */; };
+		2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096DE9316113CF100FFC0D2 /* BarDirectories.m */; };
+		20972B2B164964950006210A /* BCSerial.c in Sources */ = {isa = PBXBuildFile; fileRef = 20972B27164964950006210A /* BCSerial.c */; };
+		20972B2C164964950006210A /* Serial Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 20972B29164964950006210A /* Serial Notes.rtf */; };
+		20972B2D164964950006210A /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20972B2A164964950006210A /* Serial Programming Guide for POSIX Operating Systems.pdf */; };
+		20A5D2FA10093BCE00C00E6C /* BarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D2F910093BCE00C00E6C /* BarObject.m */; };
+		20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D3791009408C00C00E6C /* BarPhase.m */; };
+		20A5D380100940CC00C00E6C /* BarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D37F100940CC00C00E6C /* BarGroup.m */; };
+		20B470AE15AC832E00BB7A8E /* DailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B470AD15AC832E00BB7A8E /* DailyData.m */; };
+		20C2DCCF164C4E9800CE6DA1 /* temp in Resources */ = {isa = PBXBuildFile; fileRef = 20C2DCCE164C4E9800CE6DA1 /* temp */; };
+		20CEC10C0FFA5B33005816D9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CEC10B0FFA5B33005816D9 /* IOKit.framework */; };
+		20D3A54114DB161C00C57F9A /* BartenderAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54014DB161C00C57F9A /* BartenderAbout.png */; };
+		20D3A54314DB162500C57F9A /* BarTenderWaiter.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54214DB162500C57F9A /* BarTenderWaiter.png */; };
+		20D3A54514DB1AD500C57F9A /* actionPopUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54414DB1AD500C57F9A /* actionPopUp.png */; };
+		20DE82EE10025E6E005C772A /* BarDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE82ED10025E6E005C772A /* BarDocument.m */; };
+		20DE830D10026205005C772A /* BarDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DE830C10026205005C772A /* BarDocument.xib */; };
+		20DE83E710027F0A005C772A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DE83E610027F0A005C772A /* MainMenu.xib */; };
+		20DE84551002E42E005C772A /* BarExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE84541002E42E005C772A /* BarExperiment.m */; };
+		20DE84F81006B904005C772A /* ExptInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE84F71006B904005C772A /* ExptInfoController.m */; };
+		20DE85091006C495005C772A /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE85081006C495005C772A /* BarItem.m */; };
+		20DE87BC10086801005C772A /* BarSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE87BB10086801005C772A /* BarSubject.m */; };
+		20E0D15C105C1F36007698BD /* Experiments.png in Resources */ = {isa = PBXBuildFile; fileRef = 20E0D15B105C1F36007698BD /* Experiments.png */; };
+		20E2A7460FE545A20047BD8A /* DailyDataDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E2A7450FE545A20047BD8A /* DailyDataDocument.m */; };
+		20E2A75E0FE552AF0047BD8A /* ExptInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E2A75C0FE552AF0047BD8A /* ExptInfoWindow.xib */; };
+		20F6462F164AC0CA0065D7BD /* BL_GM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462A164AC0CA0065D7BD /* BL_GM.pdf */; };
+		20F64630164AC0CA0065D7BD /* BL_Supplement.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462B164AC0CA0065D7BD /* BL_Supplement.pdf */; };
+		20F64631164AC0CA0065D7BD /* BP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462C164AC0CA0065D7BD /* BP.pdf */; };
+		20F64632164AC0CA0065D7BD /* WBP6006-e97075.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462D164AC0CA0065D7BD /* WBP6006-e97075.pdf */; };
+		20F64633164AC0CA0065D7BD /* YDO01BL.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462E164AC0CA0065D7BD /* YDO01BL.pdf */; };
+		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
+		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FBA07B3F13500E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58290DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/DailyData.xib; sourceTree = "<group>"; };
+		200A742A16D03BF800C50838 /* BCMeanValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCMeanValue.m; path = ../BCKernal/Series/BCMeanValue.m; sourceTree = "<group>"; };
+		200A742B16D03BF800C50838 /* BCMeanValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCMeanValue.h; path = ../BCKernal/Series/BCMeanValue.h; sourceTree = "<group>"; };
+		200A742D16D0458D00C50838 /* DailyDataMeansHtmlFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDataMeansHtmlFormatter.h; sourceTree = "<group>"; };
+		200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataMeansHtmlFormatter.m; sourceTree = "<group>"; };
+		2030A62215A61AFB00233EA7 /* BarSummaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSummaryData.h; sourceTree = "<group>"; };
+		2030A62315A61AFB00233EA7 /* BarSummaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSummaryData.m; sourceTree = "<group>"; };
+		20443B5315E569EF00C7338E /* scale64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scale64.png; path = Graphics/scale64.png; sourceTree = "<group>"; };
+		20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBarcodeLabelsHtmlFormatter.m; sourceTree = "<group>"; };
+		20538C6516CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBarcodeLabelsHtmlFormatter.h; sourceTree = "<group>"; };
+		205F2243164EEA7700975B47 /* DailyDataTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDataTableView.h; sourceTree = "<group>"; };
+		205F2244164EEA7700975B47 /* DailyDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataTableView.m; sourceTree = "<group>"; };
+		206461EB0FF40B7000349949 /* BartenderNotes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = BartenderNotes.rtf; sourceTree = "<group>"; };
+		206758E90FE8349800B1B7B9 /* cancel64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel64.png; path = Graphics/cancel64.png; sourceTree = "<group>"; };
+		206758EA0FE8349800B1B7B9 /* comment64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = comment64.png; path = Graphics/comment64.png; sourceTree = "<group>"; };
+		206758EB0FE8349800B1B7B9 /* phase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase.png; path = Graphics/phase.png; sourceTree = "<group>"; };
+		206758EC0FE8349800B1B7B9 /* save64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = save64.png; path = Graphics/save64.png; sourceTree = "<group>"; };
+		206758F30FE836F500B1B7B9 /* BarTenderLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BarTenderLogo.png; path = Graphics/BarTenderLogo.png; sourceTree = "<group>"; };
+		206759080FE8423600B1B7B9 /* ExptsToBeWeighedOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ExptsToBeWeighedOff.png; path = Graphics/ExptsToBeWeighedOff.png; sourceTree = "<group>"; };
+		2067590D0FE847A800B1B7B9 /* WeighOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WeighOff.png; path = Graphics/WeighOff.png; sourceTree = "<group>"; };
+		2067590E0FE847A800B1B7B9 /* WeighON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WeighON.png; path = Graphics/WeighON.png; sourceTree = "<group>"; };
+		206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = BartenderIcons.icns; path = Graphics/BartenderIcons.icns; sourceTree = "<group>"; };
+		20723B6016CECBDB002F98D5 /* oldTimerCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oldTimerCode; sourceTree = "<group>"; };
+		2074560515B37F3E008312B4 /* BCTableHtmlFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTableHtmlFormatter.h; path = "../BCKernal/BC Utilities/BCTableHtmlFormatter.h"; sourceTree = SOURCE_ROOT; };
+		2074560615B37F3F008312B4 /* BCTableHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTableHtmlFormatter.m; path = "../BCKernal/BC Utilities/BCTableHtmlFormatter.m"; sourceTree = SOURCE_ROOT; };
+		207458DF15B4FE37008312B4 /* BCDailyDataWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCDailyDataWebView.h; sourceTree = "<group>"; };
+		207458E015B4FE37008312B4 /* BCDailyDataWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCDailyDataWebView.m; sourceTree = "<group>"; };
+		207AA6241610C8C1002FACB5 /* duplicate icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "duplicate icon.png"; path = "Graphics/duplicate icon.png"; sourceTree = "<group>"; };
+		208787D916C209FB004998D1 /* FadeOutText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeOutText.h; sourceTree = "<group>"; };
+		208787DA16C209FB004998D1 /* FadeOutText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeOutText.m; sourceTree = "<group>"; };
+		208787DC16C20E39004998D1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		208787DE16C20F0A004998D1 /* BCBarcodeLabelsWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBarcodeLabelsWebView.m; sourceTree = "<group>"; };
+		208787DF16C20F0A004998D1 /* BCBarcodeLabelsWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBarcodeLabelsWebView.h; sourceTree = "<group>"; };
+		208F89AA15F00D57009210FB /* carryOver64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carryOver64.png; path = Graphics/carryOver64.png; sourceTree = "<group>"; };
+		208F8AA515F015FF009210FB /* BartenderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BartenderAppDelegate.h; sourceTree = "<group>"; };
+		208F8AA615F015FF009210FB /* BartenderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BartenderAppDelegate.m; sourceTree = "<group>"; };
+		20913288164AEC97007EB75E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		2092D64115E2BC3900572E35 /* BarBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarBalance.m; sourceTree = "<group>"; };
+		2092D66D15E2C28800572E35 /* BCAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCAlert.h; path = "../BCKernal/BC Utilities/BCAlert.h"; sourceTree = SOURCE_ROOT; };
+		2092D66E15E2C28800572E35 /* BCAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCAlert.m; path = "../BCKernal/BC Utilities/BCAlert.m"; sourceTree = SOURCE_ROOT; };
+		2096DE9216113CF100FFC0D2 /* BarDirectories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarDirectories.h; sourceTree = "<group>"; };
+		2096DE9316113CF100FFC0D2 /* BarDirectories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarDirectories.m; sourceTree = "<group>"; };
+		20972B27164964950006210A /* BCSerial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BCSerial.c; path = "../BCKernal/BC Utilities/Serial/BCSerial.c"; sourceTree = SOURCE_ROOT; };
+		20972B28164964950006210A /* BCSerial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCSerial.h; path = "../BCKernal/BC Utilities/Serial/BCSerial.h"; sourceTree = SOURCE_ROOT; };
+		20972B29164964950006210A /* Serial Notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "Serial Notes.rtf"; path = "../BCKernal/BC Utilities/Serial/Serial Notes.rtf"; sourceTree = SOURCE_ROOT; };
+		20972B2A164964950006210A /* Serial Programming Guide for POSIX Operating Systems.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Serial Programming Guide for POSIX Operating Systems.pdf"; path = "../BCKernal/BC Utilities/Serial/Serial Programming Guide for POSIX Operating Systems.pdf"; sourceTree = SOURCE_ROOT; };
+		20A5D2F810093BCE00C00E6C /* BarObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarObject.h; sourceTree = "<group>"; };
+		20A5D2F910093BCE00C00E6C /* BarObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarObject.m; sourceTree = "<group>"; };
+		20A5D3781009408C00C00E6C /* BarPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarPhase.h; sourceTree = "<group>"; };
+		20A5D3791009408C00C00E6C /* BarPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarPhase.m; sourceTree = "<group>"; };
+		20A5D37F100940CC00C00E6C /* BarGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGroup.m; sourceTree = "<group>"; };
+		20B470AC15AC832E00BB7A8E /* DailyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyData.h; sourceTree = "<group>"; };
+		20B470AD15AC832E00BB7A8E /* DailyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyData.m; sourceTree = "<group>"; };
+		20B70E3B15B63EA700BC4CA7 /* BarBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarBalance.h; sourceTree = "<group>"; };
+		20C2DCCE164C4E9800CE6DA1 /* temp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = temp; sourceTree = "<group>"; };
+		20CEC10B0FFA5B33005816D9 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		20D3A54014DB161C00C57F9A /* BartenderAbout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BartenderAbout.png; path = Graphics/BartenderAbout.png; sourceTree = "<group>"; };
+		20D3A54214DB162500C57F9A /* BarTenderWaiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BarTenderWaiter.png; path = Graphics/BarTenderWaiter.png; sourceTree = "<group>"; };
+		20D3A54414DB1AD500C57F9A /* actionPopUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = actionPopUp.png; path = Graphics/actionPopUp.png; sourceTree = "<group>"; };
+		20DE82EC10025E6E005C772A /* BarDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarDocument.h; sourceTree = "<group>"; };
+		20DE82ED10025E6E005C772A /* BarDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarDocument.m; sourceTree = "<group>"; };
+		20DE830C10026205005C772A /* BarDocument.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarDocument.xib; sourceTree = "<group>"; };
+		20DE83E610027F0A005C772A /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		20DE84531002E42E005C772A /* BarExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarExperiment.h; sourceTree = "<group>"; };
+		20DE84541002E42E005C772A /* BarExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarExperiment.m; sourceTree = "<group>"; };
+		20DE84F61006B904005C772A /* ExptInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExptInfoController.h; sourceTree = "<group>"; };
+		20DE84F71006B904005C772A /* ExptInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExptInfoController.m; sourceTree = "<group>"; };
+		20DE85051006C448005C772A /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
+		20DE85081006C495005C772A /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
+		20DE85101006C4F8005C772A /* BarGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGroup.h; sourceTree = "<group>"; };
+		20DE87BA10086801005C772A /* BarSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSubject.h; sourceTree = "<group>"; };
+		20DE87BB10086801005C772A /* BarSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSubject.m; sourceTree = "<group>"; };
+		20E0D15B105C1F36007698BD /* Experiments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Experiments.png; path = Graphics/Experiments.png; sourceTree = "<group>"; };
+		20E2A7440FE545A20047BD8A /* DailyDataDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDataDocument.h; sourceTree = "<group>"; };
+		20E2A7450FE545A20047BD8A /* DailyDataDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataDocument.m; sourceTree = "<group>"; };
+		20E2A75D0FE552AF0047BD8A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ExptInfoWindow.xib; sourceTree = "<group>"; };
+		20F6462A164AC0CA0065D7BD /* BL_GM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BL_GM.pdf; sourceTree = "<group>"; };
+		20F6462B164AC0CA0065D7BD /* BL_Supplement.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BL_Supplement.pdf; sourceTree = "<group>"; };
+		20F6462C164AC0CA0065D7BD /* BP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BP.pdf; sourceTree = "<group>"; };
+		20F6462D164AC0CA0065D7BD /* WBP6006-e97075.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "WBP6006-e97075.pdf"; sourceTree = "<group>"; };
+		20F6462E164AC0CA0065D7BD /* YDO01BL.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = YDO01BL.pdf; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32DBCF750370BD2300C91783 /* Bartender_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bartender_Prefix.pch; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* Bartender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bartender.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208787DD16C20E39004998D1 /* QuartzCore.framework in Frameworks */,
+				20913289164AEC97007EB75E /* WebKit.framework in Frameworks */,
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+				20CEC10C0FFA5B33005816D9 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				208787DC16C20E39004998D1 /* QuartzCore.framework */,
+				20913288164AEC97007EB75E /* WebKit.framework */,
+				20CEC10B0FFA5B33005816D9 /* IOKit.framework */,
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+				13E42FBA07B3F13500E4EEF1 /* CoreData.framework */,
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* Bartender.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		206461750FF4021F00349949 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				20F64629164AC0CA0065D7BD /* Sartorius Balance Manuals */,
+				20B70E3B15B63EA700BC4CA7 /* BarBalance.h */,
+				2092D64115E2BC3900572E35 /* BarBalance.m */,
+				206461EB0FF40B7000349949 /* BartenderNotes.rtf */,
+				20972B27164964950006210A /* BCSerial.c */,
+				20972B28164964950006210A /* BCSerial.h */,
+				20972B29164964950006210A /* Serial Notes.rtf */,
+				20972B2A164964950006210A /* Serial Programming Guide for POSIX Operating Systems.pdf */,
+			);
+			name = Balance;
+			sourceTree = "<group>";
+		};
+		206758F70FE8370100B1B7B9 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				207AA6241610C8C1002FACB5 /* duplicate icon.png */,
+				208F89AA15F00D57009210FB /* carryOver64.png */,
+				20443B5315E569EF00C7338E /* scale64.png */,
+				20D3A54414DB1AD500C57F9A /* actionPopUp.png */,
+				20D3A54014DB161C00C57F9A /* BartenderAbout.png */,
+				20D3A54214DB162500C57F9A /* BarTenderWaiter.png */,
+				20E0D15B105C1F36007698BD /* Experiments.png */,
+				2067590E0FE847A800B1B7B9 /* WeighON.png */,
+				2067590D0FE847A800B1B7B9 /* WeighOff.png */,
+				206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */,
+				206758F30FE836F500B1B7B9 /* BarTenderLogo.png */,
+				206759080FE8423600B1B7B9 /* ExptsToBeWeighedOff.png */,
+				206758E90FE8349800B1B7B9 /* cancel64.png */,
+				206758EA0FE8349800B1B7B9 /* comment64.png */,
+				206758EB0FE8349800B1B7B9 /* phase.png */,
+				206758EC0FE8349800B1B7B9 /* save64.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		20F64629164AC0CA0065D7BD /* Sartorius Balance Manuals */ = {
+			isa = PBXGroup;
+			children = (
+				20F6462A164AC0CA0065D7BD /* BL_GM.pdf */,
+				20F6462B164AC0CA0065D7BD /* BL_Supplement.pdf */,
+				20F6462C164AC0CA0065D7BD /* BP.pdf */,
+				20F6462D164AC0CA0065D7BD /* WBP6006-e97075.pdf */,
+				20F6462E164AC0CA0065D7BD /* YDO01BL.pdf */,
+			);
+			path = "Sartorius Balance Manuals";
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* Bartender */ = {
+			isa = PBXGroup;
+			children = (
+				206461750FF4021F00349949 /* Balance */,
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = Bartender;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				200A742A16D03BF800C50838 /* BCMeanValue.m */,
+				200A742B16D03BF800C50838 /* BCMeanValue.h */,
+				20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */,
+				20538C6516CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.h */,
+				200A742D16D0458D00C50838 /* DailyDataMeansHtmlFormatter.h */,
+				200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */,
+				208787D916C209FB004998D1 /* FadeOutText.h */,
+				208787DA16C209FB004998D1 /* FadeOutText.m */,
+				207458DF15B4FE37008312B4 /* BCDailyDataWebView.h */,
+				207458E015B4FE37008312B4 /* BCDailyDataWebView.m */,
+				208787DE16C20F0A004998D1 /* BCBarcodeLabelsWebView.m */,
+				208787DF16C20F0A004998D1 /* BCBarcodeLabelsWebView.h */,
+				2074560515B37F3E008312B4 /* BCTableHtmlFormatter.h */,
+				2074560615B37F3F008312B4 /* BCTableHtmlFormatter.m */,
+				2030A62215A61AFB00233EA7 /* BarSummaryData.h */,
+				2030A62315A61AFB00233EA7 /* BarSummaryData.m */,
+				20DE84F61006B904005C772A /* ExptInfoController.h */,
+				20DE84F71006B904005C772A /* ExptInfoController.m */,
+				20DE82EC10025E6E005C772A /* BarDocument.h */,
+				20DE82ED10025E6E005C772A /* BarDocument.m */,
+				20DE84531002E42E005C772A /* BarExperiment.h */,
+				20DE84541002E42E005C772A /* BarExperiment.m */,
+				20DE85101006C4F8005C772A /* BarGroup.h */,
+				20A5D37F100940CC00C00E6C /* BarGroup.m */,
+				20DE85051006C448005C772A /* BarItem.h */,
+				20DE85081006C495005C772A /* BarItem.m */,
+				20A5D2F810093BCE00C00E6C /* BarObject.h */,
+				20A5D2F910093BCE00C00E6C /* BarObject.m */,
+				20A5D3781009408C00C00E6C /* BarPhase.h */,
+				20A5D3791009408C00C00E6C /* BarPhase.m */,
+				20DE87BA10086801005C772A /* BarSubject.h */,
+				20DE87BB10086801005C772A /* BarSubject.m */,
+				20B470AC15AC832E00BB7A8E /* DailyData.h */,
+				20B470AD15AC832E00BB7A8E /* DailyData.m */,
+				205F2243164EEA7700975B47 /* DailyDataTableView.h */,
+				205F2244164EEA7700975B47 /* DailyDataTableView.m */,
+				20E2A7440FE545A20047BD8A /* DailyDataDocument.h */,
+				20E2A7450FE545A20047BD8A /* DailyDataDocument.m */,
+				20723B6016CECBDB002F98D5 /* oldTimerCode */,
+				20C2DCCE164C4E9800CE6DA1 /* temp */,
+				208F8AA515F015FF009210FB /* BartenderAppDelegate.h */,
+				208F8AA615F015FF009210FB /* BartenderAppDelegate.m */,
+				2092D66D15E2C28800572E35 /* BCAlert.h */,
+				2092D66E15E2C28800572E35 /* BCAlert.m */,
+				2096DE9216113CF100FFC0D2 /* BarDirectories.h */,
+				2096DE9316113CF100FFC0D2 /* BarDirectories.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF750370BD2300C91783 /* Bartender_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20DE830C10026205005C772A /* BarDocument.xib */,
+				1DDD58280DA1D0D100B32029 /* DailyData.xib */,
+				20E2A75C0FE552AF0047BD8A /* ExptInfoWindow.xib */,
+				20DE83E610027F0A005C772A /* MainMenu.xib */,
+				206758F70FE8370100B1B7B9 /* Graphics */,
+				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* Bartender */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "Bartender" */;
+			buildPhases = (
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bartender;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Bartender;
+			productReference = 8D15AC370486D014006FF6A4 /* Bartender.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Bartender" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Bartender */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D15AC270486D014006FF6A4 /* Bartender */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
+				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
+				1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */,
+				20E2A75E0FE552AF0047BD8A /* ExptInfoWindow.xib in Resources */,
+				206758ED0FE8349800B1B7B9 /* cancel64.png in Resources */,
+				206758EE0FE8349800B1B7B9 /* comment64.png in Resources */,
+				206758EF0FE8349800B1B7B9 /* phase.png in Resources */,
+				206758F00FE8349800B1B7B9 /* save64.png in Resources */,
+				206758F40FE836F500B1B7B9 /* BarTenderLogo.png in Resources */,
+				206759090FE8423600B1B7B9 /* ExptsToBeWeighedOff.png in Resources */,
+				2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */,
+				206759100FE847A800B1B7B9 /* WeighON.png in Resources */,
+				206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */,
+				206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */,
+				20DE830D10026205005C772A /* BarDocument.xib in Resources */,
+				20DE83E710027F0A005C772A /* MainMenu.xib in Resources */,
+				20E0D15C105C1F36007698BD /* Experiments.png in Resources */,
+				20D3A54114DB161C00C57F9A /* BartenderAbout.png in Resources */,
+				20D3A54314DB162500C57F9A /* BarTenderWaiter.png in Resources */,
+				20D3A54514DB1AD500C57F9A /* actionPopUp.png in Resources */,
+				20443B5415E569EF00C7338E /* scale64.png in Resources */,
+				208F89AB15F00D57009210FB /* carryOver64.png in Resources */,
+				207AA6251610C8C1002FACB5 /* duplicate icon.png in Resources */,
+				20972B2C164964950006210A /* Serial Notes.rtf in Resources */,
+				20972B2D164964950006210A /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */,
+				20F6462F164AC0CA0065D7BD /* BL_GM.pdf in Resources */,
+				20F64630164AC0CA0065D7BD /* BL_Supplement.pdf in Resources */,
+				20F64631164AC0CA0065D7BD /* BP.pdf in Resources */,
+				20F64632164AC0CA0065D7BD /* WBP6006-e97075.pdf in Resources */,
+				20F64633164AC0CA0065D7BD /* YDO01BL.pdf in Resources */,
+				20C2DCCF164C4E9800CE6DA1 /* temp in Resources */,
+				20723B6116CECBDB002F98D5 /* oldTimerCode in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				20E2A7460FE545A20047BD8A /* DailyDataDocument.m in Sources */,
+				20DE82EE10025E6E005C772A /* BarDocument.m in Sources */,
+				20DE84551002E42E005C772A /* BarExperiment.m in Sources */,
+				20DE84F81006B904005C772A /* ExptInfoController.m in Sources */,
+				20DE85091006C495005C772A /* BarItem.m in Sources */,
+				20DE87BC10086801005C772A /* BarSubject.m in Sources */,
+				20A5D2FA10093BCE00C00E6C /* BarObject.m in Sources */,
+				20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */,
+				20A5D380100940CC00C00E6C /* BarGroup.m in Sources */,
+				2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */,
+				20B470AE15AC832E00BB7A8E /* DailyData.m in Sources */,
+				2074560715B37F3F008312B4 /* BCTableHtmlFormatter.m in Sources */,
+				207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */,
+				2092D64215E2BC3900572E35 /* BarBalance.m in Sources */,
+				2092D66F15E2C28800572E35 /* BCAlert.m in Sources */,
+				208F8AA715F015FF009210FB /* BartenderAppDelegate.m in Sources */,
+				2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */,
+				20972B2B164964950006210A /* BCSerial.c in Sources */,
+				205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */,
+				208787DB16C209FB004998D1 /* FadeOutText.m in Sources */,
+				208787E016C20F0A004998D1 /* BCBarcodeLabelsWebView.m in Sources */,
+				20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */,
+				200A742C16D03BF900C50838 /* BCMeanValue.m in Sources */,
+				200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1660FE840EACC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58280DA1D0D100B32029 /* DailyData.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58290DA1D0D100B32029 /* English */,
+			);
+			name = DailyData.xib;
+			sourceTree = "<group>";
+		};
+		20E2A75C0FE552AF0047BD8A /* ExptInfoWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20E2A75D0FE552AF0047BD8A /* English */,
+			);
+			name = ExptInfoWindow.xib;
+			sourceTree = "<group>";
+		};
+		2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4BAFDCFA73011CA2CEA /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C05733C808A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Bartender_Prefix.pch;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Bartender;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C05733C908A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Bartender_Prefix.pch;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Bartender;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C05733CC08A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C05733CD08A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "Bartender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733C808A9546B00998B17 /* Debug */,
+				C05733C908A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Bartender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733CC08A9546B00998B17 /* Debug */,
+				C05733CD08A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

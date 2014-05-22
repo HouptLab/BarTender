@@ -1,0 +1,57 @@
+      
+      
+      -(void) synchWeighingStatusWithExperiment; {
+      
+      // get the previous weights
+      // if weighing off, need to load previous onWeights & onTime from ".onweights"
+      // if weighing on, don't need to load any weights
+      
+		
+		if (kWeighingOff == currentState) {
+			
+			//NOTE: LOAD ON WEIGHTS OF GIVEN EXPT NAME....
+			// IF NO ON WEIGHTS and we're weighing OFF, post error...
+			[dailyData readOnWeights];
+			
+			// set the onTimeLabel
+			[onTimeLabel setStringValue:[dailyData onTimeString]];
+
+			
+		}
+		
+		
+		// set the dailyData phase 
+		// if we are weighing on, then we should  set phase to the current phase of the experiment (and the currentPhaseDay + 1)
+		// if we are weighing off, then we use the daily data phase and index loaded from the onweights file.
+        
+        // update the phase menu and label
+
+
+		if (kWeighingOn == currentState) {
+			// set the phase to the current phase of the experiment
+			// get the last phase day recorded by the experiment
+			// assuming we are now weighing this day, increment phase day by 1
+			// note that if never collected data for this phase before, then dayOfPhaseOfName returns -1
+			
+			[dailyData setPhaseName:[theExperiment currentPhaseName]];
+			
+			int exptPhaseDay = [theExperiment dayOfPhaseOfName:[dailyData phaseName]];
+			
+			if (nil != [theExperiment phaseWithName:[dailyData phaseName]]) {
+				if (-1 == exptPhaseDay) { exptPhaseDay = 0; }
+				else {  exptPhaseDay += 1 ; }
+			}
+			else { 
+				// if not a real phase (e.g. "<none>") then leave exptPhase day as -1
+				exptPhaseDay = -1; 
+			}
+			
+			[dailyData setPhaseDayIndex:exptPhaseDay]; 
+		}
+		
+		
+		
+		// set the  popup & phase day label to the current phase...
+		[self updatePhaseMenuAndLabel];
+	
+	
