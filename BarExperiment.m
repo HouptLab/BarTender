@@ -506,8 +506,9 @@
 	// 3. check that filename is prefixed with our expt code (e.g. "TQ ")
 	
 	NSString *fileName = [filePath lastPathComponent];
-	NSRange prefixRange = [fileName rangeOfString:[self code]];
-	if ( 0 == prefixRange.location && 2 == prefixRange.length) { hasPrefix = YES; }
+    hasPrefix =  [fileName hasPrefix:[self code]];
+//	NSRange prefixRange = [fileName rangeOfString:[self code]];
+//	if ( 0 == prefixRange.location && 2 == prefixRange.length) { hasPrefix = YES; }
 	
 	// if we have the right extension & prefix, then it's a datafile
 	

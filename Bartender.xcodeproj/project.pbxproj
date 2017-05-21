@@ -10,8 +10,6 @@
 		1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* DailyData.xib */; };
 		200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */; };
 		2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030A62315A61AFB00233EA7 /* BarSummaryData.m */; };
-		203BFB99192E8AF1001B770B /* Backup of SVGColorNames.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB2E192E8AF1001B770B /* Backup of SVGColorNames.numbers */; };
-		203BFB9A192E8AF1001B770B /* BC Palette.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB2F192E8AF1001B770B /* BC Palette.pxm */; };
 		203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB31192E8AF1001B770B /* BCAlert.m */; };
 		203BFB9C192E8AF1001B770B /* BCArrayUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB33192E8AF1001B770B /* BCArrayUtilities.m */; };
 		203BFB9D192E8AF1001B770B /* BCColorPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB35192E8AF1001B770B /* BCColorPopupMenuItemView.m */; };
@@ -52,35 +50,11 @@
 		203BFBC0192E8AF1001B770B /* teal.png in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB67192E8AF1001B770B /* teal.png */; };
 		203BFBC1192E8AF1001B770B /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB68192E8AF1001B770B /* white.png */; };
 		203BFBC2192E8AF1001B770B /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB69192E8AF1001B770B /* yellow.png */; };
-		203BFBC3192E8AF1001B770B /* MFFlipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB6C192E8AF1001B770B /* MFFlipController.m */; };
-		203BFBC4192E8AF1001B770B /* MFFlipDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB6E192E8AF1001B770B /* MFFlipDebugger.m */; };
-		203BFBC5192E8AF1001B770B /* MFFlipDebugger.xib in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB6F192E8AF1001B770B /* MFFlipDebugger.xib */; };
-		203BFBC6192E8AF1001B770B /* BCPlayStation3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB72192E8AF1001B770B /* BCPlayStation3Controller.m */; };
-		203BFBC7192E8AF1001B770B /* HID_cookie_strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB74192E8AF1001B770B /* HID_cookie_strings.plist */; };
-		203BFBC8192E8AF1001B770B /* HID_device_usage_strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB76192E8AF1001B770B /* HID_device_usage_strings.plist */; };
-		203BFBC9192E8AF1001B770B /* HID_usage_strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB78192E8AF1001B770B /* HID_usage_strings.plist */; };
-		203BFBCA192E8AF1001B770B /* HID_Config_Utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB7A192E8AF1001B770B /* HID_Config_Utilities.c */; };
-		203BFBCB192E8AF1001B770B /* HID_Error_Handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB7B192E8AF1001B770B /* HID_Error_Handler.c */; };
-		203BFBCC192E8AF1001B770B /* HID_Name_Lookup.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB7C192E8AF1001B770B /* HID_Name_Lookup.c */; };
-		203BFBCD192E8AF1001B770B /* HID_Queue_Utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB7D192E8AF1001B770B /* HID_Queue_Utilities.c */; };
-		203BFBCE192E8AF1001B770B /* HID_Utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB7E192E8AF1001B770B /* HID_Utilities.c */; };
-		203BFBCF192E8AF1001B770B /* ImmrHIDUtilAddOn.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB81192E8AF1001B770B /* ImmrHIDUtilAddOn.c */; };
-		203BFBD0192E8AF1001B770B /* IOHIDDevice_.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB83192E8AF1001B770B /* IOHIDDevice_.c */; };
-		203BFBD1192E8AF1001B770B /* IOHIDElement_.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB85192E8AF1001B770B /* IOHIDElement_.c */; };
-		203BFBD2192E8AF1001B770B /* IOHIDElementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB89192E8AF1001B770B /* IOHIDElementModel.m */; };
-		203BFBD3192E8AF1001B770B /* IsoluminantPalettes.pages in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB8A192E8AF1001B770B /* IsoluminantPalettes.pages */; };
 		203BFBD4192E8AF1001B770B /* Markdown-BuildRule.sh in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB8B192E8AF1001B770B /* Markdown-BuildRule.sh */; };
-		203BFBD5192E8AF1001B770B /* PalleteToShuffle.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB8C192E8AF1001B770B /* PalleteToShuffle.pxm */; };
-		203BFBD6192E8AF1001B770B /* Pict to SVG Library.txt in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB8D192E8AF1001B770B /* Pict to SVG Library.txt */; };
 		203BFBD7192E8AF1001B770B /* BCSerial.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB8F192E8AF1001B770B /* BCSerial.c */; };
 		203BFBD8192E8AF1001B770B /* Serial Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB91192E8AF1001B770B /* Serial Notes.rtf */; };
 		203BFBD9192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB92192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf */; };
-		203BFBDA192E8AF1001B770B /* SVG notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB93192E8AF1001B770B /* SVG notes.txt */; };
-		203BFBDB192E8AF1001B770B /* SVGColorNames.csv in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB94192E8AF1001B770B /* SVGColorNames.csv */; };
-		203BFBDC192E8AF1001B770B /* SVGColorNames.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB95192E8AF1001B770B /* SVGColorNames.numbers */; };
-		203BFBDD192E8AF1001B770B /* SVGColorNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB96192E8AF1001B770B /* SVGColorNames.txt */; };
-		203BFBDE192E8AF1001B770B /* SvgComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB98192E8AF1001B770B /* SvgComposer.m */; };
-		203BFBE1192E8BA7001B770B /* BCMeanValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFBDF192E8BA7001B770B /* BCMeanValue.m */; };
+		203C38021ED1DFA900CEA61E /* BCMeanValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C38011ED1DFA900CEA61E /* BCMeanValue.m */; };
 		20443B5415E569EF00C7338E /* scale64.png in Resources */ = {isa = PBXBuildFile; fileRef = 20443B5315E569EF00C7338E /* scale64.png */; };
 		20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */; };
 		205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F2244164EEA7700975B47 /* DailyDataTableView.m */; };
@@ -142,8 +116,6 @@
 		200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataMeansHtmlFormatter.m; sourceTree = "<group>"; };
 		2030A62215A61AFB00233EA7 /* BarSummaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSummaryData.h; sourceTree = "<group>"; };
 		2030A62315A61AFB00233EA7 /* BarSummaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSummaryData.m; sourceTree = "<group>"; };
-		203BFB2E192E8AF1001B770B /* Backup of SVGColorNames.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Backup of SVGColorNames.numbers"; sourceTree = "<group>"; };
-		203BFB2F192E8AF1001B770B /* BC Palette.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BC Palette.pxm"; sourceTree = "<group>"; };
 		203BFB30192E8AF1001B770B /* BCAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCAlert.h; sourceTree = "<group>"; };
 		203BFB31192E8AF1001B770B /* BCAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCAlert.m; sourceTree = "<group>"; };
 		203BFB32192E8AF1001B770B /* BCArrayUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCArrayUtilities.h; sourceTree = "<group>"; };
@@ -201,47 +173,13 @@
 		203BFB67192E8AF1001B770B /* teal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teal.png; sourceTree = "<group>"; };
 		203BFB68192E8AF1001B770B /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		203BFB69192E8AF1001B770B /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
-		203BFB6B192E8AF1001B770B /* MFFlipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFlipController.h; sourceTree = "<group>"; };
-		203BFB6C192E8AF1001B770B /* MFFlipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFlipController.m; sourceTree = "<group>"; };
-		203BFB6D192E8AF1001B770B /* MFFlipDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFlipDebugger.h; sourceTree = "<group>"; };
-		203BFB6E192E8AF1001B770B /* MFFlipDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFlipDebugger.m; sourceTree = "<group>"; };
-		203BFB6F192E8AF1001B770B /* MFFlipDebugger.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFFlipDebugger.xib; sourceTree = "<group>"; };
-		203BFB71192E8AF1001B770B /* BCPlayStation3Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCPlayStation3Controller.h; sourceTree = "<group>"; };
-		203BFB72192E8AF1001B770B /* BCPlayStation3Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCPlayStation3Controller.m; sourceTree = "<group>"; };
-		203BFB75192E8AF1001B770B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/HID_cookie_strings.plist; sourceTree = "<group>"; };
-		203BFB77192E8AF1001B770B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/HID_device_usage_strings.plist; sourceTree = "<group>"; };
-		203BFB79192E8AF1001B770B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/HID_usage_strings.plist; sourceTree = "<group>"; };
-		203BFB7A192E8AF1001B770B /* HID_Config_Utilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HID_Config_Utilities.c; sourceTree = "<group>"; };
-		203BFB7B192E8AF1001B770B /* HID_Error_Handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HID_Error_Handler.c; sourceTree = "<group>"; };
-		203BFB7C192E8AF1001B770B /* HID_Name_Lookup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HID_Name_Lookup.c; sourceTree = "<group>"; };
-		203BFB7D192E8AF1001B770B /* HID_Queue_Utilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HID_Queue_Utilities.c; sourceTree = "<group>"; };
-		203BFB7E192E8AF1001B770B /* HID_Utilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HID_Utilities.c; sourceTree = "<group>"; };
-		203BFB7F192E8AF1001B770B /* HID_Utilities_External.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HID_Utilities_External.h; sourceTree = "<group>"; };
-		203BFB81192E8AF1001B770B /* ImmrHIDUtilAddOn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ImmrHIDUtilAddOn.c; sourceTree = "<group>"; };
-		203BFB82192E8AF1001B770B /* ImmrHIDUtilAddOn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImmrHIDUtilAddOn.h; sourceTree = "<group>"; };
-		203BFB83192E8AF1001B770B /* IOHIDDevice_.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOHIDDevice_.c; sourceTree = "<group>"; };
-		203BFB84192E8AF1001B770B /* IOHIDDevice_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDDevice_.h; sourceTree = "<group>"; };
-		203BFB85192E8AF1001B770B /* IOHIDElement_.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOHIDElement_.c; sourceTree = "<group>"; };
-		203BFB86192E8AF1001B770B /* IOHIDElement_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDElement_.h; sourceTree = "<group>"; };
-		203BFB87192E8AF1001B770B /* IOHIDLib_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDLib_.h; sourceTree = "<group>"; };
-		203BFB88192E8AF1001B770B /* IOHIDElementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDElementModel.h; sourceTree = "<group>"; };
-		203BFB89192E8AF1001B770B /* IOHIDElementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOHIDElementModel.m; sourceTree = "<group>"; };
-		203BFB8A192E8AF1001B770B /* IsoluminantPalettes.pages */ = {isa = PBXFileReference; lastKnownFileType = file; path = IsoluminantPalettes.pages; sourceTree = "<group>"; };
 		203BFB8B192E8AF1001B770B /* Markdown-BuildRule.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Markdown-BuildRule.sh"; sourceTree = "<group>"; };
-		203BFB8C192E8AF1001B770B /* PalleteToShuffle.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = PalleteToShuffle.pxm; sourceTree = "<group>"; };
-		203BFB8D192E8AF1001B770B /* Pict to SVG Library.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pict to SVG Library.txt"; sourceTree = "<group>"; };
 		203BFB8F192E8AF1001B770B /* BCSerial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BCSerial.c; sourceTree = "<group>"; };
 		203BFB90192E8AF1001B770B /* BCSerial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCSerial.h; sourceTree = "<group>"; };
 		203BFB91192E8AF1001B770B /* Serial Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Serial Notes.rtf"; sourceTree = "<group>"; };
 		203BFB92192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Serial Programming Guide for POSIX Operating Systems.pdf"; sourceTree = "<group>"; };
-		203BFB93192E8AF1001B770B /* SVG notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SVG notes.txt"; sourceTree = "<group>"; };
-		203BFB94192E8AF1001B770B /* SVGColorNames.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SVGColorNames.csv; sourceTree = "<group>"; };
-		203BFB95192E8AF1001B770B /* SVGColorNames.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = SVGColorNames.numbers; sourceTree = "<group>"; };
-		203BFB96192E8AF1001B770B /* SVGColorNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SVGColorNames.txt; sourceTree = "<group>"; };
-		203BFB97192E8AF1001B770B /* SvgComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvgComposer.h; sourceTree = "<group>"; };
-		203BFB98192E8AF1001B770B /* SvgComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvgComposer.m; sourceTree = "<group>"; };
-		203BFBDF192E8BA7001B770B /* BCMeanValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMeanValue.m; sourceTree = "<group>"; };
-		203BFBE0192E8BA7001B770B /* BCMeanValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMeanValue.h; sourceTree = "<group>"; };
+		203C38001ED1DFA900CEA61E /* BCMeanValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCMeanValue.h; path = NumericSeries/BCMeanValue.h; sourceTree = "<group>"; };
+		203C38011ED1DFA900CEA61E /* BCMeanValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCMeanValue.m; path = NumericSeries/BCMeanValue.m; sourceTree = "<group>"; };
 		20443B5315E569EF00C7338E /* scale64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scale64.png; path = Graphics/scale64.png; sourceTree = "<group>"; };
 		20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBarcodeLabelsHtmlFormatter.m; sourceTree = "<group>"; };
 		20538C6516CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBarcodeLabelsHtmlFormatter.h; sourceTree = "<group>"; };
@@ -362,10 +300,8 @@
 		203BFB2D192E8AF1001B770B /* BC Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				203BFBDF192E8BA7001B770B /* BCMeanValue.m */,
-				203BFBE0192E8BA7001B770B /* BCMeanValue.h */,
-				203BFB2E192E8AF1001B770B /* Backup of SVGColorNames.numbers */,
-				203BFB2F192E8AF1001B770B /* BC Palette.pxm */,
+				203C38001ED1DFA900CEA61E /* BCMeanValue.h */,
+				203C38011ED1DFA900CEA61E /* BCMeanValue.m */,
 				203BFB30192E8AF1001B770B /* BCAlert.h */,
 				203BFB31192E8AF1001B770B /* BCAlert.m */,
 				203BFB32192E8AF1001B770B /* BCArrayUtilities.h */,
@@ -403,19 +339,8 @@
 				203BFB52192E8AF1001B770B /* BCVertexGraph.h */,
 				203BFB53192E8AF1001B770B /* BCVertexGraph.m */,
 				203BFB54192E8AF1001B770B /* Color Icons */,
-				203BFB6A192E8AF1001B770B /* FlipWindow */,
-				203BFB70192E8AF1001B770B /* HID */,
-				203BFB8A192E8AF1001B770B /* IsoluminantPalettes.pages */,
 				203BFB8B192E8AF1001B770B /* Markdown-BuildRule.sh */,
-				203BFB8C192E8AF1001B770B /* PalleteToShuffle.pxm */,
-				203BFB8D192E8AF1001B770B /* Pict to SVG Library.txt */,
 				203BFB8E192E8AF1001B770B /* Serial */,
-				203BFB93192E8AF1001B770B /* SVG notes.txt */,
-				203BFB94192E8AF1001B770B /* SVGColorNames.csv */,
-				203BFB95192E8AF1001B770B /* SVGColorNames.numbers */,
-				203BFB96192E8AF1001B770B /* SVGColorNames.txt */,
-				203BFB97192E8AF1001B770B /* SvgComposer.h */,
-				203BFB98192E8AF1001B770B /* SvgComposer.m */,
 			);
 			name = "BC Utilities";
 			path = "../BC Utilities";
@@ -447,61 +372,6 @@
 				203BFB69192E8AF1001B770B /* yellow.png */,
 			);
 			path = "Color Icons";
-			sourceTree = "<group>";
-		};
-		203BFB6A192E8AF1001B770B /* FlipWindow */ = {
-			isa = PBXGroup;
-			children = (
-				203BFB6B192E8AF1001B770B /* MFFlipController.h */,
-				203BFB6C192E8AF1001B770B /* MFFlipController.m */,
-				203BFB6D192E8AF1001B770B /* MFFlipDebugger.h */,
-				203BFB6E192E8AF1001B770B /* MFFlipDebugger.m */,
-				203BFB6F192E8AF1001B770B /* MFFlipDebugger.xib */,
-			);
-			path = FlipWindow;
-			sourceTree = "<group>";
-		};
-		203BFB70192E8AF1001B770B /* HID */ = {
-			isa = PBXGroup;
-			children = (
-				203BFB71192E8AF1001B770B /* BCPlayStation3Controller.h */,
-				203BFB72192E8AF1001B770B /* BCPlayStation3Controller.m */,
-				203BFB73192E8AF1001B770B /* HID Utilities */,
-				203BFB88192E8AF1001B770B /* IOHIDElementModel.h */,
-				203BFB89192E8AF1001B770B /* IOHIDElementModel.m */,
-			);
-			path = HID;
-			sourceTree = "<group>";
-		};
-		203BFB73192E8AF1001B770B /* HID Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				203BFB74192E8AF1001B770B /* HID_cookie_strings.plist */,
-				203BFB76192E8AF1001B770B /* HID_device_usage_strings.plist */,
-				203BFB78192E8AF1001B770B /* HID_usage_strings.plist */,
-				203BFB7A192E8AF1001B770B /* HID_Config_Utilities.c */,
-				203BFB7B192E8AF1001B770B /* HID_Error_Handler.c */,
-				203BFB7C192E8AF1001B770B /* HID_Name_Lookup.c */,
-				203BFB7D192E8AF1001B770B /* HID_Queue_Utilities.c */,
-				203BFB7E192E8AF1001B770B /* HID_Utilities.c */,
-				203BFB7F192E8AF1001B770B /* HID_Utilities_External.h */,
-				203BFB80192E8AF1001B770B /* IOHIDManager */,
-			);
-			path = "HID Utilities";
-			sourceTree = "<group>";
-		};
-		203BFB80192E8AF1001B770B /* IOHIDManager */ = {
-			isa = PBXGroup;
-			children = (
-				203BFB81192E8AF1001B770B /* ImmrHIDUtilAddOn.c */,
-				203BFB82192E8AF1001B770B /* ImmrHIDUtilAddOn.h */,
-				203BFB83192E8AF1001B770B /* IOHIDDevice_.c */,
-				203BFB84192E8AF1001B770B /* IOHIDDevice_.h */,
-				203BFB85192E8AF1001B770B /* IOHIDElement_.c */,
-				203BFB86192E8AF1001B770B /* IOHIDElement_.h */,
-				203BFB87192E8AF1001B770B /* IOHIDLib_.h */,
-			);
-			path = IOHIDManager;
 			sourceTree = "<group>";
 		};
 		203BFB8E192E8AF1001B770B /* Serial */ = {
@@ -711,28 +581,20 @@
 				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				203BFBB3192E8AF1001B770B /* fuschia.png in Resources */,
-				203BFBC8192E8AF1001B770B /* HID_device_usage_strings.plist in Resources */,
 				1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */,
-				203BFBD3192E8AF1001B770B /* IsoluminantPalettes.pages in Resources */,
 				20E2A75E0FE552AF0047BD8A /* ExptInfoWindow.xib in Resources */,
-				203BFBC9192E8AF1001B770B /* HID_usage_strings.plist in Resources */,
 				206758ED0FE8349800B1B7B9 /* cancel64.png in Resources */,
 				206758EE0FE8349800B1B7B9 /* comment64.png in Resources */,
 				206758EF0FE8349800B1B7B9 /* phase.png in Resources */,
 				206758F00FE8349800B1B7B9 /* save64.png in Resources */,
 				203BFBA8192E8AF1001B770B /* BCProgressDialog.xib in Resources */,
-				203BFBD5192E8AF1001B770B /* PalleteToShuffle.pxm in Resources */,
 				203BFBB7192E8AF1001B770B /* lime.png in Resources */,
 				206758F40FE836F500B1B7B9 /* BarTenderLogo.png in Resources */,
 				206759090FE8423600B1B7B9 /* ExptsToBeWeighedOff.png in Resources */,
 				203BFBD9192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */,
 				203BFBAE192E8AF1001B770B /* aqua.png in Resources */,
-				203BFBDC192E8AF1001B770B /* SVGColorNames.numbers in Resources */,
 				2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */,
 				206759100FE847A800B1B7B9 /* WeighON.png in Resources */,
-				203BFBDB192E8AF1001B770B /* SVGColorNames.csv in Resources */,
-				203BFBC7192E8AF1001B770B /* HID_cookie_strings.plist in Resources */,
-				203BFBDA192E8AF1001B770B /* SVG notes.txt in Resources */,
 				203BFBBE192E8AF1001B770B /* red.png in Resources */,
 				206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */,
 				206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */,
@@ -756,7 +618,6 @@
 				203BFBBA192E8AF1001B770B /* nofill.png in Resources */,
 				20F6462F164AC0CA0065D7BD /* BL_GM.pdf in Resources */,
 				203BFBC1192E8AF1001B770B /* white.png in Resources */,
-				203BFBC5192E8AF1001B770B /* MFFlipDebugger.xib in Resources */,
 				203BFBC2192E8AF1001B770B /* yellow.png in Resources */,
 				20F64630164AC0CA0065D7BD /* BL_Supplement.pdf in Resources */,
 				203BFBB9192E8AF1001B770B /* navy.png in Resources */,
@@ -764,14 +625,10 @@
 				20F64632164AC0CA0065D7BD /* WBP6006-e97075.pdf in Resources */,
 				203BFBB0192E8AF1001B770B /* blue.png in Resources */,
 				203BFBD4192E8AF1001B770B /* Markdown-BuildRule.sh in Resources */,
-				203BFB99192E8AF1001B770B /* Backup of SVGColorNames.numbers in Resources */,
 				203BFBBB192E8AF1001B770B /* olive.png in Resources */,
 				20F64633164AC0CA0065D7BD /* YDO01BL.pdf in Resources */,
 				203BFBB2192E8AF1001B770B /* darkgray.png in Resources */,
 				203BFBAF192E8AF1001B770B /* black.png in Resources */,
-				203BFBDD192E8AF1001B770B /* SVGColorNames.txt in Resources */,
-				203BFBD6192E8AF1001B770B /* Pict to SVG Library.txt in Resources */,
-				203BFB9A192E8AF1001B770B /* BC Palette.pxm in Resources */,
 				203BFBBD192E8AF1001B770B /* purple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,15 +640,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				203BFBCC192E8AF1001B770B /* HID_Name_Lookup.c in Sources */,
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
 				20E2A7460FE545A20047BD8A /* DailyDataDocument.m in Sources */,
 				20DE82EE10025E6E005C772A /* BarDocument.m in Sources */,
 				20DE84551002E42E005C772A /* BarExperiment.m in Sources */,
 				203BFBA0192E8AF1001B770B /* BCFontUtilities.m in Sources */,
 				203BFB9D192E8AF1001B770B /* BCColorPopupMenuItemView.m in Sources */,
+				203C38021ED1DFA900CEA61E /* BCMeanValue.m in Sources */,
 				203BFB9E192E8AF1001B770B /* BCColorUtilities.m in Sources */,
-				203BFBCE192E8AF1001B770B /* HID_Utilities.c in Sources */,
 				203BFBAD192E8AF1001B770B /* BCVertexGraph.m in Sources */,
 				203BFBAB192E8AF1001B770B /* BCTableHtmlFormatter.m in Sources */,
 				20DE84F81006B904005C772A /* ExptInfoController.m in Sources */,
@@ -803,38 +659,26 @@
 				203BFBA1192E8AF1001B770B /* BCFortranArray.m in Sources */,
 				203BFBA3192E8AF1001B770B /* BCMatrix.m in Sources */,
 				20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */,
-				203BFBC4192E8AF1001B770B /* MFFlipDebugger.m in Sources */,
 				20A5D380100940CC00C00E6C /* BarGroup.m in Sources */,
-				203BFBD1192E8AF1001B770B /* IOHIDElement_.c in Sources */,
 				2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */,
 				20B470AE15AC832E00BB7A8E /* DailyData.m in Sources */,
-				203BFBD2192E8AF1001B770B /* IOHIDElementModel.m in Sources */,
 				203BFBA2192E8AF1001B770B /* BCImageUtilities.m in Sources */,
-				203BFBE1192E8BA7001B770B /* BCMeanValue.m in Sources */,
-				203BFBC3192E8AF1001B770B /* MFFlipController.m in Sources */,
 				203BFBA6192E8AF1001B770B /* BCObjectMatrix.m in Sources */,
 				207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */,
 				203BFBA7192E8AF1001B770B /* BCProgressDialog.m in Sources */,
-				203BFBDE192E8AF1001B770B /* SvgComposer.m in Sources */,
 				2092D64215E2BC3900572E35 /* BarBalance.m in Sources */,
 				208F8AA715F015FF009210FB /* BartenderAppDelegate.m in Sources */,
-				203BFBCD192E8AF1001B770B /* HID_Queue_Utilities.c in Sources */,
 				203BFBAC192E8AF1001B770B /* BCTableWebView.m in Sources */,
-				203BFBC6192E8AF1001B770B /* BCPlayStation3Controller.m in Sources */,
 				203BFB9F192E8AF1001B770B /* BCFileUtilities.m in Sources */,
 				203BFBA4192E8AF1001B770B /* BCMenuUtilities.m in Sources */,
-				203BFBCF192E8AF1001B770B /* ImmrHIDUtilAddOn.c in Sources */,
 				203BFB9C192E8AF1001B770B /* BCArrayUtilities.m in Sources */,
 				203BFBAA192E8AF1001B770B /* BCStringExtensions.m in Sources */,
 				2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */,
-				203BFBCB192E8AF1001B770B /* HID_Error_Handler.c in Sources */,
-				203BFBD0192E8AF1001B770B /* IOHIDDevice_.c in Sources */,
 				205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */,
 				203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */,
 				208787DB16C209FB004998D1 /* FadeOutText.m in Sources */,
 				208787E016C20F0A004998D1 /* BCBarcodeLabelsWebView.m in Sources */,
 				203BFBD7192E8AF1001B770B /* BCSerial.c in Sources */,
-				203BFBCA192E8AF1001B770B /* HID_Config_Utilities.c in Sources */,
 				20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */,
 				200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */,
 			);
@@ -857,30 +701,6 @@
 				1DDD58290DA1D0D100B32029 /* English */,
 			);
 			name = DailyData.xib;
-			sourceTree = "<group>";
-		};
-		203BFB74192E8AF1001B770B /* HID_cookie_strings.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				203BFB75192E8AF1001B770B /* en */,
-			);
-			name = HID_cookie_strings.plist;
-			sourceTree = "<group>";
-		};
-		203BFB76192E8AF1001B770B /* HID_device_usage_strings.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				203BFB77192E8AF1001B770B /* en */,
-			);
-			name = HID_device_usage_strings.plist;
-			sourceTree = "<group>";
-		};
-		203BFB78192E8AF1001B770B /* HID_usage_strings.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				203BFB79192E8AF1001B770B /* en */,
-			);
-			name = HID_usage_strings.plist;
 			sourceTree = "<group>";
 		};
 		20E2A75C0FE552AF0047BD8A /* ExptInfoWindow.xib */ = {
