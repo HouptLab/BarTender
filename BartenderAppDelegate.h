@@ -18,7 +18,7 @@
 
 //@property (weak) IBOutlet NSWindow *aboutWindow;
 @property IBOutlet NSWindow *aboutWindow;
-
+@property IBOutlet NSTextField *versionLabel;
 
 -(IBAction)showAboutBox:(id)sender; 
 // display about box

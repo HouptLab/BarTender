@@ -75,6 +75,7 @@
 		208787E016C20F0A004998D1 /* BCBarcodeLabelsWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 208787DE16C20F0A004998D1 /* BCBarcodeLabelsWebView.m */; };
 		208F89AB15F00D57009210FB /* carryOver64.png in Resources */ = {isa = PBXBuildFile; fileRef = 208F89AA15F00D57009210FB /* carryOver64.png */; };
 		208F8AA715F015FF009210FB /* BartenderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F8AA615F015FF009210FB /* BartenderAppDelegate.m */; };
+		209095D92360F84800B9A94D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209095D82360F84800B9A94D /* MainMenu.xib */; };
 		20913289164AEC97007EB75E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20913288164AEC97007EB75E /* WebKit.framework */; };
 		2092D64215E2BC3900572E35 /* BarBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2092D64115E2BC3900572E35 /* BarBalance.m */; };
 		2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096DE9316113CF100FFC0D2 /* BarDirectories.m */; };
@@ -88,7 +89,6 @@
 		20D3A54514DB1AD500C57F9A /* actionPopUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54414DB1AD500C57F9A /* actionPopUp.png */; };
 		20DE82EE10025E6E005C772A /* BarDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE82ED10025E6E005C772A /* BarDocument.m */; };
 		20DE830D10026205005C772A /* BarDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DE830C10026205005C772A /* BarDocument.xib */; };
-		20DE83E710027F0A005C772A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DE83E610027F0A005C772A /* MainMenu.xib */; };
 		20DE84551002E42E005C772A /* BarExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE84541002E42E005C772A /* BarExperiment.m */; };
 		20DE84F81006B904005C772A /* ExptInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE84F71006B904005C772A /* ExptInfoController.m */; };
 		20DE85091006C495005C772A /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE85081006C495005C772A /* BarItem.m */; };
@@ -206,6 +206,7 @@
 		208F89AA15F00D57009210FB /* carryOver64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carryOver64.png; path = Graphics/carryOver64.png; sourceTree = "<group>"; };
 		208F8AA515F015FF009210FB /* BartenderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BartenderAppDelegate.h; sourceTree = "<group>"; };
 		208F8AA615F015FF009210FB /* BartenderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BartenderAppDelegate.m; sourceTree = "<group>"; };
+		209095D82360F84800B9A94D /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		20913288164AEC97007EB75E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2092D64115E2BC3900572E35 /* BarBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarBalance.m; sourceTree = "<group>"; };
 		2096DE9216113CF100FFC0D2 /* BarDirectories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarDirectories.h; sourceTree = "<group>"; };
@@ -225,7 +226,6 @@
 		20DE82EC10025E6E005C772A /* BarDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarDocument.h; sourceTree = "<group>"; };
 		20DE82ED10025E6E005C772A /* BarDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarDocument.m; sourceTree = "<group>"; };
 		20DE830C10026205005C772A /* BarDocument.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarDocument.xib; sourceTree = "<group>"; };
-		20DE83E610027F0A005C772A /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		20DE84531002E42E005C772A /* BarExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarExperiment.h; sourceTree = "<group>"; };
 		20DE84541002E42E005C772A /* BarExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarExperiment.m; sourceTree = "<group>"; };
 		20DE84F61006B904005C772A /* ExptInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExptInfoController.h; sourceTree = "<group>"; };
@@ -505,9 +505,9 @@
 				20DE830C10026205005C772A /* BarDocument.xib */,
 				1DDD58280DA1D0D100B32029 /* DailyData.xib */,
 				20E2A75C0FE552AF0047BD8A /* ExptInfoWindow.xib */,
-				20DE83E610027F0A005C772A /* MainMenu.xib */,
 				206758F70FE8370100B1B7B9 /* Graphics */,
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
+				209095D82360F84800B9A94D /* MainMenu.xib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 			);
@@ -550,7 +550,7 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 1020;
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Bartender" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -598,9 +598,9 @@
 				203BFBBE192E8AF1001B770B /* red.png in Resources */,
 				206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */,
 				206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */,
+				209095D92360F84800B9A94D /* MainMenu.xib in Resources */,
 				20DE830D10026205005C772A /* BarDocument.xib in Resources */,
 				203BFBB6192E8AF1001B770B /* lightgray.png in Resources */,
-				20DE83E710027F0A005C772A /* MainMenu.xib in Resources */,
 				20E0D15C105C1F36007698BD /* Experiments.png in Resources */,
 				203BFBB4192E8AF1001B770B /* gray.png in Resources */,
 				203BFBD8192E8AF1001B770B /* Serial Notes.rtf in Resources */,
@@ -738,7 +738,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -763,6 +762,8 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.behavioralcybernetics.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
 			};
@@ -784,7 +785,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bartender_Prefix.pch;
@@ -808,6 +808,8 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.behavioralcybernetics.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
 			};
@@ -816,12 +818,36 @@
 		C05733CC08A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = "";
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
@@ -832,10 +858,33 @@
 		C05733CD08A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
