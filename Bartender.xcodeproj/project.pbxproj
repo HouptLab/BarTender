@@ -76,6 +76,9 @@
 		208F89AB15F00D57009210FB /* carryOver64.png in Resources */ = {isa = PBXBuildFile; fileRef = 208F89AA15F00D57009210FB /* carryOver64.png */; };
 		208F8AA715F015FF009210FB /* BartenderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 208F8AA615F015FF009210FB /* BartenderAppDelegate.m */; };
 		209095D92360F84800B9A94D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209095D82360F84800B9A94D /* MainMenu.xib */; };
+		209095DF2361054F00B9A94D /* ExptSummaryDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209095DE2361054F00B9A94D /* ExptSummaryDialog.xib */; };
+		209095E22361065B00B9A94D /* FirebaseSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 209095E12361065B00B9A94D /* FirebaseSummary.m */; };
+		209095E5236B726000B9A94D /* BarDrug.m in Sources */ = {isa = PBXBuildFile; fileRef = 209095E4236B726000B9A94D /* BarDrug.m */; };
 		20913289164AEC97007EB75E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20913288164AEC97007EB75E /* WebKit.framework */; };
 		2092D64215E2BC3900572E35 /* BarBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2092D64115E2BC3900572E35 /* BarBalance.m */; };
 		2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096DE9316113CF100FFC0D2 /* BarDirectories.m */; };
@@ -207,6 +210,11 @@
 		208F8AA515F015FF009210FB /* BartenderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BartenderAppDelegate.h; sourceTree = "<group>"; };
 		208F8AA615F015FF009210FB /* BartenderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BartenderAppDelegate.m; sourceTree = "<group>"; };
 		209095D82360F84800B9A94D /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		209095DE2361054F00B9A94D /* ExptSummaryDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExptSummaryDialog.xib; sourceTree = "<group>"; };
+		209095E02361065B00B9A94D /* FirebaseSummary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseSummary.h; sourceTree = "<group>"; };
+		209095E12361065B00B9A94D /* FirebaseSummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseSummary.m; sourceTree = "<group>"; };
+		209095E3236B726000B9A94D /* BarDrug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarDrug.h; sourceTree = "<group>"; };
+		209095E4236B726000B9A94D /* BarDrug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarDrug.m; sourceTree = "<group>"; };
 		20913288164AEC97007EB75E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2092D64115E2BC3900572E35 /* BarBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarBalance.m; sourceTree = "<group>"; };
 		2096DE9216113CF100FFC0D2 /* BarDirectories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarDirectories.h; sourceTree = "<group>"; };
@@ -466,10 +474,14 @@
 				20DE82ED10025E6E005C772A /* BarDocument.m */,
 				20DE84531002E42E005C772A /* BarExperiment.h */,
 				20DE84541002E42E005C772A /* BarExperiment.m */,
+				209095E02361065B00B9A94D /* FirebaseSummary.h */,
+				209095E12361065B00B9A94D /* FirebaseSummary.m */,
 				20DE85101006C4F8005C772A /* BarGroup.h */,
 				20A5D37F100940CC00C00E6C /* BarGroup.m */,
 				20DE85051006C448005C772A /* BarItem.h */,
 				20DE85081006C495005C772A /* BarItem.m */,
+				209095E3236B726000B9A94D /* BarDrug.h */,
+				209095E4236B726000B9A94D /* BarDrug.m */,
 				20A5D2F810093BCE00C00E6C /* BarObject.h */,
 				20A5D2F910093BCE00C00E6C /* BarObject.m */,
 				20A5D3781009408C00C00E6C /* BarPhase.h */,
@@ -503,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				20DE830C10026205005C772A /* BarDocument.xib */,
+				209095DE2361054F00B9A94D /* ExptSummaryDialog.xib */,
 				1DDD58280DA1D0D100B32029 /* DailyData.xib */,
 				20E2A75C0FE552AF0047BD8A /* ExptInfoWindow.xib */,
 				206758F70FE8370100B1B7B9 /* Graphics */,
@@ -596,6 +609,7 @@
 				2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */,
 				206759100FE847A800B1B7B9 /* WeighON.png in Resources */,
 				203BFBBE192E8AF1001B770B /* red.png in Resources */,
+				209095DF2361054F00B9A94D /* ExptSummaryDialog.xib in Resources */,
 				206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */,
 				206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */,
 				209095D92360F84800B9A94D /* MainMenu.xib in Resources */,
@@ -661,6 +675,7 @@
 				20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */,
 				20A5D380100940CC00C00E6C /* BarGroup.m in Sources */,
 				2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */,
+				209095E5236B726000B9A94D /* BarDrug.m in Sources */,
 				20B470AE15AC832E00BB7A8E /* DailyData.m in Sources */,
 				203BFBA2192E8AF1001B770B /* BCImageUtilities.m in Sources */,
 				203BFBA6192E8AF1001B770B /* BCObjectMatrix.m in Sources */,
@@ -673,6 +688,7 @@
 				203BFBA4192E8AF1001B770B /* BCMenuUtilities.m in Sources */,
 				203BFB9C192E8AF1001B770B /* BCArrayUtilities.m in Sources */,
 				203BFBAA192E8AF1001B770B /* BCStringExtensions.m in Sources */,
+				209095E22361065B00B9A94D /* FirebaseSummary.m in Sources */,
 				2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */,
 				205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */,
 				203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */,

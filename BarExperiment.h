@@ -67,7 +67,9 @@
 
 		NSMutableArray *phases; 
 				// list of phases which divide up the days of the experiment
-	
+
+        NSMutableArray *drugs;
+            // list of drugs with name, code (= abbr), and description (=link to msds) 
 	
 		NSMutableArray *dataDays; 
 		// list of daily data records
@@ -144,6 +146,7 @@
 
 - (unsigned long) startTime;
 - (unsigned long) endTime;
+- (NSDate *)last_data_update;
 
 - (NSUInteger) prefItemIndex;
 - (NSUInteger) baseItemIndex;
@@ -277,7 +280,7 @@
 - (void) deletePhaseAtIndex:(NSUInteger)index;
 
 - (NSUInteger) numberOfPhases;
-- (BarGroup *) phaseAtIndex:(NSUInteger)index;
+- (BarPhase *) phaseAtIndex:(NSUInteger)index;
 - (NSUInteger) getPhaseIndex:(BarPhase *)thePhase;	
 - (NSString *) nameOfPhaseAtIndex:(NSUInteger)index;
 
@@ -292,6 +295,20 @@
 
 - (NSString *)nameOfPhaseOfDay:(NSUInteger)dayIndex;
 
+
+// **********************************************************************
+// Drug methods     ----------------------------------------------------
+
+- (NSMutableArray *) drugs;
+
+-(void)addNewDrug;
+- (NSUInteger) numberOfDrugs;
+- (BarPhase *) drugAtIndex:(NSUInteger)index;
+- (NSUInteger) getDrugIndex:(BarPhase *)thePhase;
+- (NSString *) nameOfDrugAtIndex:(NSUInteger)index;
+- (void) deleteDrugAtIndex:(NSUInteger)index;
+
+- (void) addDrugNamesToMenu:(NSMenu *)drugMenu;
 
 
 // **********************************************************************

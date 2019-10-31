@@ -10,6 +10,7 @@
 
 #import "BarItem.h"
 #import "BarGroup.h"
+#import "BarDrug.h"
 #import "BarSubject.h"
 #import "BarPhase.h"
 #import "DailyData.h"
@@ -92,7 +93,8 @@
 	items = [[NSMutableArray alloc] init];
 	groups = [[NSMutableArray alloc] init];
 	phases = [[NSMutableArray alloc] init];
-	
+	drugs = [[NSMutableArray alloc] init];
+    
 	// do not allocate dataDays until we actually start loading them from disk
 	// dataDays = [[NSMutableArray alloc] init];
 	
@@ -277,6 +279,9 @@
 	NSString *backupFilePath = [backupSummaryPath stringByAppendingPathComponent:[self getSummaryFileName]];
 	
 	[summary writeToFileAtPath:backupFilePath];
+
+    [summary writeToFirebase];
+
 	
 	
 }
@@ -1151,6 +1156,122 @@
     
 }
 
+// ***************************************************************************************
+// ***************************************************************************************
+// Drug methods
+//----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
+
+// NOTE: store current experimental drug by name of drug; so will break if user changes name
+
+-(NSMutableArray *) drugs {
+
+    return drugs;
+}
+
+
+
+-(void) addNewDrug {
+
+    BarDrug *newDrug = [[BarDrug alloc] initWithName:@"Untitled Drug" andCode:@"Rx" andDescription:nil];
+    [drugs addObject:newDrug];
+
+}
+
+-(void) deleteDrug:(BarDrug *)theDrug{
+
+    [drugs removeObject:theDrug];
+
+}
+-(void) deleteDrugAtIndex:(NSUInteger) index {
+
+    [drugs removeObjectAtIndex:index];
+
+}
+
+
+-(NSUInteger) numberOfDrugs {
+
+    return [drugs count];
+
+}
+
+
+
+-(BarGroup *)drugAtIndex:(NSUInteger)index {
+
+    return [drugs objectAtIndex:index];
+
+}
+
+
+
+-(NSUInteger) getDrugIndex:(BarDrug *)theDrug {
+
+    // returns NSNotFound if not in array
+
+    return [drugs indexOfObject:theDrug];
+
+}
+
+
+
+-(NSString *)nameOfDrugAtIndex:(NSUInteger)index {
+
+    BarDrug *theDrug;
+
+    theDrug = [drugs objectAtIndex:index];
+    if (theDrug !=nil ) return [theDrug name];
+    else return nil;
+
+}
+
+
+
+-(void)addDrugNamesToMenu:(NSMenu *)drugMenu; {
+
+    NSMenuItem *drugNameItem;
+
+    if (drugMenu == nil) return;
+
+    // clear out the menu
+    [drugMenu removeAllItems];
+
+    if ( 0 == [drugs count] ) {
+
+        drugNameItem = [[NSMenuItem alloc] initWithTitle:@"<none>" action:NULL keyEquivalent:[NSString string]];
+        // default "no-measure" menu item with default action & no key equivalent
+
+        // add the menu item to  the menu
+        [drugMenu addItem:drugNameItem];
+    }
+
+    for (BarDrug *theDrug in drugs) {
+
+        drugNameItem = [[NSMenuItem alloc] initWithTitle:[theDrug name] action:NULL keyEquivalent:[NSString string]];
+        // add the menu item to  the menu
+        [drugMenu addItem:drugNameItem];
+
+    }
+
+
+
+}
+
+-(BarDrug *)drugWithName:(NSString *)drugName; {
+
+    if (nil == drugName) return nil;
+
+    for (BarDrug *theDrug in drugs) {
+
+        if ([[theDrug name] isEqualToString:drugName]) { return theDrug; }
+
+    }
+
+    return nil;
+
+
+}
 
 // ***************************************************************************************
 // ***************************************************************************************
@@ -1542,7 +1663,13 @@
 	NSMutableDictionary *rootDictionary = [[NSMutableDictionary alloc] init];
 	
 	[rootDictionary setObject:@"Bartender" forKey:@"creator"];
-	[rootDictionary setObject:@"2.0" forKey:@"version"];
+
+    NSMutableString *version = [NSMutableString string];
+    [version appendString: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    [version appendString:@"."];
+    [version appendString: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+
+	[rootDictionary setObject:version forKey:@"version"];
 	[rootDictionary setObject:[self makeExptParametersDictionary] forKey:@"ExptParameters"];
 	[rootDictionary setObject:[self makeSubjectDictionary] forKey:@"Subjects"];
 	[rootDictionary setObject:[self makeGroupDictionary] forKey:@"Groups"];
@@ -1694,7 +1821,7 @@
 	if ([dictionary objectForKey:@"description"]) [self setDescription:[dictionary objectForKey:@"description"]];
 	if ([dictionary objectForKey:@"investigators"]) [self setInvestigators:[dictionary objectForKey:@"investigators"]];
 	if ([dictionary objectForKey:@"protocol"]) [self setProtocol:[dictionary objectForKey:@"protocol"]];
-    if ([dictionary objectForKey:@"wiki"]) [self setProtocol:[dictionary objectForKey:@"wiki"]];
+    if ([dictionary objectForKey:@"wiki"]) [self setWiki:[dictionary objectForKey:@"wiki"]];
 	if ([dictionary objectForKey:@"funding"]) [self setFunding:[dictionary objectForKey:@"funding"]];
 	
 	if ([dictionary objectForKey:@"startTime"]) [self setStartTime:[[dictionary objectForKey: @"startTime"] unsignedLongValue]];
@@ -1841,7 +1968,70 @@
 
 }
 
+-(NSDictionary *)makeDrugDictionary {
 
+    // name, code, description, and color
+
+    NSLog(@"BarExpt: makeDrugDictionary");
+
+
+    NSUInteger i;
+
+    NSMutableArray *drugArray = [[NSMutableArray alloc] init];
+
+
+    for (i=0; i < [drugs count]; i++) {
+
+        BarDrug *theDrug = [drugs objectAtIndex:i];
+
+        NSDictionary *drugSubDictionary = [NSDictionary
+                                            dictionaryWithObjects:
+                                            [NSArray arrayWithObjects: [theDrug name], [theDrug code], [theDrug description], nil]
+                                            forKeys:
+                                            [NSArray arrayWithObjects: @"name", @"code", @"description", nil]
+                                            ];
+
+        // NOTE need to add drug colors
+
+
+        [drugArray addObject:drugSubDictionary];
+
+    }
+
+    NSDictionary *drugDictionary = [NSDictionary  dictionaryWithObject:drugArray  forKey:@"DrugsArray"];
+
+    return drugDictionary;
+}
+
+
+-(BOOL) unpackDrugDictionary:(NSDictionary *) dictionary   {
+
+    NSUInteger i;
+
+    NSDictionary *subDictionary;
+    BarDrug *theDrug;
+
+    NSArray *drugArray = [dictionary objectForKey:@"DrugsArray"];
+
+    for (i=0;i< [drugArray count]; i++) {
+
+        subDictionary = (NSDictionary *)[drugArray objectAtIndex:i];
+
+        theDrug = [[BarDrug alloc]
+                    initWithName:[subDictionary objectForKey:@"name"]
+                    andCode:[subDictionary objectForKey:@"code"]
+                    andDescription:[subDictionary objectForKey:@"description"]
+                    ];
+
+
+        [[self drugs] addObject:theDrug];
+
+    }
+
+
+    return YES;
+
+}
 
 
 
@@ -2011,6 +2201,20 @@
 	
 }
 
+-(NSDate *)last_data_update; {
 
+    NSDate *last_data_update = NULL;
+    for (NSUInteger d=0;d< [self numberOfDays]; d++ ) {
+        double onwgt, offwgt, deltawgt;
+
+        DailyData *dailyData = [self dailyDataForDay:d];
+
+        if (NULL == last_data_update) { last_data_update = [dailyData offTime]; }
+        else if ([[dailyData offTime] compare:last_data_update] == NSOrderedDescending) {
+            last_data_update = [dailyData offTime];
+        }
+    }
+    return last_data_update;
+}
 
 @end

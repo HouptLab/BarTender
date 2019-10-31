@@ -14,6 +14,8 @@
 // returns the directory path to the standard directories
 // side effect: creates the directory if it doesn't exist already
 
+#define BartenderDataDirectoryName @"Bartender Data"
+
 BOOL CreateDirectoryAtPath(NSString *directoryPath) {
 	
 	NSError *fileManagerError;
@@ -49,8 +51,9 @@ NSString *GetExptDirectoryPath(void) {
 	// check if the appropriate directories exist, create them if they don't exist
 	
 	NSString *docDirectoryPath = GetDocDirectoryPath();
+
 	
-	NSString *exptDirectoryPath = [docDirectoryPath stringByAppendingPathComponent:@"Bartender/Experiments"];
+	NSString *exptDirectoryPath = [[docDirectoryPath stringByAppendingPathComponent:BartenderDataDirectoryName] stringByAppendingPathComponent:@"Experiments"];
 	
 	if (CreateDirectoryAtPath(exptDirectoryPath) ) { return exptDirectoryPath; }
 	
@@ -65,7 +68,7 @@ NSString *GetArchiveDirectoryPath(NSString *code) {
 	// check if the appropriate directories exist, create them if they don't exist
 	NSString *docDirectoryPath = GetDocDirectoryPath();
 	
-	NSString *exptArchiveName = [NSString stringWithFormat:@"Bartender/Archives/%@",code];
+	NSString *exptArchiveName = [NSString stringWithFormat:@"%@/Archives/%@",BartenderDataDirectoryName,code];
 	
 	NSString *archiveDirectoryPath = [docDirectoryPath stringByAppendingPathComponent:exptArchiveName];
 	
@@ -81,7 +84,7 @@ NSString *GetDailyDataDirectoryPath(void) {
 	// set to the template directory
 	// check if the appropriate directories exist, create them if they don't exist
 	NSString *docDirectoryPath = GetDocDirectoryPath();
-	NSString *dailyDataDirectoryPath = [docDirectoryPath stringByAppendingPathComponent:@"Bartender/DailyData"];
+	NSString *dailyDataDirectoryPath = [[docDirectoryPath stringByAppendingPathComponent:BartenderDataDirectoryName] stringByAppendingPathComponent:@"DailyData"];
 	
 	if (CreateDirectoryAtPath(dailyDataDirectoryPath) ) { return dailyDataDirectoryPath; }
 	
@@ -95,7 +98,7 @@ NSString *GetTemplateDirectoryPath(void) {
 	// set to the template directory
 	// check if the appropriate directories exist, create them if they don't exist
 	NSString *docDirectoryPath = GetDocDirectoryPath();
-	NSString *templateDirectoryPath = [docDirectoryPath stringByAppendingPathComponent:@"Bartender/Templates"];
+	NSString *templateDirectoryPath = [[docDirectoryPath stringByAppendingPathComponent:BartenderDataDirectoryName] stringByAppendingPathComponent:@"Templates"];
 	
 	if (CreateDirectoryAtPath(templateDirectoryPath) ) { return templateDirectoryPath; }
 	
