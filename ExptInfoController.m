@@ -5,6 +5,7 @@
 #import	"BarSubject.h"
 #import	"BarItem.h"
 #import "BarGroup.h"
+#import "BarDrug.h"
 #import	"BarPhase.h"
 #import "BarDirectories.h"
 #import "DailyDataDocument.h"
@@ -247,6 +248,7 @@
 
 	[itemsTableView reloadData];
 	[groupsTableView reloadData];
+    [drugsTableView reloadData];
 	[phasesTableView reloadData];
 	[subjectsTableView reloadData];
 	[dailyDataTableView reloadData];
@@ -494,7 +496,28 @@
 
 }
 
+- (IBAction)addDrug:(id)sender {
+    NSLog(@" ExptInfo Add Drug Button pressed");
 
+    [theExperiment addNewDrug];
+    [drugsTableView reloadData];
+
+}
+
+- (IBAction)deleteDrug:(id)sender {
+    NSLog(@" ExptInfo Delete Drug  pressed");
+
+
+    NSInteger selectedDrugIndex = [drugsTableView selectedRow];
+    if (selectedDrugIndex == -1) return; // no selection
+    //otherwise last row selected
+
+    [theExperiment deleteDrugAtIndex:(NSUInteger)selectedDrugIndex];
+    [drugsTableView reloadData];
+
+
+
+}
 // SUBJECTS *********************************************************************
 
 -(IBAction)numberOfSubjectsChanged:(id)sender {
@@ -632,6 +655,8 @@
 	
 	if (aTableView == itemsTableView) return( (NSInteger)[theExperiment numberOfItems] );
 	else if (aTableView == groupsTableView) return( (NSInteger)[theExperiment numberOfGroups] );
+    else if (aTableView == drugsTableView) return( (NSInteger)[theExperiment numberOfDrugs] );
+
 	else if (aTableView == phasesTableView) return( (NSInteger)[theExperiment numberOfPhases] );
 	else if (aTableView == subjectsTableView)	return( (NSInteger)[theExperiment numberOfSubjects] );
 	else if (aTableView == dailyDataTableView)	return( (NSInteger)[theExperiment numberOfDays] );
@@ -696,6 +721,9 @@
 		else if (aTableView == groupsTableView)	{ 
 			objectAtIndex =  (NSObject *)[theExperiment groupAtIndex:(NSUInteger)rowIndex];
 		}
+        else if (aTableView == drugsTableView)    {
+            objectAtIndex =  (NSObject *)[theExperiment drugAtIndex:(NSUInteger)rowIndex];
+        }
 		else if (aTableView == phasesTableView)	{ 
 			objectAtIndex =  (NSObject *)[theExperiment phaseAtIndex:(NSUInteger)rowIndex];
 		}		
@@ -735,6 +763,13 @@
         //have to update group listings in subject table too
         [self setGroupPopupMenu];
         [subjectsTableView reloadData];
+
+
+    }
+    else if (aTableView == drugsTableView)    {
+
+        barObjectAtIndex =  (BarObject *)[theExperiment drugAtIndex:(NSUInteger)rowIndex];
+        [barObjectAtIndex setValue:anObject forKey:identifier];
 
 
     }

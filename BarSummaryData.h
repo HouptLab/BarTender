@@ -76,6 +76,7 @@
 - (void) setNullDataString:(NSString *)nd;
 
 - (void) writeToFileAtPath:(NSString *)myFilePath;
+- (void) writeToFirebase;
 - (void) update;
 - (void) writeHeaderRows;
 - (void) writeDataRows;

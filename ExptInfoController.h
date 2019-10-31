@@ -38,6 +38,9 @@
 	
 	// groups tab
 	IBOutlet NSTableView *groupsTableView;
+
+    // drug tab
+    IBOutlet NSTableView *drugsTableView;
 	
 	// subjects tab
 	IBOutlet NSTableView *subjectsTableView;
@@ -111,6 +114,9 @@
 - (IBAction)addGroup:(id)sender;
 - (IBAction)deleteGroup:(id)sender;
 
+// drugs
+- (IBAction)addDrug:(id)sender;
+- (IBAction)deleteDrug:(id)sender;
 
 
 // subjects

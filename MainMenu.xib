@@ -114,9 +114,21 @@
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4UK-Oo-TWd"/>
-                            <menuItem title="Cut" keyEquivalent="x" id="k9n-c8-ZZq"/>
-                            <menuItem title="Copy" keyEquivalent="c" id="2vX-mn-gdZ"/>
-                            <menuItem title="Paste" keyEquivalent="v" id="o1f-SS-1bu"/>
+                            <menuItem title="Cut" keyEquivalent="x" id="k9n-c8-ZZq">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="c90-By-oi5"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="2vX-mn-gdZ">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="zE9-fU-0Jb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="o1f-SS-1bu">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="L0V-SP-8eQ"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Delete" id="gjh-rE-oMJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
@@ -248,6 +260,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-390" y="-498"/>
         </menu>
         <window title="About BarTender" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="var-2y-dXt" userLabel="aboutWindow" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>

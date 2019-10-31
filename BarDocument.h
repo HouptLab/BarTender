@@ -46,6 +46,9 @@
 -(IBAction)weighOnExperiment:(id)sender;
 -(IBAction)weighOffExperiment:(id)sender;
 
+-(IBAction)saveExperimentToFirebase:(id)sender;
+-(IBAction)saveExperimentToXynkImport:(id)sender;
+
 -(void)closeExptInfo:(id)sender andSaveExpt:(BOOL)saveFlag;
 
 -(BarExperiment *)experimentWithCode:(char *)code;

@@ -166,7 +166,7 @@
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78q-67-ZFK">
                         <rect key="frame" x="174" y="19" width="48" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" pullsDown="YES" arrowPosition="noArrow" selectedItem="2rq-QH-0hU" id="h8i-jt-aUT">
+                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" pullsDown="YES" arrowPosition="noArrow" id="h8i-jt-aUT">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="xp7-Vg-H6U">
@@ -189,6 +189,19 @@
                                         </connections>
                                     </menuItem>
                                     <menuItem isSeparatorItem="YES" id="dl2-ag-gRI"/>
+                                    <menuItem title="Save to Firebase..." id="ale-rV-EoD" userLabel="Save to Firebase">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="saveExperimentToFirebase:" target="-2" id="bwz-SH-Ib6"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Save to Xynk import..." id="v4l-dK-3HN" userLabel="Save to Firebase">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="saveExperimentToXynkImport:" target="-2" id="cMa-1G-29n"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" id="cgu-86-3sb"/>
                                     <menuItem title="Weigh ON..." id="RRe-0w-bve">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                         <connections>

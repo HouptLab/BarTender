@@ -9,7 +9,10 @@
 #import "BarSummaryData.h"
 #import "DailyData.h"
 #import "BarItem.h"
+#import "BarSubject.h"
 #import "BCAlert.h"
+#import "FirebaseSummary.h"
+
 
 /*
  
@@ -147,6 +150,148 @@
 		
 	}
 		
+}
+
+-(void) writeToFirebase; {
+
+    // put experiment data into a dictionary which we can then serialize as json
+    NSMutableDictionary *exptDictionary = [NSMutableDictionary dictionary];
+
+    NSDictionary *contacts = @{ @"Tom Houpt" : @{ @"email" : @"houpt@bio.fsu.edu",  @"phone" : @"850-459-6216" }};
+
+    [exptDictionary setObject: contacts
+                       forKey:@"contacts"];
+
+
+    NSMutableDictionary *drugs = [NSMutableDictionary dictionary];
+    for (NSUInteger i=0;i< [experiment numberOfDrugs]; i++ ) {
+        [drugs setObject: [[[experiment drugs] objectAtIndex:i] description]
+                   forKey: [[[experiment drugs] objectAtIndex:i] name]];
+    }
+
+    [exptDictionary setObject: drugs
+                       forKey:@"drugs"];
+
+    NSMutableDictionary *groups = [NSMutableDictionary dictionary];
+    for (NSUInteger i=0;i< [experiment numberOfGroups]; i++ ) {
+        [groups setObject: [[[experiment groups] objectAtIndex:i] description]
+                   forKey: [[[experiment groups] objectAtIndex:i] name]];
+    }
+    [exptDictionary setObject: groups
+                       forKey:@"groups"];
+
+    [exptDictionary setObject: [experiment investigators]
+                       forKey:@"investigators"];
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+
+    [formatter setDateFormat:@"EEE' 'MM-dd-yyyy' at 'HH:mm"];
+
+    NSDate *currentDate = [NSDate date];
+    NSString *dateString = [formatter stringFromDate:currentDate];
+
+    [exptDictionary setObject: dateString
+                       forKey:@"last_uploaded"];
+
+
+
+    NSString *lastString = [formatter stringFromDate:[experiment last_data_update]];
+
+    [exptDictionary setObject: lastString
+                       forKey:@"last_updated"];
+
+
+
+//    NSMutableString *measures = [NSMutableString string];
+//
+//    for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
+//        [measures appendString: [[[experiment items] objectAtIndex:i] name]];
+//        [measures appendString: @","];
+//    }
+
+    NSMutableDictionary *measures = [NSMutableDictionary dictionary];
+    for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
+        [measures setObject: [[[experiment items] objectAtIndex:i] description]
+                   forKey: [[[experiment items] objectAtIndex:i] name]];
+    }
+
+
+    [exptDictionary setObject: measures
+                       forKey:@"measures"];
+
+
+    [exptDictionary setObject: [experiment name]
+                        forKey:@"name"];
+
+    [exptDictionary setObject: [NSNumber numberWithUnsignedInteger:[experiment numberOfSubjects]]
+                       forKey:@"num_subjects"];
+
+    [exptDictionary setObject: [experiment protocol]
+                       forKey:@"protocol"];
+
+  [exptDictionary setObject: [experiment wiki]
+                       forKey:@"wikipage"];
+
+    NSDateFormatter *offDateFormatter = [[NSDateFormatter alloc] init];
+    [offDateFormatter setDateFormat:@"MM-dd-yyyy HH:mm"];
+
+    NSMutableDictionary *subjects = [NSMutableDictionary dictionary];
+    for (NSUInteger s=0;s< [experiment numberOfSubjects]; s++ ) {
+
+         NSMutableDictionary *subject = [NSMutableDictionary dictionary];
+
+            NSMutableDictionary *subject_data = [NSMutableDictionary dictionary];
+            for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
+                NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
+
+                 for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+                     double onwgt, offwgt, deltawgt;
+
+                     DailyData *dailyData = [experiment dailyDataForDay:d];
+                     [dailyData getWeightsForRat:s andItem:i onWeight:&onwgt offWeight:&offwgt deltaWeight:&deltawgt];
+
+                     [item_data setObject: [NSNumber numberWithDouble:deltawgt]
+                                   forKey: [offDateFormatter stringFromDate:[dailyData offTime]]];
+
+                 }
+
+                [subject_data setObject: item_data
+                                 forKey: [[[experiment items] objectAtIndex:i] name]];
+
+            }
+
+        [subject setObject:subject_data
+                    forKey: @"data"];
+
+        NSUInteger groupIndex = [(BarSubject *)[[experiment subjects] objectAtIndex:s] groupIndex];
+
+        [subject setObject: [[[experiment groups] objectAtIndex:groupIndex] name]
+                    forKey: @"group"];
+
+        NSString *subjectName = [NSString stringWithFormat:@"%@%02ld",[experiment code],(s+1)];
+        [subjects setObject: subject
+                   forKey:subjectName];
+    }
+
+    [exptDictionary setObject: subjects
+                       forKey:@"subjects"];
+
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:exptDictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    NSString *jsonString = NULL;
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+
+    if (NULL != jsonString) {
+        [[[FirebaseSummary alloc] init] saveExpt:[experiment code] withData:jsonString];
+
+    }
 }
 
 -(void) update; {

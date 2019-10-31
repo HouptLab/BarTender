@@ -355,6 +355,78 @@
 		 
 }
 
+-(IBAction)saveExperimentToXynkImport:(id)sender; {
+
+    NSLog(@"saveExptSummary Info called");
+
+    if (nil == [self selectedExpt]) return;
+
+    // ask user where they want to save the summary data?
+
+    NSSavePanel *sp;
+    NSInteger runResult;
+
+    /* create or get the shared instance of NSSavePanel */
+    sp = [NSSavePanel savePanel];
+
+    /* set up new attributes */
+    [sp setRequiredFileType:@"txt"];
+
+    /* set the suggest file name */
+    BarExperiment *theExperiment = [self selectedExpt];
+    NSString *fileName = [theExperiment getSummaryFileName];
+
+    [sp setNameFieldStringValue:fileName];
+
+    /* display the NSSavePanel */
+    runResult = [sp runModal];
+
+    if (runResult != NSOKButton) return;
+
+    NSString *myFilePath = [[sp filename] copy];
+
+    /* if successful, save file under designated name */
+
+
+    /*
+
+     To write out a BarExperiment summary data to a delimited file
+
+     1. initialize a BarSummaryData object with the experiment
+
+     2. call [BarSummaryData update] to put the summary data to the summaryDataString
+
+     3. write the summary data out to the file with [BarSummaryData writeToFileAtPath:]
+
+     */
+
+
+    BarSummaryData *summary = [[BarSummaryData alloc] initWithExperiment:[self selectedExpt]];
+
+    [summary update];
+
+    [summary writeToFileAtPath:myFilePath];
+
+}
+
+-(IBAction)saveExperimentToFirebase:(id)sender; {
+
+    NSLog(@"saveExpt to Firebase  called");
+
+    if (nil == [self selectedExpt]) return;
+
+    // ask user where they want to save the summary data?
+
+    
+
+    BarSummaryData *summary = [[BarSummaryData alloc] initWithExperiment:[self selectedExpt]];
+
+    [summary update];
+
+    [summary writeToFirebase];
+
+}
+
 
 
 
