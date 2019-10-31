@@ -223,6 +223,8 @@
 	[exptCodeView setStringValue: [theExperiment code]];
 	[exptInvestigatorsView setStringValue: [theExperiment investigators]];
 	[exptProtocolView setStringValue: [theExperiment protocol]];
+    [exptWikiView setStringValue: [theExperiment wiki]];
+
 	[exptFundingView setStringValue: [theExperiment funding]];
 	[exptSubjectsView setIntegerValue: (NSInteger)[theExperiment numberOfSubjects]];
 
@@ -393,6 +395,8 @@
 	 [theExperiment setCode:[exptCodeView stringValue]];
 	 [theExperiment setInvestigators:[exptInvestigatorsView stringValue]];
 	 [theExperiment setProtocol:[exptProtocolView stringValue]];
+     [theExperiment setWiki:[exptWikiView stringValue]];
+
 	 [theExperiment setFunding:[exptFundingView stringValue]];
 	 [theExperiment setNumberOfSubjects: (NSUInteger)[exptSubjectsView integerValue]];
 

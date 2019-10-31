@@ -272,6 +272,7 @@
 			[summaryDataString appendString: delimiter];
 			 
 		}
+        NSLog(@"Day #%ld",dayIndex);
 	
 	}
 	[summaryDataString appendString: endOfLine];

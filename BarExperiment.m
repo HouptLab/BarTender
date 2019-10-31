@@ -73,6 +73,8 @@
 	[self setInvestigators:@"Your name here"];
 	[self setProtocol:@"Review cmte protocol #"];
 	[self setFunding:@"Funding source"];
+    [self setWiki:@"Wiki page here"];
+
 	
 	[self setDescription:@"Describe experiment here"];
 	[self setBackupSummaryPath:	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0]];
@@ -162,6 +164,11 @@
 	// [protocol autorelease];
 	protocol = [newProtocol copy];
 }
+-(void)setWiki:(NSString *)newWiki  {
+    
+    // [protocol autorelease];
+    wiki = [newWiki copy];
+}
 
 -(void)setFunding:(NSString *)newFunding {
 
@@ -200,7 +207,7 @@
 -(NSString *)investigators	{ return investigators; }
 -(NSString *)protocol		{ return protocol; }
 -(NSString *)funding		{ return funding; }
-
+-(NSString *)wiki        { return wiki; }
 
 - (NSString *) getSummaryFileName; {
 
@@ -436,12 +443,18 @@
 		NSUInteger i, n;
 		
 		NSArray *content = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
-		
+        NSArray *sortedContent = [content sortedArrayUsingComparator:
+                                  ^(id path1, id path2)
+                                  {                               
+                                      // compare 
+                                      NSComparisonResult comp = [path1 compare:path2 options:NSCaseInsensitiveSearch];
+                                      return comp;                                
+                                  }];
 		n = [content count]; 
 		
 		for (i=0; i<n; i++) {
 			
-			NSString *subItemName = [content objectAtIndex:i];
+			NSString *subItemName = [sortedContent objectAtIndex:i];
 			NSString *subPath = [path stringByAppendingPathComponent:subItemName];
 			
 			[self readDailyDataFromPath:subPath];
@@ -1374,6 +1387,7 @@
 	[copy setInvestigators: [self investigators]];
 	[copy setProtocol: [self protocol]];
 	[copy setFunding:[self funding]];
+    [copy setWiki:[self wiki]];
 	
     // Boolean
 	[copy setTemplateFlag: [self templateFlag]];
@@ -1640,7 +1654,7 @@
 											
 			dictionaryWithObjects:
 				[NSArray arrayWithObjects:
-					 name, code, description, investigators, protocol, funding,
+					 name, code, description, investigators, protocol, wiki,funding,
 					 [NSNumber numberWithUnsignedLong:startTime], [NSNumber numberWithUnsignedLong:endTime],
 					// [NSNumber numberWithBool:waitingForOff],  set by presence of ".onweights" file
 					 [NSNumber numberWithBool:useGroups], 
@@ -1652,7 +1666,7 @@
 					 nil]
 			 forKeys:
 				[NSArray arrayWithObjects:
-					 @"name", @"code", @"description", @"investigators", @"protocol", @"funding",
+					 @"name", @"code", @"description", @"investigators", @"protocol", @"wiki",@"funding",
 					 @"startTime", @"endTime",
 					// @"waitingForOff", // set by presence of ".onweights" file
 					 @"useGroups", 
@@ -1680,6 +1694,7 @@
 	if ([dictionary objectForKey:@"description"]) [self setDescription:[dictionary objectForKey:@"description"]];
 	if ([dictionary objectForKey:@"investigators"]) [self setInvestigators:[dictionary objectForKey:@"investigators"]];
 	if ([dictionary objectForKey:@"protocol"]) [self setProtocol:[dictionary objectForKey:@"protocol"]];
+    if ([dictionary objectForKey:@"wiki"]) [self setProtocol:[dictionary objectForKey:@"wiki"]];
 	if ([dictionary objectForKey:@"funding"]) [self setFunding:[dictionary objectForKey:@"funding"]];
 	
 	if ([dictionary objectForKey:@"startTime"]) [self setStartTime:[[dictionary objectForKey: @"startTime"] unsignedLongValue]];

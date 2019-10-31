@@ -19,9 +19,9 @@
 	IBOutlet NSTextField *exptNameView;
 	IBOutlet NSTextField *exptInvestigatorsView;
 	IBOutlet NSTextField *exptProtocolView;
+    IBOutlet NSTextField *exptWikiView;
 	IBOutlet NSTextField *exptFundingView;
 	IBOutlet NSTextView  *exptSummaryView;
-	
 
 	// items tab
 	IBOutlet NSTableView *itemsTableView;

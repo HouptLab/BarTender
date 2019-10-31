@@ -23,7 +23,8 @@
 		NSString *investigators;
 		NSString *protocol;
 		NSString *funding;
-	
+        NSString *wiki;
+    
 		BOOL templateFlag; 
 		// is this experiment used as a template, i.e. stored as AA.bartemplate
 	
@@ -108,6 +109,7 @@
 // these setters make deep copies of the passed variables...
 - (void) setInvestigators:(NSString *)newInvestigators;
 - (void) setProtocol:(NSString *)newProtocol;
+- (void) setWiki:(NSString *)newWiki;
 - (void) setFunding:(NSString *)newFunding;
 
 - (void) setTemplateFlag:(BOOL)flag;
@@ -136,6 +138,7 @@
 - (NSString *) getSummaryFileName;
 - (NSString *) investigators;
 - (NSString *) protocol;
+- (NSString *) wiki;
 - (NSString *) funding;
 - (BOOL) templateFlag;
 
