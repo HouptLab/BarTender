@@ -215,6 +215,25 @@
         [measures setObject: [[[experiment items] objectAtIndex:i] description]
                    forKey: [[[experiment items] objectAtIndex:i] name]];
     }
+    if ([experiment hasPreference]) {
+        NSUInteger topitem,bottomitem;
+        [experiment getIndexOfPreferenceItem:&topitem overItem:&bottomitem];
+         NSString *name = [NSString stringWithFormat:@"%@ Preference",[[[experiment items] objectAtIndex:topitem] name] ];
+         NSString *description;
+         if ([experiment usePreferenceOverTotal]) {
+             description = [NSString stringWithFormat:@"Preference for %@ over total %@ + %@",
+                            [[[experiment items] objectAtIndex:topitem] name] ,
+                            [[[experiment items] objectAtIndex:topitem] name] ,
+                            [[[experiment items] objectAtIndex:bottomitem] name] ];
+         } else {
+         description = [NSString stringWithFormat:@"Preference for %@ over %@",
+                            [[[experiment items] objectAtIndex:topitem] name] ,
+                        [[[experiment items] objectAtIndex:bottomitem] name] ];
+         }
+        [measures setObject: description
+                     forKey: name];        
+    }
+    
 
 
     [exptDictionary setObject: measures
@@ -259,8 +278,45 @@
                 [subject_data setObject: item_data
                                  forKey: [[[experiment items] objectAtIndex:i] name]];
 
-            }
-
+            }            
+            if ([experiment hasPreference]) {
+                
+                NSUInteger topitem,bottomitem;
+                [experiment getIndexOfPreferenceItem:&topitem overItem:&bottomitem];
+                NSString *name = [NSString stringWithFormat:@"%@ Preference",[[[experiment items] objectAtIndex:topitem] name] ];
+                
+                NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
+                
+                for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+                    double onwgt, offwgt, top_deltawgt,bottom_deltawgt;
+                    
+                    DailyData *dailyData = [experiment dailyDataForDay:d];
+                    [dailyData getWeightsForRat:s andItem:topitem onWeight:&onwgt offWeight:&offwgt deltaWeight:&top_deltawgt];
+                    [dailyData getWeightsForRat:s andItem:bottomitem onWeight:&onwgt offWeight:&offwgt deltaWeight:&bottom_deltawgt];
+                    
+                    double preference = -32000;
+                    
+                    if (-32000 != top_deltawgt && -32000 != bottom_deltawgt){
+                        if ([experiment usePreferenceOverTotal]) {
+                            double denominator = top_deltawgt + bottom_deltawgt;
+                            if (denominator != 0) {
+                                preference = top_deltawgt / denominator;
+                            }
+                        }
+                        else {
+                            if (bottom_deltawgt != 0) {
+                                preference = top_deltawgt / bottom_deltawgt;
+                            }
+                        }
+                    }
+                    [item_data setObject: [NSNumber numberWithDouble:preference]
+                                  forKey: [offDateFormatter stringFromDate:[dailyData offTime]]];
+                } // next day
+    
+                [subject_data setObject: item_data
+                                 forKey: name];
+            } // has preference
+   
         [subject setObject:subject_data
                     forKey: @"data"];
 
@@ -277,6 +333,9 @@
     [exptDictionary setObject: subjects
                        forKey:@"subjects"];
 
+    [exptDictionary setObject: [self getMeans]
+                       forKey:@"group_means"];
+    
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:exptDictionary
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
@@ -294,6 +353,117 @@
     }
 }
 
+-(NSDictionary *)getMeans; {
+    
+    NSDateFormatter *offDateFormatter = [[NSDateFormatter alloc] init];
+    [offDateFormatter setDateFormat:@"MM-dd-yyyy HH:mm"];
+    
+    NSMutableDictionary *group_means = [NSMutableDictionary dictionary];
+    for (NSUInteger g=0;g< [experiment numberOfGroups]; g++ ) {
+        
+        NSMutableDictionary *group_data = [NSMutableDictionary dictionary];
+        for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
+            NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
+                for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+                double onwgt, offwgt, deltawgt;
+                
+                DailyData *dailyData = [experiment dailyDataForDay:d];
+                
+                double mean = 0, count=0, sem = 0,M2=0,delta,delta2;
+                
+                for (NSUInteger s=0;s< [experiment numberOfSubjects]; s++ ) {
+                    
+                    BarSubject *subject = [experiment subjectAtIndex:s];
+                    if (g == [subject groupIndex]) {
+                        
+                        [dailyData getWeightsForRat:s andItem:i onWeight:&onwgt offWeight:&offwgt deltaWeight:&deltawgt];
+            
+                        if (-32000 != deltawgt){
+                            count += 1;
+                            delta = deltawgt - mean;
+                            mean += delta / count;
+                            delta2 = deltawgt - mean;
+                            M2 += delta * delta2;
+                        }
+
+                                                
+                    } // right group
+                } // next subject
+                
+                if (0 == count) { mean = -32000; }
+                if (count >= 2) { sem = sqrt( M2/(count-1))/ sqrt(count); }
+                [item_data setObject: @{ @"mean":[NSNumber numberWithDouble:mean], @"sem": [NSNumber numberWithDouble:sem]}
+                              forKey: [offDateFormatter stringFromDate:[dailyData offTime]]];
+                
+            } // next day
+            
+            [group_data setObject: item_data
+                             forKey: [[[experiment items] objectAtIndex:i] name]];
+            
+        }  // next item      
+        if ([experiment hasPreference]) {
+            
+            NSUInteger topitem,bottomitem;
+            [experiment getIndexOfPreferenceItem:&topitem overItem:&bottomitem];
+            NSString *name = [NSString stringWithFormat:@"%@ Preference",[[[experiment items] objectAtIndex:topitem] name] ];
+            
+            NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
+            
+            for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+                double onwgt, offwgt, top_deltawgt,bottom_deltawgt;
+                
+                DailyData *dailyData = [experiment dailyDataForDay:d];
+                double mean = 0, count=0, sem = 0,M2=0,delta,delta2;
+                
+                for (NSUInteger s=0;s< [experiment numberOfSubjects]; s++ ) {
+                    
+                    BarSubject *subject = [experiment subjectAtIndex:s];
+                    if (g == [subject groupIndex]) {
+                        [dailyData getWeightsForRat:s andItem:topitem onWeight:&onwgt offWeight:&offwgt deltaWeight:&top_deltawgt];
+                        [dailyData getWeightsForRat:s andItem:bottomitem onWeight:&onwgt offWeight:&offwgt deltaWeight:&bottom_deltawgt];
+                
+                        double preference = -32000;
+                        
+                        if (-32000 != top_deltawgt && -32000 != bottom_deltawgt){
+                            if ([experiment usePreferenceOverTotal]) {
+                                double denominator = top_deltawgt + bottom_deltawgt;
+                                if (denominator != 0) {
+                                    preference = top_deltawgt / denominator;
+                                }
+                            }
+                            else {
+                                if (bottom_deltawgt != 0) {
+                                    preference = top_deltawgt / bottom_deltawgt;
+                                }
+                            }
+                        }
+                        
+                        if (preference != -32000) {
+                            count += 1;
+                            delta = preference - mean;
+                            mean += delta / count;
+                            delta2 = preference - mean;
+                            M2 += delta * delta2;
+                            
+                        }
+                    } // right group g  
+                } // next s
+                if (0 == count) { mean = -32000; }
+                if (count >= 2) { sem = sqrt( M2/(count-1))/ sqrt(count); }
+                [item_data setObject: @{ @"mean":[NSNumber numberWithDouble:mean], @"sem": [NSNumber numberWithDouble:sem]}
+                              forKey: [offDateFormatter stringFromDate:[dailyData offTime]]];
+            } // next day
+            
+            [group_data setObject: item_data
+                               forKey: name];
+        } // has preference
+        
+        [group_means setObject: group_data
+                        forKey: [experiment nameOfGroupAtIndex:g]];
+    } // next group
+        
+    return group_means;
+} 
 -(void) update; {
 	
 	if (nil == experiment) return;
