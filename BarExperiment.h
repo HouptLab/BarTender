@@ -22,7 +22,9 @@
 	// general expt info
 		NSString *investigators;
 		NSString *protocol;
-		NSString *funding;
+		NSString *project_code;
+        NSString *project_name;
+
         NSString *wiki;
     
 		BOOL templateFlag; 
@@ -112,7 +114,8 @@
 - (void) setInvestigators:(NSString *)newInvestigators;
 - (void) setProtocol:(NSString *)newProtocol;
 - (void) setWiki:(NSString *)newWiki;
-- (void) setFunding:(NSString *)newFunding;
+- (void) setProjectCode:(NSString *)newCode;
+- (void) setProjectName:(NSString *)newName;
 
 - (void) setTemplateFlag:(BOOL)flag;
 
@@ -141,7 +144,9 @@
 - (NSString *) investigators;
 - (NSString *) protocol;
 - (NSString *) wiki;
-- (NSString *) funding;
+- (NSString *) project_code;
+- (NSString *) project_name;
+
 - (BOOL) templateFlag;
 
 - (unsigned long) startTime;

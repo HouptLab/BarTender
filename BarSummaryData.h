@@ -23,7 +23,7 @@
 #import <Cocoa/Cocoa.h>
 #import "BarExperiment.h"
 
-// NSArray *headerStrings = [NSArray arrayWithObjects: @"Creator", @"Version", @"Type", @"CreationDate", @"Experiment", @"ExptCode", @"Investigators", @"Description", @"Protocol", @"Funding", @"Phase", @"PhaseTestIndex",@"StartDate", @"EndDate",@"Measure",@"Unit", @"Subject", @"Comment"];
+// NSArray *headerStrings = [NSArray arrayWithObjects: @"Creator", @"Version", @"Type", @"CreationDate", @"Experiment", @"ExptCode", @"Investigators", @"Description", @"Protocol", @"Project", @"Phase", @"PhaseTestIndex",@"StartDate", @"EndDate",@"Measure",@"Unit", @"Subject", @"Comment"];
 
 
 // file info fields
@@ -38,7 +38,9 @@
 #define kPIString @"Investigators"
 #define kDescriptionString @"Description"
 #define kProtocolString @"Protocol"
-#define kFundingString @"Funding"
+#define kProjectCodeString @"ProjCode"
+
+#define kProjectString @"Project"
 
 // daily data fields
 #define kPhaseString @"Phase"
