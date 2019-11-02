@@ -73,7 +73,8 @@
 	[self setCode:@"??"];
 	[self setInvestigators:@"Your name here"];
 	[self setProtocol:@"Review cmte protocol #"];
-	[self setFunding:@"Funding source"];
+	[self setProjectCode:@"CFP"];
+    [self setProjectName:@"Conditioned Flavor Preferences"];
     [self setWiki:@"Wiki page here"];
 
 	
@@ -172,12 +173,12 @@
     wiki = [newWiki copy];
 }
 
--(void)setFunding:(NSString *)newFunding {
-
-	// [funding autorelease];
-	funding = [newFunding copy];
+-(void)setProjectCode:(NSString *)newCode {
+	project_code = [newCode copy];
 }
-
+-(void)setProjectName:(NSString *)newName {
+    project_name = [newName copy];
+}
 
 - (void) setTemplateFlag:(BOOL)flag; {templateFlag = flag; }
 
@@ -198,6 +199,7 @@
 -(void)setItems: (NSMutableArray *)nI { items = nI; }
 -(void)setGroups: (NSMutableArray *)nG { groups = nG; }
 -(void)setPhases: (NSMutableArray *)nP {phases = nP; }
+-(void)setDrugs: (NSMutableArray *)nD {drugs = nD; }
 
 -(void) setBackupSummaryPath:(NSString *)newPath;  {
 	if (nil != newPath) { backupSummaryPath = [newPath copy]; }
@@ -208,7 +210,8 @@
 
 -(NSString *)investigators	{ return investigators; }
 -(NSString *)protocol		{ return protocol; }
--(NSString *)funding		{ return funding; }
+-(NSString *)project_code		{ return project_code; }
+-(NSString *)project_name       { return project_name; }
 -(NSString *)wiki        { return wiki; }
 
 - (NSString *) getSummaryFileName; {
@@ -1507,7 +1510,9 @@
     // strings
 	[copy setInvestigators: [self investigators]];
 	[copy setProtocol: [self protocol]];
-	[copy setFunding:[self funding]];
+	[copy setProjectCode:[self project_code]];
+    [copy setProjectName:[self project_name]];
+
     [copy setWiki:[self wiki]];
 	
     // Boolean
@@ -1537,7 +1542,8 @@
 	[copy setItems: [[NSMutableArray allocWithZone: zone] initWithArray: [self items] copyItems:YES]];
 	[copy setGroups: [[NSMutableArray allocWithZone: zone] initWithArray: [self groups] copyItems:YES]];
 	[copy setPhases: [[NSMutableArray allocWithZone: zone] initWithArray: [self phases] copyItems:YES]];
-	 
+    [copy setDrugs: [[NSMutableArray allocWithZone: zone] initWithArray: [self drugs] copyItems:YES]];
+
 	
     // NSStrings
     [copy setCurrentPhaseName:[self currentPhaseName]];
@@ -1781,7 +1787,7 @@
 											
 			dictionaryWithObjects:
 				[NSArray arrayWithObjects:
-					 name, code, description, investigators, protocol, wiki,funding,
+					 name, code, description, investigators, protocol, wiki,project_code,project_name,
 					 [NSNumber numberWithUnsignedLong:startTime], [NSNumber numberWithUnsignedLong:endTime],
 					// [NSNumber numberWithBool:waitingForOff],  set by presence of ".onweights" file
 					 [NSNumber numberWithBool:useGroups], 
@@ -1793,7 +1799,7 @@
 					 nil]
 			 forKeys:
 				[NSArray arrayWithObjects:
-					 @"name", @"code", @"description", @"investigators", @"protocol", @"wiki",@"funding",
+					 @"name", @"code", @"description", @"investigators", @"protocol", @"wiki",@"project_code",@"project_name",
 					 @"startTime", @"endTime",
 					// @"waitingForOff", // set by presence of ".onweights" file
 					 @"useGroups", 
@@ -1822,7 +1828,8 @@
 	if ([dictionary objectForKey:@"investigators"]) [self setInvestigators:[dictionary objectForKey:@"investigators"]];
 	if ([dictionary objectForKey:@"protocol"]) [self setProtocol:[dictionary objectForKey:@"protocol"]];
     if ([dictionary objectForKey:@"wiki"]) [self setWiki:[dictionary objectForKey:@"wiki"]];
-	if ([dictionary objectForKey:@"funding"]) [self setFunding:[dictionary objectForKey:@"funding"]];
+	if ([dictionary objectForKey:@"project_code"]) [self setProjectCode:[dictionary objectForKey:@"project_code"]];
+    if ([dictionary objectForKey:@"project_name"]) [self setProjectName:[dictionary objectForKey:@"project_name"]];
 	
 	if ([dictionary objectForKey:@"startTime"]) [self setStartTime:[[dictionary objectForKey: @"startTime"] unsignedLongValue]];
 	if ([dictionary objectForKey:@"endTime"]) [self setEndTime:[[dictionary objectForKey:@"endTime"] unsignedLongValue]];

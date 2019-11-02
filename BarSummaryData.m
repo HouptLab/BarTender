@@ -49,7 +49,7 @@
  // experiment info fields
 "Investigators"
 "Protocol"
-"Funding"
+"Project"
  
  // daily data  fields
 "Phase"
@@ -243,6 +243,15 @@
     [exptDictionary setObject: [experiment name]
                         forKey:@"name"];
 
+    [exptDictionary setObject: [experiment code]
+                       forKey:@"code"];
+    
+    [exptDictionary setObject: [experiment project_name]
+                       forKey:@"project_name"];
+    
+    [exptDictionary setObject: [experiment project_code]
+                       forKey:@"project_code"];
+    
     [exptDictionary setObject: [NSNumber numberWithUnsignedInteger:[experiment numberOfSubjects]]
                        forKey:@"num_subjects"];
 
@@ -392,7 +401,7 @@
                 
                 if (0 == count) { mean = -32000; }
                 if (count >= 2) { sem = sqrt( M2/(count-1))/ sqrt(count); }
-                [item_data setObject: @{ @"mean":[NSNumber numberWithDouble:mean], @"sem": [NSNumber numberWithDouble:sem]}
+                    [item_data setObject: @{ @"mean":[NSNumber numberWithDouble:mean], @"n": [NSNumber numberWithUnsignedInteger:count], @"sem": [NSNumber numberWithDouble:sem]}
                               forKey: [offDateFormatter stringFromDate:[dailyData offTime]]];
                 
             } // next day
@@ -527,10 +536,14 @@
 	[summaryDataString appendString: [experiment protocol]]; [summaryDataString appendString: endOfLine];
 	
 	
-	// Funding
-	[summaryDataString appendString: kFundingString]; [summaryDataString appendString: delimiter];
-	[summaryDataString appendString: [experiment funding]]; [summaryDataString appendString: endOfLine];
-	
+	// Project
+    // experiment
+    [summaryDataString appendString: kProjectString]; [summaryDataString appendString: delimiter];
+    [summaryDataString appendString: [experiment project_name]]; [summaryDataString appendString: endOfLine];
+    
+    // ExptCode
+    [summaryDataString appendString: kProjectCodeString];[summaryDataString appendString: delimiter];
+    [summaryDataString appendString: [experiment project_code]];[summaryDataString appendString: endOfLine];	
 }
 
 

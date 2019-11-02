@@ -20,7 +20,8 @@
 	IBOutlet NSTextField *exptInvestigatorsView;
 	IBOutlet NSTextField *exptProtocolView;
     IBOutlet NSTextField *exptWikiView;
-	IBOutlet NSTextField *exptFundingView;
+	IBOutlet NSTextField *exptProjCodeView;
+    IBOutlet NSTextField *exptProjNameView;
 	IBOutlet NSTextView  *exptSummaryView;
 
 	// items tab
