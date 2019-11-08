@@ -26,7 +26,7 @@
 
     NSURL *url = [NSURL URLWithString:firebaseExptURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"PUT"];
+    [request setHTTPMethod:@"PATCH"];
     [request setHTTPBody:postData];
 
     NSData *responseData = [NSURLConnection  sendSynchronousRequest:request returningResponse:NULL error:NULL];
