@@ -11,7 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FirebaseSummary : NSObject
 
-- (BOOL) saveExpt:(NSString *)exptCode withData:(NSString *)exptDataJSON;
+- (NSData *)getExpt:(NSString *)exptCode;
+- (BOOL) saveExpt:(NSString *)exptCode withData:(NSData *)exptJSONData;
 
 @end
 

@@ -12,7 +12,7 @@
 #import "BarSubject.h"
 #import "BCAlert.h"
 #import "FirebaseSummary.h"
-
+#import "BCMergeDictionary.h"
 
 /*
  
@@ -154,6 +154,8 @@
 
 -(void) writeToFirebase; {
 
+      FirebaseSummary *firebase = [[FirebaseSummary alloc] init]; 
+    
     // put experiment data into a dictionary which we can then serialize as json
     NSMutableDictionary *exptDictionary = [NSMutableDictionary dictionary];
 
@@ -346,19 +348,25 @@
                        forKey:@"group_means"];
     
     NSError *error;
+    NSData *currentExptJSONData = [firebase getExpt:[experiment code]];
+   //  NSData *targetExptJSONData = [targetExptJSON dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSDictionary *currentExptDictionary = [NSJSONSerialization JSONObjectWithData:currentExptJSONData options:kNilOptions error:&error];
+    
+    [exptDictionary mergeWithSourceDictionary: currentExptDictionary];
+  
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:exptDictionary
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
-    NSString *jsonString = NULL;
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-    } else {
-        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
+//    NSString *jsonString = NULL;
+//    if (! jsonData) {
+//        NSLog(@"Got an error: %@", error);
+//    } else {
+//        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//    }
 
-    if (NULL != jsonString) {
-        [[[FirebaseSummary alloc] init] saveExpt:[experiment code] withData:jsonString];
-
+    NSString *merged_code = [NSString stringWithFormat:@"%@_merged",[experiment code] ];
+    if (NULL != jsonData) {
+        [[[FirebaseSummary alloc] init] saveExpt:merged_code withData:jsonData];
     }
 }
 
