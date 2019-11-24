@@ -11,10 +11,10 @@
 
 /** mergeWithSourceDictionary
 
- given a target dictionary, merge this dictionary  with the target:
-
- if key is in self but not target, add key-object to target
- if key is in self and also in target, replace target object
+ self is target, gien dictionary is source
+ given a source dictionary, merge this dictionary  with the source:
+ if key is in self but not source, add key-object to self
+ if key is in self and also in source, keep self
  (recurse through subdictionaries so only leaves are replaced)
 
  */
@@ -24,31 +24,35 @@
     for (NSString *key in sourceDictionary) {
 
         id value = self[key];
+        
+        if ([key isEqualToString:@"Body Weight"]) {
+            NSLog(@"body weight %@", key);
+
+            
+        }
 
         // is key not in targetDictionary? then add key-object to targetDictionary
         if (nil == value) {
-
-            self[key] = sourceDictionary[key];
-
+            self[key]  = sourceDictionary[key];
+            NSLog(@"added value from source to target at key %@", key);
         }
-        else { // key is in targetDictionary
+        else { // key is in sourceDictionary and targetDictionary
 
             // is key-object a dictionary? then we need to recurse and only add/overwrite leaves
-            if ([[value className] isEqualToString:@"NSDictionary"]) {
+            if ([value isKindOfClass:[NSDictionary class]]) {
 
                 NSDictionary *sourceSubDictionary = sourceDictionary[key];
 
                 // convert sub-dictionary to a mutable dictionary
-                NSMutableDictionary *targetSubDictionary = [[NSMutableDictionary alloc] init];
-                [targetSubDictionary setDictionary:(NSDictionary *)value];
-                self[key] = targetSubDictionary;
-
+                NSMutableDictionary *targetSubDictionary = [(NSDictionary *)self[key] mutableCopy];
                 [targetSubDictionary mergeWithSourceDictionary:sourceSubDictionary];
+                self[key] = targetSubDictionary;
 
             }
             else {
-                // if key-object is not a dictionary, then overwrite target with source value
-                self[key] = sourceDictionary[key];
+                // if key-object is not a dictionary, then use target value instead of source (ie don't change target)                
+             //   NSLog(@"updated  value in target overrides source at key %@", key);
+
             }
 
         }
