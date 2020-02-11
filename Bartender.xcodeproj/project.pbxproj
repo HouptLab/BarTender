@@ -82,6 +82,7 @@
 		20913289164AEC97007EB75E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20913288164AEC97007EB75E /* WebKit.framework */; };
 		2092D64215E2BC3900572E35 /* BarBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2092D64115E2BC3900572E35 /* BarBalance.m */; };
 		2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096DE9316113CF100FFC0D2 /* BarDirectories.m */; };
+		209D1E0D23F22AE70085E516 /* BCMergeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 209D1E0C23F22AE70085E516 /* BCMergeDictionary.m */; };
 		20A5D2FA10093BCE00C00E6C /* BarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D2F910093BCE00C00E6C /* BarObject.m */; };
 		20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D3791009408C00C00E6C /* BarPhase.m */; };
 		20A5D380100940CC00C00E6C /* BarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D37F100940CC00C00E6C /* BarGroup.m */; };
@@ -219,6 +220,8 @@
 		2092D64115E2BC3900572E35 /* BarBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarBalance.m; sourceTree = "<group>"; };
 		2096DE9216113CF100FFC0D2 /* BarDirectories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarDirectories.h; sourceTree = "<group>"; };
 		2096DE9316113CF100FFC0D2 /* BarDirectories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarDirectories.m; sourceTree = "<group>"; };
+		209D1E0B23F22AE70085E516 /* BCMergeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMergeDictionary.h; sourceTree = SOURCE_ROOT; };
+		209D1E0C23F22AE70085E516 /* BCMergeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMergeDictionary.m; sourceTree = SOURCE_ROOT; };
 		20A5D2F810093BCE00C00E6C /* BarObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarObject.h; sourceTree = "<group>"; };
 		20A5D2F910093BCE00C00E6C /* BarObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarObject.m; sourceTree = "<group>"; };
 		20A5D3781009408C00C00E6C /* BarPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarPhase.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 		203BFB2D192E8AF1001B770B /* BC Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				209D1E0B23F22AE70085E516 /* BCMergeDictionary.h */,
+				209D1E0C23F22AE70085E516 /* BCMergeDictionary.m */,
 				203C38001ED1DFA900CEA61E /* BCMeanValue.h */,
 				203C38011ED1DFA900CEA61E /* BCMeanValue.m */,
 				203BFB30192E8AF1001B770B /* BCAlert.h */,
@@ -695,6 +700,7 @@
 				208787DB16C209FB004998D1 /* FadeOutText.m in Sources */,
 				208787E016C20F0A004998D1 /* BCBarcodeLabelsWebView.m in Sources */,
 				203BFBD7192E8AF1001B770B /* BCSerial.c in Sources */,
+				209D1E0D23F22AE70085E516 /* BCMergeDictionary.m in Sources */,
 				20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */,
 				200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */,
 			);

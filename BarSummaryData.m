@@ -275,7 +275,8 @@
             for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
                 NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
 
-                 for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+                 NSUInteger numDays = [experiment numberOfDays];
+                 for (NSUInteger d=0;d< numDays; d++ ) {
                      double onwgt, offwgt, deltawgt;
 
                      DailyData *dailyData = [experiment dailyDataForDay:d];
@@ -298,7 +299,8 @@
                 
                 NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
                 
-                for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+                NSUInteger numDays = [experiment numberOfDays];
+                for (NSUInteger d=0;d< numDays; d++ ) {
                     double onwgt, offwgt, top_deltawgt,bottom_deltawgt;
                     
                     DailyData *dailyData = [experiment dailyDataForDay:d];
@@ -364,9 +366,9 @@
 //        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 //    }
 
-    NSString *merged_code = [NSString stringWithFormat:@"%@_merged",[experiment code] ];
+//    NSString *merged_code = [NSString stringWithFormat:@"%@_merged",[experiment code] ];
     if (NULL != jsonData) {
-        [[[FirebaseSummary alloc] init] saveExpt:merged_code withData:jsonData];
+        [[[FirebaseSummary alloc] init] saveExpt:[experiment code] withData:jsonData];
     }
 }
 

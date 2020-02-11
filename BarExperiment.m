@@ -304,7 +304,6 @@
 	
 	// count number of daily data files (*.weights)  are in the DailyData directory
 	
-	if (nil != dataDays) { return [dataDays count]; }
 	
 	NSUInteger count = 0;
 	
@@ -324,9 +323,10 @@
 	
 	[self loadDailyData];
 	
-	if (nil != dataDays) { return [dataDays objectAtIndex:dayIndex]; }
+    if (dayIndex > ([dataDays count]-1)) { return nil;}
+    
+	return [dataDays objectAtIndex:dayIndex];
 	
-	return nil;
 }
 
 -(NSUInteger) dayIndexOfDailyData:(DailyData *)dailyData; {
@@ -336,7 +336,6 @@
 	
 	[self loadDailyData];
 	
-	if (nil == dataDays) return NSNotFound;
 	
 	for (DailyData *oneDay in dataDays) {
 		
@@ -353,8 +352,10 @@
 }
 
 -(void)loadDailyData; {
+
+    dataDays = [[NSMutableArray alloc] init];
 	
-	if (nil == dataDays || dailyDataNeedsUpdating) {
+	// if (nil == dataDays || dailyDataNeedsUpdating) {
 		
 		NSString *path = [self getExptDailyDataDirectoryPath]; // set to our daily data directory
 		
@@ -362,7 +363,7 @@
 		
 		dailyDataNeedsUpdating = NO;
 		
-	}
+	// }
 	
 	
 }
@@ -444,6 +445,7 @@
 	
     if (nil == path) { return; }
     
+    
 	[[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&dir]; 
 	
 	if (dir) {
@@ -476,7 +478,7 @@
 			
 			DailyData *oneDailyData = [[DailyData alloc] initFromPath:path withExperiment:self];
 			
-			if (nil == dataDays) { dataDays = [[NSMutableArray alloc] init]; }
+			
 			[dataDays addObject:oneDailyData];
 			
 		}

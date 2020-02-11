@@ -11,16 +11,19 @@
 
 /** mergeWithSourceDictionary
 
- self is target, gien dictionary is source
+ self is target, given dictionary is source
  given a source dictionary, merge this dictionary  with the source:
- if key is in self but not source, add key-object to self
- if key is in self and also in source, keep self
+ if key is in source but not self, add key-object to self
+ if key is in self and also in source, keep self (ie. replace source with target)
  (recurse through subdictionaries so only leaves are replaced)
 
  */
 
 -(void)mergeWithSourceDictionary:(NSDictionary *)sourceDictionary; {
 
+    // don't try to merge a nil dictionary
+    
+    if (nil == sourceDictionary) { return; }
     for (NSString *key in sourceDictionary) {
 
         id value = self[key];
