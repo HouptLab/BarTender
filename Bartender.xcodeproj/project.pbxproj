@@ -10,6 +10,7 @@
 		1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* DailyData.xib */; };
 		200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */; };
 		2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030A62315A61AFB00233EA7 /* BarSummaryData.m */; };
+		20351BF5238B0122002F88DA /* BCMergeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 20351BF4238B0122002F88DA /* BCMergeDictionary.m */; };
 		203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB31192E8AF1001B770B /* BCAlert.m */; };
 		203BFB9C192E8AF1001B770B /* BCArrayUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB33192E8AF1001B770B /* BCArrayUtilities.m */; };
 		203BFB9D192E8AF1001B770B /* BCColorPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB35192E8AF1001B770B /* BCColorPopupMenuItemView.m */; };
@@ -120,6 +121,8 @@
 		200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataMeansHtmlFormatter.m; sourceTree = "<group>"; };
 		2030A62215A61AFB00233EA7 /* BarSummaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSummaryData.h; sourceTree = "<group>"; };
 		2030A62315A61AFB00233EA7 /* BarSummaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSummaryData.m; sourceTree = "<group>"; };
+		20351BF3238B0122002F88DA /* BCMergeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMergeDictionary.h; sourceTree = "<group>"; };
+		20351BF4238B0122002F88DA /* BCMergeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMergeDictionary.m; sourceTree = "<group>"; };
 		203BFB30192E8AF1001B770B /* BCAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCAlert.h; sourceTree = "<group>"; };
 		203BFB31192E8AF1001B770B /* BCAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCAlert.m; sourceTree = "<group>"; };
 		203BFB32192E8AF1001B770B /* BCArrayUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCArrayUtilities.h; sourceTree = "<group>"; };
@@ -471,6 +474,8 @@
 				207458E015B4FE37008312B4 /* BCDailyDataWebView.m */,
 				208787DE16C20F0A004998D1 /* BCBarcodeLabelsWebView.m */,
 				208787DF16C20F0A004998D1 /* BCBarcodeLabelsWebView.h */,
+				20351BF3238B0122002F88DA /* BCMergeDictionary.h */,
+				20351BF4238B0122002F88DA /* BCMergeDictionary.m */,
 				2030A62215A61AFB00233EA7 /* BarSummaryData.h */,
 				2030A62315A61AFB00233EA7 /* BarSummaryData.m */,
 				20DE84F61006B904005C772A /* ExptInfoController.h */,
