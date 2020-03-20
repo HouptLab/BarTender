@@ -366,9 +366,12 @@
 //        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 //    }
 
-//    NSString *merged_code = [NSString stringWithFormat:@"%@_merged",[experiment code] ];
+    // NSString *merged_code = [NSString stringWithFormat:@"%@_merged",[experiment code] ];
+    
+    NSString *merged_code = [experiment code];
+    
     if (NULL != jsonData) {
-        [[[FirebaseSummary alloc] init] saveExpt:[experiment code] withData:jsonData];
+        [[[FirebaseSummary alloc] init] saveExpt:merged_code withData:jsonData];
     }
 }
 
