@@ -14,6 +14,8 @@
 #import "BCAlert.h"
 #import "BarDirectories.h"
 
+#import "BarUtilities.h"
+
 @implementation BarDocument
 
 // ***************************************************************************************
@@ -573,7 +575,7 @@
 
 
 
--(BarExperiment *)experimentWithCode:(char *)code {
+-(BarExperiment *)experimentWithCode:(NSString *)code {
 	
 	BarExperiment *expt;
 	unsigned long i;
@@ -582,7 +584,7 @@
 	
 		expt = (BarExperiment *)[currentExpts objectAtIndex:i];
 	
-		if ([expt codeMatchesCString:code]) return(expt);
+        if ([[expt code] caseInsensitiveCompare:code] == NSOrderedSame) { return expt; }
 	
 	}
 
@@ -591,37 +593,19 @@
 }
 
 
+
 -(BarExperiment *)getExperimentFromLabel:(NSString *)labelString {
 	
 	// gets the first set of characters from the string (terminated by non-alpha character)
 	// and match it with the code for one of the global experiments
 	// i.e. in "EX005F", "EX" is the experiment code
 
-#define MAX_TAG_LENGTH 256
-#define MAX_CODE_LENGTH 32
-	
-	size_t i,l;
-	char tag[MAX_TAG_LENGTH];
-	char code[MAX_CODE_LENGTH];
+    NSArray *label_codes = [labelString parseAsBarTenderLabel];
 
-// get a C string out of the label text...
+    if (nil == label_codes) { return nil; }
 
-	if (![labelString getCString:tag maxLength:(NSUInteger)MAX_TAG_LENGTH encoding:NSASCIIStringEncoding]) return nil;
+    return [self experimentWithCode:label_codes[kParseIndexExptCode]];
 
-	// increment through the c string, getting alpha characters 
-	// (make it all upper case, by the way)
-	// until we run into a non-alpha character
-	
-	i = 0; l = strlen(tag);
-	while (isalpha(tag[i]) && i <= l) {
-		code[i] = (char)toupper(tag[i]);
-		i++;
-	}
-	code[i] = '\0';  // null terminate
-	
-	// match the code with an experiment
-	
-	return [self experimentWithCode:code];
 	
 }
 

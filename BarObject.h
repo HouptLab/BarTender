@@ -37,7 +37,6 @@
 -(NSString *) codeName; // return a string with both tag and name, e.g. "AP Area Postrema Lesions"
 -(NSString *) description;
 
--(BOOL)codeMatchesCString:(char *)code_string;
 
 
 @end

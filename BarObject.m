@@ -92,20 +92,7 @@
 -(NSString *) description  { return description; }
 
 
--(BOOL)codeMatchesCString:(char *)code_string {
-	
-#define MAX_CODE_LENGTH 32
 
-	char myCode[MAX_CODE_LENGTH];
-	
-	if (![code getCString:myCode maxLength:(NSUInteger)MAX_CODE_LENGTH encoding:NSASCIIStringEncoding]) return NO;
-
-	if (strcmp(code_string,myCode) == 0) return YES;
-	
-	return NO;
-
-	
-}
 
 
 // ***************************************************************************************

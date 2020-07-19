@@ -10,7 +10,6 @@
 		1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* DailyData.xib */; };
 		200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */; };
 		2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030A62315A61AFB00233EA7 /* BarSummaryData.m */; };
-		20351BF5238B0122002F88DA /* BCMergeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 20351BF4238B0122002F88DA /* BCMergeDictionary.m */; };
 		203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB31192E8AF1001B770B /* BCAlert.m */; };
 		203BFB9C192E8AF1001B770B /* BCArrayUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB33192E8AF1001B770B /* BCArrayUtilities.m */; };
 		203BFB9D192E8AF1001B770B /* BCColorPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB35192E8AF1001B770B /* BCColorPopupMenuItemView.m */; };
@@ -59,6 +58,7 @@
 		20443B5415E569EF00C7338E /* scale64.png in Resources */ = {isa = PBXBuildFile; fileRef = 20443B5315E569EF00C7338E /* scale64.png */; };
 		20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */; };
 		205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F2244164EEA7700975B47 /* DailyDataTableView.m */; };
+		2062071E24C4BE5A00422FE5 /* BarUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2062071D24C4BE5A00422FE5 /* BarUtilities.m */; };
 		206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 206461EB0FF40B7000349949 /* BartenderNotes.rtf */; };
 		206758ED0FE8349800B1B7B9 /* cancel64.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758E90FE8349800B1B7B9 /* cancel64.png */; };
 		206758EE0FE8349800B1B7B9 /* comment64.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758EA0FE8349800B1B7B9 /* comment64.png */; };
@@ -192,6 +192,8 @@
 		20538C6516CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBarcodeLabelsHtmlFormatter.h; sourceTree = "<group>"; };
 		205F2243164EEA7700975B47 /* DailyDataTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDataTableView.h; sourceTree = "<group>"; };
 		205F2244164EEA7700975B47 /* DailyDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataTableView.m; sourceTree = "<group>"; };
+		2062071C24C4BE5A00422FE5 /* BarUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarUtilities.h; sourceTree = "<group>"; };
+		2062071D24C4BE5A00422FE5 /* BarUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarUtilities.m; sourceTree = "<group>"; };
 		206461EB0FF40B7000349949 /* BartenderNotes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = BartenderNotes.rtf; sourceTree = "<group>"; };
 		206758E90FE8349800B1B7B9 /* cancel64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel64.png; path = Graphics/cancel64.png; sourceTree = "<group>"; };
 		206758EA0FE8349800B1B7B9 /* comment64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = comment64.png; path = Graphics/comment64.png; sourceTree = "<group>"; };
@@ -471,6 +473,8 @@
 				208787D916C209FB004998D1 /* FadeOutText.h */,
 				208787DA16C209FB004998D1 /* FadeOutText.m */,
 				207458DF15B4FE37008312B4 /* BCDailyDataWebView.h */,
+				2062071C24C4BE5A00422FE5 /* BarUtilities.h */,
+				2062071D24C4BE5A00422FE5 /* BarUtilities.m */,
 				207458E015B4FE37008312B4 /* BCDailyDataWebView.m */,
 				208787DE16C20F0A004998D1 /* BCBarcodeLabelsWebView.m */,
 				208787DF16C20F0A004998D1 /* BCBarcodeLabelsWebView.h */,
@@ -673,6 +677,7 @@
 				203C38021ED1DFA900CEA61E /* BCMeanValue.m in Sources */,
 				203BFB9E192E8AF1001B770B /* BCColorUtilities.m in Sources */,
 				203BFBAD192E8AF1001B770B /* BCVertexGraph.m in Sources */,
+				2062071E24C4BE5A00422FE5 /* BarUtilities.m in Sources */,
 				203BFBAB192E8AF1001B770B /* BCTableHtmlFormatter.m in Sources */,
 				20DE84F81006B904005C772A /* ExptInfoController.m in Sources */,
 				20DE85091006C495005C772A /* BarItem.m in Sources */,
