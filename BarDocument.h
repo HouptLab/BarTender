@@ -12,6 +12,8 @@
 @class ExptInfoController;
 @class BarBalance;
 
+
+
 @interface BarDocument : NSDocument {
 	
 	IBOutlet NSTextField *experiments_waiting;
@@ -51,7 +53,7 @@
 
 -(void)closeExptInfo:(id)sender andSaveExpt:(BOOL)saveFlag;
 
--(BarExperiment *)experimentWithCode:(char *)code;
+-(BarExperiment *)experimentWithCode:(NSString *)code;
 -(BarExperiment *)getExperimentFromLabel:(NSString *)labelString;
 
 -(void)loadActiveExperiments;

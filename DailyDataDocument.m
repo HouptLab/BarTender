@@ -1398,7 +1398,7 @@ static int numBlankColumns=0;
 	// optionally there can be another column:
 	// "Preference"
     
-    NSLog(@"tableView objectValueForTableColumn:");
+  //  NSLog(@"tableView objectValueForTableColumn:");
 	
 	NSString *identifier = [aTableColumn identifier];
 	NSString *objectValue;

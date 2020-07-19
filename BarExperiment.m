@@ -8,6 +8,7 @@
 
 #import "BarExperiment.h"
 
+#import "BarUtilities.h"
 #import "BarItem.h"
 #import "BarGroup.h"
 #import "BarDrug.h"
@@ -653,50 +654,20 @@
 	// extract the number of the subject
 	// -1 if outside the range of subject numbers
 	
-	
-	#define MAX_TAG_LENGTH 256
-	#define MAX_CODE_LENGTH 32
-	
-	NSUInteger i,l, rat_start;
-    NSUInteger tag_number;
-	NSUInteger rat;
-	char tag[MAX_TAG_LENGTH];
-	char rattag[MAX_CODE_LENGTH];
-	
-	// get a C string out of the label text...
-	
-	if (![labelString getCString:tag maxLength:(NSUInteger)MAX_TAG_LENGTH encoding:NSASCIIStringEncoding]) return NSNotFound;
-	
-	// increment through the c string, getting alpha characters 
-	// (make it all upper case, by the way)
-	// until we run into a non-alpha character
-	
 
-		i = 0; l = strlen(tag);
-		while (isalpha(tag[i]) && i <= l) i++;
-	
-	// so the rat tag begins at this position (first non-numeric character)
-	
-		rat_start = i;
-	
-	// make a little string that contains just the numeric characters
-		
-		while( isdigit(tag[i]) && i <= l) {
-			
-			rattag[i-rat_start] = tag[i];
-			i++;
-		}
-		rattag[i-rat_start] = '\0';
-	
-	// read the number for the rattag string
-		
-		tag_number = NSNotFound;
-	
-		if (strlen(rattag) > 0) { 
-			sscanf(rattag,"%lu",&tag_number);
-			tag_number--; // rat indices are zero-indexed internally, so decrement the number on the label
-		}
-		
+    NSArray *label_codes = [labelString parseAsBarTenderLabel];
+
+    if (nil == label_codes) {
+            return NSNotFound;
+    }
+
+
+    NSUInteger tag_number;
+    NSUInteger rat;
+
+    tag_number = [label_codes[kParseIndexSubjectIndex] intValue] - 1;
+    // rat indices are zero-indexed internally, so decrement the number on the label
+
 	if ( tag_number == NSNotFound || tag_number >= [self numberOfSubjects]) {
         // invalid rat number
 		rat = NSNotFound;
@@ -715,27 +686,7 @@
 	
 	// rat's name is of the form "[Expt Code]00n", e.g. "AP003" or "AP032"
 	
-//	char num_text[5], rat_text[256],code_text[MAX_TAG_LENGTH] ;
-//	
-//    sprintf(num_text,"%02ld",index+1);
-//    
-//	if (index+1 < 10) {
-//		sprintf(num_text,"00%ld",index+1);
-//	}
-//	else if ( 10 <= index+1 && index+1 <= 99) {
-//		sprintf(num_text,"0%ld",index+1);
-//	}
-//	else {
-//		sprintf(num_text,"%ld",index+1);
-//		
-//	}
-	
-    
-//	[code getCString:code_text maxLength:(NSUInteger)MAX_TAG_LENGTH encoding:NSASCIIStringEncoding];
-//	
-//	sprintf(rat_text,"%s%s",code_text,num_text);
-//	
-//	return [[NSString alloc] initWithCString:rat_text encoding:NSASCIIStringEncoding];
+
 	
     NSString *subjectName = [[NSString alloc] initWithFormat:@"%@%02ld",code,index+1];
 
@@ -864,7 +815,7 @@
 		
 		testItem = [items objectAtIndex:i];
 		
-		if  ([[testItem code] compare:testCode]== NSOrderedSame) return testItem;
+		if  ([[testItem code] caseInsensitiveCompare:testCode]== NSOrderedSame) return testItem;
 		
 	}
 	
@@ -911,40 +862,16 @@
 	// then read the item code (alpha characters)
 	// i.e. in "EX005F", "F" is the item code
  
-	NSUInteger i,l, it_start;
-	char tag[MAX_TAG_LENGTH];
-	char ittag[MAX_CODE_LENGTH];
-	BarItem *theItem;
-	
-	// get a C string out of the label text...
- 
-	if (![labelString getCString:tag maxLength:(NSUInteger)MAX_TAG_LENGTH encoding:NSASCIIStringEncoding]) { return NSNotFound; }
 
+
+    NSArray * label_codes = [labelString parseAsBarTenderLabel];
+
+    if (nil == label_codes) {
+
+        return NSNotFound;
+    }
 	
-	// increment through the label
-	// past the alpha expt code and the numeric rat index
-	
-	i = 0; l = strlen(tag);
-	while (isalpha(tag[i]) && i <= l) i++;
-	while (isdigit(tag[i]) && i <= l) i++;
-	
-	// so the item tag begins at this position (past the rat code)
-	
-	it_start = i;
-	
-	// read the item tag into its own little string
-	
-	while( isalpha(tag[i]) && i <= l) {
-		
-		ittag[i-it_start] = (char)toupper(tag[i]);
-		i++;
-	}
-	ittag[i-it_start] = '\0';
-	
-	// match the code with item
-	NSString *itemCodeString = [NSString stringWithCString:ittag	encoding:NSASCIIStringEncoding];
-	
-	theItem = [self itemWithCode:itemCodeString];
+    BarItem *theItem = [self itemWithCode:[label_codes objectAtIndex:kParseIndexItemCode]];
 	
 	return [self indexOfItem:theItem];
 	
