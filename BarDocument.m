@@ -423,7 +423,7 @@
 
     BarSummaryData *summary = [[BarSummaryData alloc] initWithExperiment:[self selectedExpt]];
 
-    [summary update];
+   // [summary update];
 
     [summary writeToFirebase];
 

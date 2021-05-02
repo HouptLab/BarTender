@@ -11,24 +11,10 @@
 		200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */; };
 		2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030A62315A61AFB00233EA7 /* BarSummaryData.m */; };
 		203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB31192E8AF1001B770B /* BCAlert.m */; };
-		203BFB9C192E8AF1001B770B /* BCArrayUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB33192E8AF1001B770B /* BCArrayUtilities.m */; };
-		203BFB9D192E8AF1001B770B /* BCColorPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB35192E8AF1001B770B /* BCColorPopupMenuItemView.m */; };
-		203BFB9E192E8AF1001B770B /* BCColorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB37192E8AF1001B770B /* BCColorUtilities.m */; };
-		203BFB9F192E8AF1001B770B /* BCFileUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB39192E8AF1001B770B /* BCFileUtilities.m */; };
-		203BFBA0192E8AF1001B770B /* BCFontUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB3B192E8AF1001B770B /* BCFontUtilities.m */; };
-		203BFBA1192E8AF1001B770B /* BCFortranArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB3D192E8AF1001B770B /* BCFortranArray.m */; };
-		203BFBA2192E8AF1001B770B /* BCImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB3F192E8AF1001B770B /* BCImageUtilities.m */; };
-		203BFBA3192E8AF1001B770B /* BCMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB41192E8AF1001B770B /* BCMatrix.m */; };
-		203BFBA4192E8AF1001B770B /* BCMenuUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB43192E8AF1001B770B /* BCMenuUtilities.m */; };
-		203BFBA5192E8AF1001B770B /* BCMshColorSpace.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB44192E8AF1001B770B /* BCMshColorSpace.c */; };
-		203BFBA6192E8AF1001B770B /* BCObjectMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB46192E8AF1001B770B /* BCObjectMatrix.m */; };
 		203BFBA7192E8AF1001B770B /* BCProgressDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB48192E8AF1001B770B /* BCProgressDialog.m */; };
 		203BFBA8192E8AF1001B770B /* BCProgressDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB49192E8AF1001B770B /* BCProgressDialog.xib */; };
-		203BFBA9192E8AF1001B770B /* BCSpectrum2RGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB4A192E8AF1001B770B /* BCSpectrum2RGB.c */; };
-		203BFBAA192E8AF1001B770B /* BCStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB4D192E8AF1001B770B /* BCStringExtensions.m */; };
 		203BFBAB192E8AF1001B770B /* BCTableHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB4F192E8AF1001B770B /* BCTableHtmlFormatter.m */; };
 		203BFBAC192E8AF1001B770B /* BCTableWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB51192E8AF1001B770B /* BCTableWebView.m */; };
-		203BFBAD192E8AF1001B770B /* BCVertexGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 203BFB53192E8AF1001B770B /* BCVertexGraph.m */; };
 		203BFBAE192E8AF1001B770B /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB55192E8AF1001B770B /* aqua.png */; };
 		203BFBAF192E8AF1001B770B /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB56192E8AF1001B770B /* black.png */; };
 		203BFBB0192E8AF1001B770B /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB57192E8AF1001B770B /* blue.png */; };
@@ -121,44 +107,15 @@
 		200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataMeansHtmlFormatter.m; sourceTree = "<group>"; };
 		2030A62215A61AFB00233EA7 /* BarSummaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSummaryData.h; sourceTree = "<group>"; };
 		2030A62315A61AFB00233EA7 /* BarSummaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSummaryData.m; sourceTree = "<group>"; };
-		20351BF3238B0122002F88DA /* BCMergeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMergeDictionary.h; sourceTree = "<group>"; };
-		20351BF4238B0122002F88DA /* BCMergeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMergeDictionary.m; sourceTree = "<group>"; };
 		203BFB30192E8AF1001B770B /* BCAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCAlert.h; sourceTree = "<group>"; };
 		203BFB31192E8AF1001B770B /* BCAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCAlert.m; sourceTree = "<group>"; };
-		203BFB32192E8AF1001B770B /* BCArrayUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCArrayUtilities.h; sourceTree = "<group>"; };
-		203BFB33192E8AF1001B770B /* BCArrayUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCArrayUtilities.m; sourceTree = "<group>"; };
-		203BFB34192E8AF1001B770B /* BCColorPopupMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCColorPopupMenuItemView.h; sourceTree = "<group>"; };
-		203BFB35192E8AF1001B770B /* BCColorPopupMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCColorPopupMenuItemView.m; sourceTree = "<group>"; };
-		203BFB36192E8AF1001B770B /* BCColorUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCColorUtilities.h; sourceTree = "<group>"; };
-		203BFB37192E8AF1001B770B /* BCColorUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCColorUtilities.m; sourceTree = "<group>"; };
-		203BFB38192E8AF1001B770B /* BCFileUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFileUtilities.h; sourceTree = "<group>"; };
-		203BFB39192E8AF1001B770B /* BCFileUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCFileUtilities.m; sourceTree = "<group>"; };
-		203BFB3A192E8AF1001B770B /* BCFontUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFontUtilities.h; sourceTree = "<group>"; };
-		203BFB3B192E8AF1001B770B /* BCFontUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCFontUtilities.m; sourceTree = "<group>"; };
-		203BFB3C192E8AF1001B770B /* BCFortranArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFortranArray.h; sourceTree = "<group>"; };
-		203BFB3D192E8AF1001B770B /* BCFortranArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCFortranArray.m; sourceTree = "<group>"; };
-		203BFB3E192E8AF1001B770B /* BCImageUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCImageUtilities.h; sourceTree = "<group>"; };
-		203BFB3F192E8AF1001B770B /* BCImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCImageUtilities.m; sourceTree = "<group>"; };
-		203BFB40192E8AF1001B770B /* BCMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMatrix.h; sourceTree = "<group>"; };
-		203BFB41192E8AF1001B770B /* BCMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMatrix.m; sourceTree = "<group>"; };
-		203BFB42192E8AF1001B770B /* BCMenuUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMenuUtilities.h; sourceTree = "<group>"; };
-		203BFB43192E8AF1001B770B /* BCMenuUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMenuUtilities.m; sourceTree = "<group>"; };
-		203BFB44192E8AF1001B770B /* BCMshColorSpace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BCMshColorSpace.c; sourceTree = "<group>"; };
-		203BFB45192E8AF1001B770B /* BCObjectMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCObjectMatrix.h; sourceTree = "<group>"; };
-		203BFB46192E8AF1001B770B /* BCObjectMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCObjectMatrix.m; sourceTree = "<group>"; };
 		203BFB47192E8AF1001B770B /* BCProgressDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCProgressDialog.h; sourceTree = "<group>"; };
 		203BFB48192E8AF1001B770B /* BCProgressDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCProgressDialog.m; sourceTree = "<group>"; };
 		203BFB49192E8AF1001B770B /* BCProgressDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCProgressDialog.xib; sourceTree = "<group>"; };
-		203BFB4A192E8AF1001B770B /* BCSpectrum2RGB.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BCSpectrum2RGB.c; sourceTree = "<group>"; };
-		203BFB4B192E8AF1001B770B /* BCSpectrum2RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCSpectrum2RGB.h; sourceTree = "<group>"; };
-		203BFB4C192E8AF1001B770B /* BCStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCStringExtensions.h; sourceTree = "<group>"; };
-		203BFB4D192E8AF1001B770B /* BCStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCStringExtensions.m; sourceTree = "<group>"; };
 		203BFB4E192E8AF1001B770B /* BCTableHtmlFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableHtmlFormatter.h; sourceTree = "<group>"; };
 		203BFB4F192E8AF1001B770B /* BCTableHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTableHtmlFormatter.m; sourceTree = "<group>"; };
 		203BFB50192E8AF1001B770B /* BCTableWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableWebView.h; sourceTree = "<group>"; };
 		203BFB51192E8AF1001B770B /* BCTableWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTableWebView.m; sourceTree = "<group>"; };
-		203BFB52192E8AF1001B770B /* BCVertexGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCVertexGraph.h; sourceTree = "<group>"; };
-		203BFB53192E8AF1001B770B /* BCVertexGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCVertexGraph.m; sourceTree = "<group>"; };
 		203BFB55192E8AF1001B770B /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		203BFB56192E8AF1001B770B /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
 		203BFB57192E8AF1001B770B /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
@@ -322,46 +279,19 @@
 				203C38011ED1DFA900CEA61E /* BCMeanValue.m */,
 				203BFB30192E8AF1001B770B /* BCAlert.h */,
 				203BFB31192E8AF1001B770B /* BCAlert.m */,
-				203BFB32192E8AF1001B770B /* BCArrayUtilities.h */,
-				203BFB33192E8AF1001B770B /* BCArrayUtilities.m */,
-				203BFB34192E8AF1001B770B /* BCColorPopupMenuItemView.h */,
-				203BFB35192E8AF1001B770B /* BCColorPopupMenuItemView.m */,
-				203BFB36192E8AF1001B770B /* BCColorUtilities.h */,
-				203BFB37192E8AF1001B770B /* BCColorUtilities.m */,
-				203BFB38192E8AF1001B770B /* BCFileUtilities.h */,
-				203BFB39192E8AF1001B770B /* BCFileUtilities.m */,
-				203BFB3A192E8AF1001B770B /* BCFontUtilities.h */,
-				203BFB3B192E8AF1001B770B /* BCFontUtilities.m */,
-				203BFB3C192E8AF1001B770B /* BCFortranArray.h */,
-				203BFB3D192E8AF1001B770B /* BCFortranArray.m */,
-				203BFB3E192E8AF1001B770B /* BCImageUtilities.h */,
-				203BFB3F192E8AF1001B770B /* BCImageUtilities.m */,
-				203BFB40192E8AF1001B770B /* BCMatrix.h */,
-				203BFB41192E8AF1001B770B /* BCMatrix.m */,
-				203BFB42192E8AF1001B770B /* BCMenuUtilities.h */,
-				203BFB43192E8AF1001B770B /* BCMenuUtilities.m */,
-				203BFB44192E8AF1001B770B /* BCMshColorSpace.c */,
-				203BFB45192E8AF1001B770B /* BCObjectMatrix.h */,
-				203BFB46192E8AF1001B770B /* BCObjectMatrix.m */,
 				203BFB47192E8AF1001B770B /* BCProgressDialog.h */,
 				203BFB48192E8AF1001B770B /* BCProgressDialog.m */,
 				203BFB49192E8AF1001B770B /* BCProgressDialog.xib */,
-				203BFB4A192E8AF1001B770B /* BCSpectrum2RGB.c */,
-				203BFB4B192E8AF1001B770B /* BCSpectrum2RGB.h */,
-				203BFB4C192E8AF1001B770B /* BCStringExtensions.h */,
-				203BFB4D192E8AF1001B770B /* BCStringExtensions.m */,
 				203BFB4E192E8AF1001B770B /* BCTableHtmlFormatter.h */,
 				203BFB4F192E8AF1001B770B /* BCTableHtmlFormatter.m */,
 				203BFB50192E8AF1001B770B /* BCTableWebView.h */,
 				203BFB51192E8AF1001B770B /* BCTableWebView.m */,
-				203BFB52192E8AF1001B770B /* BCVertexGraph.h */,
-				203BFB53192E8AF1001B770B /* BCVertexGraph.m */,
 				203BFB54192E8AF1001B770B /* Color Icons */,
 				203BFB8B192E8AF1001B770B /* Markdown-BuildRule.sh */,
 				203BFB8E192E8AF1001B770B /* Serial */,
 			);
 			name = "BC Utilities";
-			path = "../BC Utilities";
+			path = BC_Utilities;
 			sourceTree = "<group>";
 		};
 		203BFB54192E8AF1001B770B /* Color Icons */ = {
@@ -478,8 +408,6 @@
 				207458E015B4FE37008312B4 /* BCDailyDataWebView.m */,
 				208787DE16C20F0A004998D1 /* BCBarcodeLabelsWebView.m */,
 				208787DF16C20F0A004998D1 /* BCBarcodeLabelsWebView.h */,
-				20351BF3238B0122002F88DA /* BCMergeDictionary.h */,
-				20351BF4238B0122002F88DA /* BCMergeDictionary.m */,
 				2030A62215A61AFB00233EA7 /* BarSummaryData.h */,
 				2030A62315A61AFB00233EA7 /* BarSummaryData.m */,
 				20DE84F61006B904005C772A /* ExptInfoController.h */,
@@ -672,37 +600,23 @@
 				20E2A7460FE545A20047BD8A /* DailyDataDocument.m in Sources */,
 				20DE82EE10025E6E005C772A /* BarDocument.m in Sources */,
 				20DE84551002E42E005C772A /* BarExperiment.m in Sources */,
-				203BFBA0192E8AF1001B770B /* BCFontUtilities.m in Sources */,
-				203BFB9D192E8AF1001B770B /* BCColorPopupMenuItemView.m in Sources */,
 				203C38021ED1DFA900CEA61E /* BCMeanValue.m in Sources */,
-				203BFB9E192E8AF1001B770B /* BCColorUtilities.m in Sources */,
-				203BFBAD192E8AF1001B770B /* BCVertexGraph.m in Sources */,
 				2062071E24C4BE5A00422FE5 /* BarUtilities.m in Sources */,
 				203BFBAB192E8AF1001B770B /* BCTableHtmlFormatter.m in Sources */,
 				20DE84F81006B904005C772A /* ExptInfoController.m in Sources */,
 				20DE85091006C495005C772A /* BarItem.m in Sources */,
-				203BFBA5192E8AF1001B770B /* BCMshColorSpace.c in Sources */,
 				20DE87BC10086801005C772A /* BarSubject.m in Sources */,
 				20A5D2FA10093BCE00C00E6C /* BarObject.m in Sources */,
-				203BFBA9192E8AF1001B770B /* BCSpectrum2RGB.c in Sources */,
-				203BFBA1192E8AF1001B770B /* BCFortranArray.m in Sources */,
-				203BFBA3192E8AF1001B770B /* BCMatrix.m in Sources */,
 				20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */,
 				20A5D380100940CC00C00E6C /* BarGroup.m in Sources */,
 				2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */,
 				209095E5236B726000B9A94D /* BarDrug.m in Sources */,
 				20B470AE15AC832E00BB7A8E /* DailyData.m in Sources */,
-				203BFBA2192E8AF1001B770B /* BCImageUtilities.m in Sources */,
-				203BFBA6192E8AF1001B770B /* BCObjectMatrix.m in Sources */,
 				207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */,
 				203BFBA7192E8AF1001B770B /* BCProgressDialog.m in Sources */,
 				2092D64215E2BC3900572E35 /* BarBalance.m in Sources */,
 				208F8AA715F015FF009210FB /* BartenderAppDelegate.m in Sources */,
 				203BFBAC192E8AF1001B770B /* BCTableWebView.m in Sources */,
-				203BFB9F192E8AF1001B770B /* BCFileUtilities.m in Sources */,
-				203BFBA4192E8AF1001B770B /* BCMenuUtilities.m in Sources */,
-				203BFB9C192E8AF1001B770B /* BCArrayUtilities.m in Sources */,
-				203BFBAA192E8AF1001B770B /* BCStringExtensions.m in Sources */,
 				209095E22361065B00B9A94D /* FirebaseSummary.m in Sources */,
 				2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */,
 				205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */,
@@ -769,6 +683,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.3;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -795,7 +710,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.behavioralcybernetics.${PRODUCT_NAME:identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
 			};
@@ -816,6 +731,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -841,7 +757,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.behavioralcybernetics.${PRODUCT_NAME:identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
 			};
