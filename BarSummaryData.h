@@ -61,6 +61,9 @@
 @interface BarSummaryData : NSObject {
 	
 	BarExperiment *experiment;
+        
+    NSUInteger numDataDays;
+    NSMutableArray *dailyDataArray;
 	
 	NSMutableString *summaryDataString;
 	

@@ -2141,7 +2141,6 @@
 
     NSDate *last_data_update = NULL;
     for (NSUInteger d=0;d< [self numberOfDays]; d++ ) {
-        double onwgt, offwgt, deltawgt;
 
         DailyData *dailyData = [self dailyDataForDay:d];
 

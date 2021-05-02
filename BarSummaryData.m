@@ -99,6 +99,13 @@
 	if (self) {
 		
 		experiment = expt;
+   
+        numDataDays = [experiment numberOfDays];
+         // load all daily data into memory
+        dailyDataArray = [NSMutableArray arrayWithCapacity: numDataDays];
+        for (NSUInteger d=0;d< numDataDays; d++ )  {
+            [dailyDataArray addObject: [experiment dailyDataForDay:d]];
+        }
 		
 		// set default delimiter
 		delimiter = kTabDelimiterString;
@@ -265,7 +272,9 @@
 
     NSDateFormatter *offDateFormatter = [[NSDateFormatter alloc] init];
     [offDateFormatter setDateFormat:@"MM-dd-yyyy HH:mm"];
-
+    
+   
+    
     NSMutableDictionary *subjects = [NSMutableDictionary dictionary];
     for (NSUInteger s=0;s< [experiment numberOfSubjects]; s++ ) {
 
@@ -275,11 +284,11 @@
             for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
                 NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
 
-                 NSUInteger numDays = [experiment numberOfDays];
-                 for (NSUInteger d=0;d< numDays; d++ ) {
+                
+                 for (NSUInteger d=0;d< numDataDays; d++ ) {
                      double onwgt, offwgt, deltawgt;
 
-                     DailyData *dailyData = [experiment dailyDataForDay:d];
+                     DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:d];;
                      [dailyData getWeightsForRat:s andItem:i onWeight:&onwgt offWeight:&offwgt deltaWeight:&deltawgt];
 
                      [item_data setObject: [NSNumber numberWithDouble:deltawgt]
@@ -299,11 +308,10 @@
                 
                 NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
                 
-                NSUInteger numDays = [experiment numberOfDays];
-                for (NSUInteger d=0;d< numDays; d++ ) {
+                for (NSUInteger d=0;d< numDataDays; d++ ) {
                     double onwgt, offwgt, top_deltawgt,bottom_deltawgt;
                     
-                    DailyData *dailyData = [experiment dailyDataForDay:d];
+                    DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:d];;
                     [dailyData getWeightsForRat:s andItem:topitem onWeight:&onwgt offWeight:&offwgt deltaWeight:&top_deltawgt];
                     [dailyData getWeightsForRat:s andItem:bottomitem onWeight:&onwgt offWeight:&offwgt deltaWeight:&bottom_deltawgt];
                     
@@ -386,10 +394,10 @@
         NSMutableDictionary *group_data = [NSMutableDictionary dictionary];
         for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
             NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
-                for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+                for (NSUInteger d=0;d< numDataDays; d++ ) {
                 double onwgt, offwgt, deltawgt;
                 
-                DailyData *dailyData = [experiment dailyDataForDay:d];
+                DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:d];
                 
                 double mean = 0, count=0, sem = 0,M2=0,delta,delta2;
                 
@@ -431,10 +439,10 @@
             
             NSMutableDictionary *item_data = [NSMutableDictionary dictionary];
             
-            for (NSUInteger d=0;d< [experiment numberOfDays]; d++ ) {
+            for (NSUInteger d=0;d< numDataDays; d++ ) {
                 double onwgt, offwgt, top_deltawgt,bottom_deltawgt;
                 
-                DailyData *dailyData = [experiment dailyDataForDay:d];
+                DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:d];;
                 double mean = 0, count=0, sem = 0,M2=0,delta,delta2;
                 
                 for (NSUInteger s=0;s< [experiment numberOfSubjects]; s++ ) {
@@ -603,9 +611,9 @@
 		
 	for (measureIndex = 0; measureIndex < numColumns; measureIndex++) {
 	
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
-			DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+			DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 			
 			if (0 == [[dailyData phaseName] length]) { [summaryDataString appendString:kNoDataCellText]; }
 			else { [summaryDataString appendString:[dailyData phaseName]]; }
@@ -645,9 +653,9 @@
 	
 	for (measureIndex = 0; measureIndex < numColumns; measureIndex++) {
 		
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
-			DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+			DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 			
 			if (0 == [[dailyData phaseName] length]) {[summaryDataString appendFormat: kNullDataString]; }
 			
@@ -689,9 +697,9 @@
 		
 		for (measureIndex = 0; measureIndex < numColumns; measureIndex++) {
 			
-			for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+			for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 				
-				DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+				DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 				
 				[summaryDataString appendString:[dailyData onTimeDescription]];
 				
@@ -729,9 +737,9 @@
 		
 		for (measureIndex = 0; measureIndex < numColumns; measureIndex++) {
 			
-			for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+			for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 				
-				DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+				DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 				
 				[summaryDataString appendString:[dailyData offTimeDescription]];
 				
@@ -768,7 +776,7 @@
 		
 		BarItem *item = [experiment itemAtIndex:itemIndex];
 		
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
 			
 			[summaryDataString appendString:[item name]];
@@ -782,7 +790,7 @@
 	if ([experiment hasPreference]) { 
 		
 		// get preference
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
 			
 			[summaryDataString appendString: [experiment preferenceTitleText]  ];
@@ -793,7 +801,7 @@
 		
 		
 		// get total
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
 			
 			[summaryDataString appendString: [experiment totalTitleText] ]; 
@@ -833,7 +841,7 @@
 		
 		BarItem *item = [experiment itemAtIndex:itemIndex];
 		
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
 			[summaryDataString appendString:[item unit]];
 			
@@ -847,7 +855,7 @@
 		
 		// get preference units ( == units less )
 		
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
 			[summaryDataString appendString: nullData  ];
 			
@@ -864,7 +872,7 @@
 		BarItem *item = [experiment itemAtIndex:prefItem];
 		
 		
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 						
 			[summaryDataString appendString: [item unit] ]; 
 			
@@ -905,9 +913,9 @@
 	
 	for (measureIndex = 0; measureIndex < numColumns; measureIndex++) {
 		
-		for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+		for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 			
-			DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+			DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 			
 			[summaryDataString appendString:[dailyData comment]];
 			
@@ -947,9 +955,9 @@
 			
 			NSString *itemName = [[experiment itemAtIndex:itemIndex] name];
 			
-			for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+			for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 				
-				DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+				DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 				
 				[summaryDataString appendString: [dailyData getTextForItem:itemName atTerm:kWeightDelta forRat:subjectIndex]  ];
 				
@@ -963,9 +971,9 @@
 		if ([experiment hasPreference]) { 
 			
 			// get preference
-			for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+			for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 				
-				DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+				DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 				
 				[summaryDataString appendString: [dailyData getPreferenceScoreTextForRat:subjectIndex]  ];
 				
@@ -975,9 +983,9 @@
 		
 		
 			// get total
-			for (dayIndex = 0; dayIndex < [experiment numberOfDays]; dayIndex++) {
+			for (dayIndex = 0; dayIndex < numDataDays; dayIndex++) {
 				
-				DailyData *dailyData = [experiment dailyDataForDay:dayIndex];
+				DailyData *dailyData = (DailyData *)[dailyDataArray objectAtIndex:dayIndex];
 				
 				[summaryDataString appendString: [dailyData getTotalTextForRat:subjectIndex]  ];
 				

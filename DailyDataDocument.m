@@ -1150,7 +1150,7 @@
 	if (nil != date) {
 		[onTimeLabel setStringValue: [dailyData onTimeString]];
 	}
-	else { [onTimeLabel setStringValue:nil]; }
+	else { [onTimeLabel setStringValue:@""]; }
 
 }
 
@@ -1161,7 +1161,7 @@
 	if (nil != date) {
 		[offTimeLabel setStringValue: [dailyData offTimeString]];
 	}
-	else { [offTimeLabel setStringValue:nil]; }
+	else { [offTimeLabel setStringValue:@""]; }
 	
 }
 

@@ -34,7 +34,7 @@
 	// load data from file at specified path; not used for weighing
     self = [super init];
     if (self) {
-		NSLog(@"DailyData: initFromPath");
+		// NSLog(@"DailyData: initFromPath");
  		[self setDefaults];
 		[self setTheExperiment:theExpt];
 		[self setCurrentState:kDataOnly]; // only loading data to access data, not for display or editing
@@ -57,7 +57,7 @@
 
 -(void)dealloc; {
 	
-	NSLog(@"DailyData:	dealloc");
+	// NSLog(@"DailyData:	dealloc");
 	
 	if (onWeight != NULL) { free(onWeight); }
 	if (offWeight != NULL) { free(offWeight); }
@@ -169,7 +169,7 @@
 	// note that the format of both onweights and weights files are identical XML plists,
 	// just that off weights in the .onweights file are set to NaN
 	
-	NSLog(@"DailyData: save");
+	// NSLog(@"DailyData: save");
 		
 	if (currentState == kWeighingOn) {
 		[self saveOnWeights];
@@ -191,7 +191,7 @@
 	// construct a complete path to the file to store the on weights:
 	// e.g. "~/Bartender/DailyData/[ExptCode]/[ExptCode].onweights"
 	
-	NSLog(@"DailyData:	saveOnWeights");
+	// NSLog(@"DailyData:	saveOnWeights");
 	
 	// set the time of weighing on to right now
 	onTime = [NSDate date];
@@ -202,6 +202,11 @@
 	NSString *dailyDataFilePath = [[theExperiment getExptDailyDataDirectoryPath] stringByAppendingPathComponent:filename];
 	
 	[self saveToPath:dailyDataFilePath];
+ 
+ NSString *backup_filename =  [[[theExperiment code] stringByAppendingString:[self dateStringForFile:onTime]] stringByAppendingPathExtension:@"onweights.BAK"];
+	NSString *backup_dailyDataFilePath = [[theExperiment getExptDailyDataDirectoryPath] stringByAppendingPathComponent:backup_filename];
+ 
+ [self saveToPath:backup_dailyDataFilePath];   
 	
 	// tell the expeiment that new on weights have been recorded, so we're waiting for the off weights
 
@@ -253,7 +258,7 @@
 	// construct a complete path to the file to store the completed on & off weights:
 	// e.g. "~/Bartender/DailyData/[ExptCode]/[ExptCode][Y-M-D].weights"
 	
-	NSLog(@"DailyData: saveOffWeights");
+	// NSLog(@"DailyData: saveOffWeights");
 	
 	
 	// set the time of weighing off to right now
@@ -280,7 +285,7 @@
 	// construct a complete path to the file to store the completed on & off weights:
 	// e.g. "~/Bartender/DailyData/[ExptCode]/[ExptCode][Y-M-D].weights"
 	
-	NSLog(@"DailyData: saveEdits");
+	// NSLog(@"DailyData: saveEdits");
 	
     [self backupOffWeights];
     
@@ -301,43 +306,43 @@
 -(void)saveToPath:(NSString *)filePath; {
 	
 	// got to write out a plist consiting of the ontime, offtime, and the array of onweights and offweights...
-	NSLog(@"DailyData: saveToPath: path is %@",filePath);
+	// NSLog(@"DailyData: saveToPath: path is %@",filePath);
 	
 	NSMutableDictionary *rootDictionary = [[NSMutableDictionary alloc] init];
 	[rootDictionary setObject:@"Bartender" forKey:@"creator"];
 	[rootDictionary setObject:@"2.0" forKey:@"version"];
     
-    NSLog(@"DailyData: saveToPath: about to get time descriptions");
+    // NSLog(@"DailyData: saveToPath: about to get time descriptions");
     
 	[rootDictionary setObject:[self onTimeDescription] forKey:@"weighedOn"];
 	[rootDictionary setObject:[self offTimeDescription] forKey:@"weighedOff"];
 	[rootDictionary setObject:[self modificationDateDescription] forKey:@"modified"];
     
-    NSLog(@"DailyData: saveToPath: about to get phasename, phasedayindex,comment, and uuid");
+    // NSLog(@"DailyData: saveToPath: about to get phasename, phasedayindex,comment, and uuid");
 
 	[rootDictionary setObject:phaseName forKey:@"phase"];
 	[rootDictionary setObject:[NSNumber numberWithLong:phaseDayIndex] forKey:@"phaseDayIndex"];
 	[rootDictionary setObject:comment forKey:@"comment"];
 	[rootDictionary setObject:UUID forKey:@"UUID"];
 	
-    NSLog(@"DailyData: saveToPath: about to make subjects dictionary array");
+    // NSLog(@"DailyData: saveToPath: about to make subjects dictionary array");
 
 	[rootDictionary setObject:[self makeSubjectsDictionaryArray] forKey:@"SubjectsArray"];
 	
 	NSString *error;
     
-    NSLog(@"DailyData: saveToPath: about to serialize root dictionary");
+    // NSLog(@"DailyData: saveToPath: about to serialize root dictionary");
 
 	id xmlData = [NSPropertyListSerialization dataFromPropertyList:(id)rootDictionary format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
 	
 	if(xmlData) {
-		NSLog(@"DailyData: No error creating Weights XML data.");
+		// NSLog(@"DailyData: No error creating Weights XML data.");
 		
 		[xmlData writeToFile:filePath atomically:YES];
 		
 	}
 	else {
-		NSLog(@"DailyData: Error creating Weights XML data: %@",error);
+		// NSLog(@"DailyData: Error creating Weights XML data: %@",error);
 	}
 	
 }
@@ -465,7 +470,7 @@
 -(BOOL)readOnWeights; {
 	
 	
-	NSLog(@"DailyData: readOnWeights");
+	// NSLog(@"DailyData: readOnWeights");
 	
 	NSString *filename =  [[theExperiment code] stringByAppendingPathExtension:@"onweights"];
 	NSString *dailyDataFilePath = [[theExperiment getExptDailyDataDirectoryPath] stringByAppendingPathComponent:filename];
@@ -483,12 +488,12 @@
 	NSString *errorDesc = nil;
 	NSPropertyListFormat format;
 	
-	NSLog(@"DailyData: readFromPath");
+	// NSLog(@"DailyData: readFromPath");
 	
 	// load the data in xml format from the file
 	NSData *xmlData = [[NSFileManager defaultManager] contentsAtPath:filePath];
 	
-	NSLog(@"DailyData: readFromPath loaded xmlData");
+	// NSLog(@"DailyData: readFromPath loaded xmlData");
 	
 	
 	// unpack the xmlData into the rootDictionary
@@ -498,10 +503,10 @@
 													format:&format
 													errorDescription:&errorDesc];
 	if (!rootDictionary) {
-		NSLog(@"DailyData: Error reading expt file xml: %@, format: %ld", errorDesc, format);
+		// NSLog(@"DailyData: Error reading expt file xml: %@, format: %ld", errorDesc, format);
 	}
 	
-	NSLog(@"DailyData: DailyData readFromPath read rootdictionary");
+	// NSLog(@"DailyData: DailyData readFromPath read rootdictionary");
 	
 	
 	if ([rootDictionary objectForKey:@"phase"]) { phaseName = [rootDictionary objectForKey:@"phase"]; }
@@ -529,7 +534,7 @@
     NSString *modificationDateString = [rootDictionary objectForKey:@"modified"];
 	if (nil != modificationDateString) { [self setModificationDate:[self dateFromTimeString:modificationDateString]]; }
     
-    NSLog(@"DailyData: DailyData readFromPath about to unpackSubjectDictionaries ");
+    // NSLog(@"DailyData: DailyData readFromPath about to unpackSubjectDictionaries ");
 
 	
 	// subjects is an array of dictionarys that should be unpacked
