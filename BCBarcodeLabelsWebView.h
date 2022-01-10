@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "BarExperiment.h"
 
-@interface BCBarcodeLabelsWebView : WebView {
+@interface BCBarcodeLabelsWebView : WebView <WebFrameLoadDelegate> {
 		
 	BarExperiment *experiment;
     NSString *exptCode;

@@ -195,7 +195,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
 
-    [formatter setDateFormat:@"EEE' 'MM-dd-yyyy' at 'HH:mm"];
+    [formatter setDateFormat:kDateWithDayFormatString];
 
     NSDate *currentDate = [NSDate date];
     NSString *dateString = [formatter stringFromDate:currentDate];
@@ -271,7 +271,7 @@
                        forKey:@"wikipage"];
 
     NSDateFormatter *offDateFormatter = [[NSDateFormatter alloc] init];
-    [offDateFormatter setDateFormat:@"MM-dd-yyyy HH:mm"];
+    [offDateFormatter setDateFormat:kDateFormatString];
     
    
     
@@ -386,7 +386,7 @@
 -(NSDictionary *)getMeans; {
     
     NSDateFormatter *offDateFormatter = [[NSDateFormatter alloc] init];
-    [offDateFormatter setDateFormat:@"MM-dd-yyyy HH:mm"];
+    [offDateFormatter setDateFormat:kDateFormatString];
     
     NSMutableDictionary *group_means = [NSMutableDictionary dictionary];
     for (NSUInteger g=0;g< [experiment numberOfGroups]; g++ ) {
@@ -422,7 +422,10 @@
                 
                 if (0 == count) { mean = -32000; }
                 if (count >= 2) { sem = sqrt( M2/(count-1))/ sqrt(count); }
-                    [item_data setObject: @{ @"mean":[NSNumber numberWithDouble:mean], @"n": [NSNumber numberWithUnsignedInteger:count], @"sem": [NSNumber numberWithDouble:sem]}
+                    [item_data setObject: @{ 
+                       @"mean":[NSNumber numberWithDouble:mean], 
+                       @"n": [NSNumber numberWithUnsignedInteger:(unsigned long)count],
+                       @"sem": [NSNumber numberWithDouble:sem]}
                               forKey: [offDateFormatter stringFromDate:[dailyData offTime]]];
                 
             } // next day

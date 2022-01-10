@@ -55,6 +55,7 @@
 		2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2067590D0FE847A800B1B7B9 /* WeighOff.png */; };
 		206759100FE847A800B1B7B9 /* WeighON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2067590E0FE847A800B1B7B9 /* WeighON.png */; };
 		206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */; };
+		206C752F278CAFBE00EACDF8 /* Set-CFBundleVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */; };
 		207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207458E015B4FE37008312B4 /* BCDailyDataWebView.m */; };
 		207AA6251610C8C1002FACB5 /* duplicate icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 207AA6241610C8C1002FACB5 /* duplicate icon.png */; };
 		208787DB16C209FB004998D1 /* FadeOutText.m in Sources */ = {isa = PBXBuildFile; fileRef = 208787DA16C209FB004998D1 /* FadeOutText.m */; };
@@ -161,6 +162,7 @@
 		2067590D0FE847A800B1B7B9 /* WeighOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WeighOff.png; path = Graphics/WeighOff.png; sourceTree = "<group>"; };
 		2067590E0FE847A800B1B7B9 /* WeighON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WeighON.png; path = Graphics/WeighON.png; sourceTree = "<group>"; };
 		206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = BartenderIcons.icns; path = Graphics/BartenderIcons.icns; sourceTree = "<group>"; };
+		206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Set-CFBundleVersion.sh"; sourceTree = "<group>"; };
 		207458DF15B4FE37008312B4 /* BCDailyDataWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCDailyDataWebView.h; sourceTree = "<group>"; };
 		207458E015B4FE37008312B4 /* BCDailyDataWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCDailyDataWebView.m; sourceTree = "<group>"; };
 		207AA6241610C8C1002FACB5 /* duplicate icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "duplicate icon.png"; path = "Graphics/duplicate icon.png"; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 			children = (
 				32DBCF750370BD2300C91783 /* Bartender_Prefix.pch */,
 				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+				206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
+				206C7530278CAFE000EACDF8 /* Run Set CFBundleVersion Script */,
 			);
 			buildRules = (
 			);
@@ -581,6 +585,7 @@
 				20F64632164AC0CA0065D7BD /* WBP6006-e97075.pdf in Resources */,
 				203BFBB0192E8AF1001B770B /* blue.png in Resources */,
 				203BFBD4192E8AF1001B770B /* Markdown-BuildRule.sh in Resources */,
+				206C752F278CAFBE00EACDF8 /* Set-CFBundleVersion.sh in Resources */,
 				203BFBBB192E8AF1001B770B /* olive.png in Resources */,
 				20F64633164AC0CA0065D7BD /* YDO01BL.pdf in Resources */,
 				203BFBB2192E8AF1001B770B /* darkgray.png in Resources */,
@@ -590,6 +595,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		206C7530278CAFE000EACDF8 /* Run Set CFBundleVersion Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Set CFBundleVersion Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Set-CFBundleVersion.sh\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D15AC300486D014006FF6A4 /* Sources */ = {
@@ -683,7 +710,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.4;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -731,7 +758,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
