@@ -69,6 +69,8 @@
         // a copy of the originalExperiment for editing;
         // if successful, then originalExperiment gets modified to matched edited theExperiment
 
+    NSUInteger numDataDays;
+    NSMutableArray *dailyDataArray;
 
 	
 	// barcodes tab

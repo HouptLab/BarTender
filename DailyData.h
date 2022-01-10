@@ -21,6 +21,9 @@ enum kBarTerm  {kWeightUnknownTerm = 0, kWeightOn, kWeightOff, kWeightDelta};
 #define MISSINGWGT -32000.0
 #define kNoDataCellText @"--"
 
+#define kDateFormatString @"yyyy-MM-dd HH:mm" // refactor from @"MM-dd-yyyy HH:mm"
+#define kDateWithDayFormatString @"EEE yyyy-MM-dd HH:mm" // refactor from @"EEE MM-dd-yyyy HH:mm"
+
 
 
 @interface DailyData : NSObject {

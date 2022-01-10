@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "DailyData.h"
 
-@interface BCDailyDataWebView : WebView {
+@interface BCDailyDataWebView : WebView <WebFrameLoadDelegate> {
 	
 	DailyData *dailyData;
 	

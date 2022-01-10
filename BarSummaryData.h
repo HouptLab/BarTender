@@ -58,6 +58,7 @@
 #define kReturnString @"\r"
 
 
+
 @interface BarSummaryData : NSObject {
 	
 	BarExperiment *experiment;

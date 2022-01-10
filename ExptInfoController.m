@@ -205,6 +205,14 @@
 	theExperiment = newExpt;
     
 	[self loadTheExpt];
+ 
+        numDataDays = [theExperiment numberOfDays];
+         // load all daily data into memory
+        dailyDataArray = [NSMutableArray arrayWithCapacity: numDataDays];
+        for (NSUInteger d=0;d< numDataDays; d++ )  {
+            [dailyDataArray addObject: [theExperiment dailyDataForDay:d]];
+        }
+   
 			
 }
 
@@ -685,7 +693,7 @@
   	}
     else if (aTableView == dailyDataTableView)	{
         
-        DailyData *theDay = [theExperiment dailyDataForDay:(NSUInteger)rowIndex];
+        DailyData *theDay = [dailyDataArray objectAtIndex:(NSUInteger)rowIndex];
 
         if ([identifier compare:@"dayIndex"] == NSOrderedSame) {
              return [NSNumber numberWithLong:(rowIndex+1)];
@@ -807,12 +815,11 @@
             int phaseIndexFromObject = [anObject intValue];
             
             if (0 <= phaseIndexFromObject  && phaseIndexFromObject < (NSInteger)[theExperiment numberOfPhases]) {
-                [[theExperiment dailyDataForDay:(NSUInteger)rowIndex] setPhaseName:[theExperiment nameOfPhaseAtIndex:(NSUInteger)phaseIndexFromObject]];
-                [[theExperiment dailyDataForDay:(NSUInteger)rowIndex] setCurrentState:kUserEditing];
-                [[theExperiment dailyDataForDay:(NSUInteger)rowIndex] setPhaseDayIndex:0];
-                [[theExperiment dailyDataForDay:(NSUInteger)rowIndex] save];
+                [[dailyDataArray objectAtIndex:(NSUInteger)rowIndex] setPhaseName:[theExperiment nameOfPhaseAtIndex:(NSUInteger)phaseIndexFromObject]];
+                [[dailyDataArray objectAtIndex:(NSUInteger)rowIndex] setCurrentState:kUserEditing];
+                [[dailyDataArray objectAtIndex:(NSUInteger)rowIndex] setPhaseDayIndex:0];
+                [(DailyData *)[dailyDataArray objectAtIndex:(NSUInteger)rowIndex] save];
                 // tell the daily data to save itself
-                
             }
             
         }
@@ -833,7 +840,6 @@
             if ([aCell isKindOfClass:[NSPopUpButtonCell class]]) {
                 NSString *title = [theExperiment nameOfGroupOfSubjectAtIndex:(NSUInteger)rowIndex];
                 [aCell setTitle:title];
-
             }
         }
     }

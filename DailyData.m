@@ -842,7 +842,7 @@
 //			[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 		
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateFormat:@"EEEE, yyyy-MM-dd HH:mm"];
+		[dateFormatter setDateFormat:kDateWithDayFormatString];
 		
 		return [dateFormatter stringFromDate:onTime];
 	}
@@ -862,7 +862,7 @@
 	if (offTime) {
 		
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateFormat:@"EEEE, yyyy-MM-dd HH:mm"];
+		[dateFormatter setDateFormat:kDateWithDayFormatString];
 		
 		return [dateFormatter stringFromDate:offTime];
 		
@@ -937,7 +937,7 @@
     if (date) {
 		
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateFormat:@"EEE yy-MM-dd HH:mm"];
+		[dateFormatter setDateFormat:kDateWithDayFormatString];
 		
 		return [dateFormatter stringFromDate:date];
 		

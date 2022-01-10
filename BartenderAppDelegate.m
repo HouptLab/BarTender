@@ -20,11 +20,11 @@
 	
 	
 	// intialize the about box
-    NSMutableString *version = [NSMutableString stringWithString:@"Version: "];
-    [version appendString: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-    [version appendString:@"."];
-    [version appendString: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-    [self.versionLabel setStringValue:version];
+ NSBundle *main = [NSBundle mainBundle];
+    
+    [self.versionLabel setStringValue:[NSString stringWithFormat:@"Version %@ (%@)",  [main objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [main objectForInfoDictionaryKey:@"CFBundleVersion"]] ];
+
+    [self.copyrightLabel setStringValue: [main objectForInfoDictionaryKey:@"NSHumanReadableCopyright"]];
 	
 	[aboutWindow center];
 	[aboutWindow makeKeyAndOrderFront:nil];
