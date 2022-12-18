@@ -60,6 +60,8 @@
 	
 	
     lastWeight = -32000.0;
+    
+    speech = [[NSSpeechSynthesizer alloc] init];
 
       
     // register for notifications
@@ -73,8 +75,6 @@
     
 	
 }
-
-
 
 
 
@@ -774,6 +774,7 @@
 	
 	
 	NSLog(@"Label String Entered");
+
 	
 	// a string was entered into the itemLabelfield
 	// parse the string to get expt code, rat number, and item type
@@ -784,6 +785,12 @@
 	
 	NSString *labelString = [itemLabel stringValue];
     
+     [speech startSpeakingString:   labelString];
+ 
+ while ([speech isSpeaking]) {
+ 
+ 
+ }
     if (nil == labelString || 0 == [labelString length]) {
         // no label entered, so just clear and return
  		// clear the itemLabel
@@ -855,6 +862,10 @@
     // make a sound to notify the user that the weight was successfully read from balance
         
     NSBeep();
+    
+    
+    NSString *weight_utterance =[NSString stringWithFormat: @"%.2lf", currentWeight];
+    [speech startSpeakingString:weight_utterance];
         
         
 	// check for double entry or out of range weight

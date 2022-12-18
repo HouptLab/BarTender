@@ -57,6 +57,8 @@
 	IBOutlet NSTextField *phaseDayLabel;
 
 	NSInteger fontSize;
+ 
+    NSSpeechSynthesizer *speech ;  
 	
 }
 
