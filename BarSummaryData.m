@@ -209,6 +209,10 @@
 
     [exptDictionary setObject: lastString
                        forKey:@"last_updated"];
+                       
+     NSNumber *lastMS =  [NSNumber numberWithInteger: (NSInteger)([[experiment last_data_update] timeIntervalSince1970] * 1000.0)];
+     [exptDictionary setObject: lastMS
+                       forKey:@"last_updated_ms"];
 
 
 
@@ -384,6 +388,8 @@
 }
 
 -(NSDictionary *)getMeans; {
+
+// TODO: instantiate an "unassigned group" if there are subjects that are not in a group
     
     NSDateFormatter *offDateFormatter = [[NSDateFormatter alloc] init];
     [offDateFormatter setDateFormat:kDateFormatString];
