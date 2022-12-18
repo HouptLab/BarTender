@@ -150,7 +150,7 @@
 
 #define kSerialPortNotOpenedString @"Serial Port not opened."
 #define kSerialPortNotFoundString @"Serial port was not found.")
-#define kSerialDeviceNotFoundString @"Serial device \"%@\" was not found. Make sure Keyspan serial adapter is plugged in."
+#define kSerialDeviceNotFoundString @"Serial device \"%@\" was not found. Make sure USB serial adapter is plugged in."
 
 
 -(void) openSerialPort; {
@@ -161,14 +161,16 @@
 	// defaults for sartorius balance: 7 data bits odd parity 1 stop bit
 	// predefined constants kSartoriusNumDataBits, kSartoriusParity, kSartoriusNumStopBits
 	
-	serialFileDescriptor = FindAndOpenSerialPort(kKeyspanSerialDevice1, &serialPortFound, &deviceFound, kSartoriusNumDataBits, kSartoriusParity, kSartoriusNumStopBits);
+    // TODO: store and read serial device from preferences   
+    // TODO: present dialog to choose serial device from list at /dev/cu.*
+	serialFileDescriptor = FindAndOpenSerialPort(kStarTechSerialDevice, &serialPortFound, &deviceFound, kSartoriusNumDataBits, kSartoriusParity, kSartoriusNumStopBits);
 	
 	// NOTE: put in error code here to alert if balance is not found...
 	
 
-	if (serialFileDescriptor == kSerialErrReturn) {
+	if (serialFileDescriptor == kSerialErrReturn) {     
 		
-		NSString *deviceName = [NSString stringWithCString:kKeyspanSerialDevice1 encoding:[NSString defaultCStringEncoding]] ;
+		NSString *deviceName = [NSString stringWithCString:kStarTechSerialDevice encoding:[NSString defaultCStringEncoding]] ;
 		
 		NSString *deviceString = [NSString stringWithFormat:kSerialDeviceNotFoundString, deviceName];
 		
