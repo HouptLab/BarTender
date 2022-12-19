@@ -7,7 +7,8 @@
 //
 
 #import "BartenderAppDelegate.h"
-
+#import "SerialPortNameController.h"
+#define kBartenderSerialPortNameKey @"BartenderSerialPortName"
 
 @implementation BartenderAppDelegate
 
@@ -25,6 +26,9 @@
     [self.versionLabel setStringValue:[NSString stringWithFormat:@"Version %@ (%@)",  [main objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [main objectForInfoDictionaryKey:@"CFBundleVersion"]] ];
 
     [self.copyrightLabel setStringValue: [main objectForInfoDictionaryKey:@"NSHumanReadableCopyright"]];
+    
+    
+         [self setSerialPortLabel];
 	
 	[aboutWindow center];
 	[aboutWindow makeKeyAndOrderFront:nil];
@@ -39,8 +43,20 @@
 		
 }
 
+-(void)setSerialPortLabel; {
+ NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
+     
+     NSString *defaultName = (nil == serialPortName || 0 == [serialPortName length]) ? @"none" : serialPortName;
+     
+    [self.serialDeviceLabel setStringValue: defaultName];
+	
+    
+}
 -(IBAction)showAboutBox:(id)sender; {
 	
+  [self setSerialPortLabel];
+	
+       
 	[aboutWindow center];
 	[aboutWindow makeKeyAndOrderFront:nil];
 }
@@ -59,4 +75,30 @@
 //	return NO;
 //}
 //
+
+
+
+-(IBAction)enterSerialDeviceName:(id)sender; {
+
+    NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
+     
+     NSString *defaultName = (nil == serialPortName) ? @"cu.usbserial" : serialPortName;
+     
+    
+        // get name from user
+        SerialPortNameController *newNameDialog =  [[SerialPortNameController alloc] initWithName:defaultName];
+        NSString *newSerialPortName = [newNameDialog dialogForWindow:[NSApp keyWindow]];
+        
+        if (nil == serialPortName || 0 == [serialPortName length]) {
+                 [[NSUserDefaults standardUserDefaults] setValue: nil forKey:kBartenderSerialPortNameKey];        
+        }
+        else {
+
+        [[NSUserDefaults standardUserDefaults] setValue: newSerialPortName forKey:kBartenderSerialPortNameKey];
+        }
+        
+    
+      
+}
+
 @end

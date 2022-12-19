@@ -21,6 +21,8 @@
 @property IBOutlet NSTextField *versionLabel;
 @property IBOutlet NSTextField *copyrightLabel;
 
+@property IBOutlet NSTextField *serialDeviceLabel;
+
 -(IBAction)showAboutBox:(id)sender; 
 // display about box
 -(void)hideAboutBox:(NSTimer *)aboutTimer;
@@ -28,5 +30,6 @@
 
 //- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender;
 
+-(IBAction)enterSerialDeviceName:(id)sender;
 
 @end

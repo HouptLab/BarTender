@@ -51,6 +51,10 @@
 -(IBAction)saveExperimentToFirebase:(id)sender;
 -(IBAction)saveExperimentToXynkImport:(id)sender;
 
+-(IBAction)toggleFakeReading:(id)sender;
+
+-(BOOL)validateMenuItem:(NSMenuItem *)anItem; 
+
 -(void)closeExptInfo:(id)sender andSaveExpt:(BOOL)saveFlag;
 
 -(BarExperiment *)experimentWithCode:(NSString *)code;

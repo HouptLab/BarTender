@@ -15,6 +15,7 @@
 #import "BarDirectories.h"
 
 #import "BarUtilities.h"
+#import "SerialPortNameController.h"
 
 @implementation BarDocument
 
@@ -539,6 +540,12 @@
 }
 
 
+-(BOOL)validateMenuItem:(NSMenuItem *)anItem; {
+
+    return [anItem isEnabled];
+
+}
+
 -(void)closeExptInfo:(id)sender andSaveExpt:(BOOL)saveFlag; {
 	
 	NSLog(@"Close Expt Info called");
@@ -678,6 +685,14 @@
 
 
 -(BarBalance *)balance;  { return balance; }
+
+
+
+
+-(IBAction)toggleFakeReading:(id)sender; {
+    [balance toggleFakeReading];
+}
+
 // get the interface for the balance
 
 
