@@ -95,6 +95,8 @@
 -(void) setUnstable;
 -(void) setVeryUnstable;
 
+-(void)toggleFakeReading;
+
 // get the weight
 -(double) curr_weight;
 -(NSDate *) curr_weight_time;

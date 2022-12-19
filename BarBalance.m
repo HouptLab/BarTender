@@ -9,8 +9,9 @@
 #import "BarBalance.h"
 #import "BCSerial.h"
 #import "BCAlert.h"
+#import "SerialPortNameController.h"
 
-#define debug_log NO
+#define debug_log YES
 
 @implementation BarBalance
 
@@ -38,7 +39,7 @@
 		
 		[self openBalance];
         
-        fakeReading = YES;
+        fakeReading = NO;
         
         // start an NSTimer to make us check weight every so often e.g., 0.1 seconds
         NSTimer *checkWeightTimer;
@@ -150,8 +151,9 @@
 
 #define kSerialPortNotOpenedString @"Serial Port not opened."
 #define kSerialPortNotFoundString @"Serial port was not found.")
-#define kSerialDeviceNotFoundString @"Serial device \"%@\" was not found. Make sure USB serial adapter is plugged in."
+#define kSerialDeviceNotFoundString @"Serial device \"%@\" was not found. Make sure USB serial adapter is plugged in, and re-enter its name as found in /dev directory."
 
+#define kBartenderSerialPortNameKey @"BartenderSerialPortName"
 
 -(void) openSerialPort; {
 	
@@ -163,38 +165,65 @@
 	
     // TODO: store and read serial device from preferences   
     // TODO: present dialog to choose serial device from list at /dev/cu.*
-	serialFileDescriptor = FindAndOpenSerialPort(kStarTechSerialDevice, &serialPortFound, &deviceFound, kSartoriusNumDataBits, kSartoriusParity, kSartoriusNumStopBits);
-	
-	// NOTE: put in error code here to alert if balance is not found...
-	
+            
+     // get serial port name from user defaults
+     NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
+     
+     if (nil == serialPortName) {
+        // get name from user
+        SerialPortNameController *newNameDialog =  [[SerialPortNameController alloc] initWithName:@"cu.usbserial"];
+        serialPortName = [newNameDialog dialogForWindow:[NSApp keyWindow]];
+        if (nil == serialPortName || 0 == [serialPortName length]) {
+            serialPortName = @"none";
+        }
+     }
+     
 
-	if (serialFileDescriptor == kSerialErrReturn) {     
-		
-		NSString *deviceName = [NSString stringWithCString:kStarTechSerialDevice encoding:[NSString defaultCStringEncoding]] ;
-		
-		NSString *deviceString = [NSString stringWithFormat:kSerialDeviceNotFoundString, deviceName];
-		
-		NSString *information;
-		
-		if (!serialPortFound && !deviceFound) {
-			
-			information = [NSString stringWithFormat:@"%@\n%@", kSerialPortNotOpenedString, deviceString];
-			
-		}
-		else if (!serialPortFound) {
-			
-			information = kSerialPortNotOpenedString;
-			
-		}
-		else if (!deviceFound) {
-			information = deviceString;
-		}
-		
-			BCOneButtonAlert(NSWarningAlertStyle, @"Serial Port not opened.", information, @"OK");
-		
-	}
+
+        if ([serialPortName isEqualToString:@"none"]) {
+            serialFileDescriptor = kSerialErrReturn;
+        }
+        else {
+            serialFileDescriptor = FindAndOpenSerialPort([serialPortName UTF8String], &serialPortFound, &deviceFound, kSartoriusNumDataBits, kSartoriusParity, kSartoriusNumStopBits);
+        }
+       
+        
+        // NOTE: put in error code here to alert if balance is not found...
+
+        if ( kSerialErrReturn == serialFileDescriptor) {     
+            
+            
+            NSString *deviceString = [NSString stringWithFormat:kSerialDeviceNotFoundString, serialPortName];
+            
+            NSString *information;
+            
+            if (!serialPortFound && !deviceFound) {
+                
+                information = [NSString stringWithFormat:@"%@\n%@", kSerialPortNotOpenedString, deviceString];
+                
+            }
+            else if (!serialPortFound) {
+                
+                information = kSerialPortNotOpenedString;
+                
+            }
+            else if (!deviceFound) {
+                information = deviceString;
+            }
+            
+                BCOneButtonAlert(NSWarningAlertStyle, @"Serial Port not opened.", information, @"OK");
+                
+                // erase the serialport name because it didn't work
+                [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
+            
+        } // kSerialErrReturn
+        else {
+              // worked, so save the serial port name
+              [[NSUserDefaults standardUserDefaults] setValue:serialPortName forKey:kBartenderSerialPortNameKey];
+        }
 	
 	
+ 
 }
 
 -(BOOL) writeSerialOut:(char *)outtext; {
@@ -310,6 +339,14 @@
     [self writeSerialOut:kSartoriusVeryUnstableCode];
     [ self postNotification];
 
+}
+
+// ----------------------------------------------------------------------
+
+
+-(void)toggleFakeReading; {
+
+    fakeReading = !fakeReading;
 }
 
 // ----------------------------------------------------------------------

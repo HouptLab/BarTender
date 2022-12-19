@@ -75,6 +75,9 @@
 		20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D3791009408C00C00E6C /* BarPhase.m */; };
 		20A5D380100940CC00C00E6C /* BarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D37F100940CC00C00E6C /* BarGroup.m */; };
 		20B470AE15AC832E00BB7A8E /* DailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B470AD15AC832E00BB7A8E /* DailyData.m */; };
+		20BD3CA5294F8A94006132CC /* SerialPortNameController.h in Sources */ = {isa = PBXBuildFile; fileRef = 20BD3CA3294F8A94006132CC /* SerialPortNameController.h */; };
+		20BD3CA6294F8A94006132CC /* SerialPortNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BD3CA4294F8A94006132CC /* SerialPortNameController.xib */; };
+		20BD3CA8294F8AF3006132CC /* SerialPortNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD3CA7294F8AF3006132CC /* SerialPortNameController.m */; };
 		20CEC10C0FFA5B33005816D9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CEC10B0FFA5B33005816D9 /* IOKit.framework */; };
 		20D3A54114DB161C00C57F9A /* BartenderAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54014DB161C00C57F9A /* BartenderAbout.png */; };
 		20D3A54314DB162500C57F9A /* BarTenderWaiter.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54214DB162500C57F9A /* BarTenderWaiter.png */; };
@@ -194,6 +197,9 @@
 		20B470AC15AC832E00BB7A8E /* DailyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyData.h; sourceTree = "<group>"; };
 		20B470AD15AC832E00BB7A8E /* DailyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyData.m; sourceTree = "<group>"; };
 		20B70E3B15B63EA700BC4CA7 /* BarBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarBalance.h; sourceTree = "<group>"; };
+		20BD3CA3294F8A94006132CC /* SerialPortNameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerialPortNameController.h; sourceTree = "<group>"; };
+		20BD3CA4294F8A94006132CC /* SerialPortNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SerialPortNameController.xib; sourceTree = "<group>"; };
+		20BD3CA7294F8AF3006132CC /* SerialPortNameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerialPortNameController.m; sourceTree = "<group>"; };
 		20CEC10B0FFA5B33005816D9 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		20D3A54014DB161C00C57F9A /* BartenderAbout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BartenderAbout.png; path = Graphics/BartenderAbout.png; sourceTree = "<group>"; };
 		20D3A54214DB162500C57F9A /* BarTenderWaiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BarTenderWaiter.png; path = Graphics/BarTenderWaiter.png; sourceTree = "<group>"; };
@@ -329,6 +335,9 @@
 			children = (
 				203BFB8F192E8AF1001B770B /* BCSerial.c */,
 				203BFB90192E8AF1001B770B /* BCSerial.h */,
+				20BD3CA3294F8A94006132CC /* SerialPortNameController.h */,
+				20BD3CA7294F8AF3006132CC /* SerialPortNameController.m */,
+				20BD3CA4294F8A94006132CC /* SerialPortNameController.xib */,
 				203BFB91192E8AF1001B770B /* Serial Notes.rtf */,
 				203BFB92192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf */,
 			);
@@ -510,6 +519,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+					8D15AC270486D014006FF6A4 = {
+						LastSwiftMigration = 1420;
+					};
+				};
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Bartender" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -551,6 +565,7 @@
 				206758F40FE836F500B1B7B9 /* BarTenderLogo.png in Resources */,
 				206759090FE8423600B1B7B9 /* ExptsToBeWeighedOff.png in Resources */,
 				203BFBD9192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */,
+				20BD3CA6294F8A94006132CC /* SerialPortNameController.xib in Resources */,
 				203BFBAE192E8AF1001B770B /* aqua.png in Resources */,
 				2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */,
 				206759100FE847A800B1B7B9 /* WeighON.png in Resources */,
@@ -626,6 +641,7 @@
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
 				20E2A7460FE545A20047BD8A /* DailyDataDocument.m in Sources */,
 				20DE82EE10025E6E005C772A /* BarDocument.m in Sources */,
+				20BD3CA5294F8A94006132CC /* SerialPortNameController.h in Sources */,
 				20DE84551002E42E005C772A /* BarExperiment.m in Sources */,
 				203C38021ED1DFA900CEA61E /* BCMeanValue.m in Sources */,
 				2062071E24C4BE5A00422FE5 /* BarUtilities.m in Sources */,
@@ -647,6 +663,7 @@
 				209095E22361065B00B9A94D /* FirebaseSummary.m in Sources */,
 				2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */,
 				205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */,
+				20BD3CA8294F8AF3006132CC /* SerialPortNameController.m in Sources */,
 				203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */,
 				208787DB16C209FB004998D1 /* FadeOutText.m in Sources */,
 				208787E016C20F0A004998D1 /* BCBarcodeLabelsWebView.m in Sources */,
@@ -699,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -736,10 +754,13 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -747,6 +768,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -783,10 +805,12 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
