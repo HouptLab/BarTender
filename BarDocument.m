@@ -555,14 +555,16 @@
 		// retrieve the edited Experiment from the exptInfo Controller, and
 		// make sure it is in our list of experiments
 		BarExperiment *editedExperiment = [exptInfoController getExperiment];
-		
-		if (![currentExpts containsObject:editedExperiment]) {
-				[currentExpts addObject:editedExperiment];
-		}
-		
-				// save the edited experiment to disk...
-		if (saveFlag) [editedExperiment save];
-		
+  
+        if (nil != editedExperiment){     
+        
+            if (![currentExpts containsObject:editedExperiment]) {
+                    [currentExpts addObject:editedExperiment];
+            }
+            
+                    // save the edited experiment to disk...
+            if (saveFlag) { [editedExperiment save]; }
+        }
 		// update the table of experiments
 		[exptTableView reloadData];
 	}

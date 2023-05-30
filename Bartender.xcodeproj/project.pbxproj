@@ -56,6 +56,9 @@
 		206759100FE847A800B1B7B9 /* WeighON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2067590E0FE847A800B1B7B9 /* WeighON.png */; };
 		206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */; };
 		206C752F278CAFBE00EACDF8 /* Set-CFBundleVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */; };
+		206C977A295A24EA00FB0678 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 206C9779295A24EA00FB0678 /* GoogleService-Info.plist */; };
+		206C977C295A5E8E00FB0678 /* FirebaseDatabase in Resources */ = {isa = PBXBuildFile; fileRef = 206C977B295A5E8E00FB0678 /* FirebaseDatabase */; };
+		206C977E295A5E9700FB0678 /* FirebaseAnalytics in Resources */ = {isa = PBXBuildFile; fileRef = 206C977D295A5E9700FB0678 /* FirebaseAnalytics */; };
 		207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207458E015B4FE37008312B4 /* BCDailyDataWebView.m */; };
 		207AA6251610C8C1002FACB5 /* duplicate icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 207AA6241610C8C1002FACB5 /* duplicate icon.png */; };
 		208787DB16C209FB004998D1 /* FadeOutText.m in Sources */ = {isa = PBXBuildFile; fileRef = 208787DA16C209FB004998D1 /* FadeOutText.m */; };
@@ -166,6 +169,11 @@
 		2067590E0FE847A800B1B7B9 /* WeighON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WeighON.png; path = Graphics/WeighON.png; sourceTree = "<group>"; };
 		206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = BartenderIcons.icns; path = Graphics/BartenderIcons.icns; sourceTree = "<group>"; };
 		206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Set-CFBundleVersion.sh"; sourceTree = "<group>"; };
+		206C9779295A24EA00FB0678 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		206C977B295A5E8E00FB0678 /* FirebaseDatabase */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FirebaseDatabase; path = Firebase/FirebaseDatabase; sourceTree = "<group>"; };
+		206C977D295A5E9700FB0678 /* FirebaseAnalytics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FirebaseAnalytics; path = Firebase/FirebaseAnalytics; sourceTree = "<group>"; };
+		206C977F295A5F9E00FB0678 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Firebase/Firebase.h; sourceTree = "<group>"; };
+		206C9780295A5FBA00FB0678 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = Firebase/module.modulemap; sourceTree = "<group>"; };
 		207458DF15B4FE37008312B4 /* BCDailyDataWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCDailyDataWebView.h; sourceTree = "<group>"; };
 		207458E015B4FE37008312B4 /* BCDailyDataWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCDailyDataWebView.m; sourceTree = "<group>"; };
 		207AA6241610C8C1002FACB5 /* duplicate icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "duplicate icon.png"; path = "Graphics/duplicate icon.png"; sourceTree = "<group>"; };
@@ -260,6 +268,8 @@
 		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				206C977D295A5E9700FB0678 /* FirebaseAnalytics */,
+				206C977B295A5E8E00FB0678 /* FirebaseDatabase */,
 				208787DC16C20E39004998D1 /* QuartzCore.framework */,
 				20913288164AEC97007EB75E /* WebKit.framework */,
 				20CEC10B0FFA5B33005816D9 /* IOKit.framework */,
@@ -458,6 +468,7 @@
 		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				206C977F295A5F9E00FB0678 /* Firebase.h */,
 				32DBCF750370BD2300C91783 /* Bartender_Prefix.pch */,
 				2A37F4B0FDCFA73011CA2CEA /* main.m */,
 				206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */,
@@ -468,6 +479,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				206C9780295A5FBA00FB0678 /* module.modulemap */,
 				20DE830C10026205005C772A /* BarDocument.xib */,
 				209095DE2361054F00B9A94D /* ExptSummaryDialog.xib */,
 				1DDD58280DA1D0D100B32029 /* DailyData.xib */,
@@ -476,6 +488,7 @@
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
 				209095D82360F84800B9A94D /* MainMenu.xib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
+				206C9779295A24EA00FB0678 /* GoogleService-Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -560,10 +573,13 @@
 				206758EE0FE8349800B1B7B9 /* comment64.png in Resources */,
 				206758EF0FE8349800B1B7B9 /* phase.png in Resources */,
 				206758F00FE8349800B1B7B9 /* save64.png in Resources */,
+				206C977C295A5E8E00FB0678 /* FirebaseDatabase in Resources */,
 				203BFBA8192E8AF1001B770B /* BCProgressDialog.xib in Resources */,
+				206C977A295A24EA00FB0678 /* GoogleService-Info.plist in Resources */,
 				203BFBB7192E8AF1001B770B /* lime.png in Resources */,
 				206758F40FE836F500B1B7B9 /* BarTenderLogo.png in Resources */,
 				206759090FE8423600B1B7B9 /* ExptsToBeWeighedOff.png in Resources */,
+				206C977E295A5E9700FB0678 /* FirebaseAnalytics in Resources */,
 				203BFBD9192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */,
 				20BD3CA6294F8A94006132CC /* SerialPortNameController.xib in Resources */,
 				203BFBAE192E8AF1001B770B /* aqua.png in Resources */,
@@ -755,7 +771,8 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
@@ -806,7 +823,8 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
 				PRODUCT_NAME = Bartender;
 				SDKROOT = macosx;
