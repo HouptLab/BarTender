@@ -176,6 +176,10 @@
         if (nil == serialPortName || 0 == [serialPortName length]) {
             serialPortName = @"none";
         }
+        else {
+            [[NSUserDefaults standardUserDefaults] setValue:serialPortName forKey:kBartenderSerialPortNameKey];
+        
+        }
      }
      
 
