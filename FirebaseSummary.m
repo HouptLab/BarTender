@@ -6,14 +6,19 @@
 //
 
 #import "FirebaseSummary.h"
+#import "DailyData.h"
+#import "Bartender_Constants.h"
 
-#define kBartenderFirebaseURLString @"https://bartenderdata.firebaseio.com/expts/"
 
 @implementation FirebaseSummary
 
 - (NSData *)getExpt:(NSString *)exptCode; {
+
+    NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
     
-    NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:kBartenderFirebaseURLString ];
+    // TODO: alert if firebaseURL is nil
+    
+    NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
     [firebaseExptURLString appendString: exptCode];
     [firebaseExptURLString appendString: @".json"];
     
@@ -35,7 +40,12 @@
 
     // curl -X PUT -d "{\"name\":{\"last\": \"sparrow\"}}" https://samplechat.firebaseio-demo.com/users/jack.json
 
-    NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:kBartenderFirebaseURLString ];
+    NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
+    
+    // TODO: alert if firebaseURL is nil
+    
+    NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
+    
     [firebaseExptURLString appendString: exptCode];
     [firebaseExptURLString appendString: @".json"];
 
@@ -53,5 +63,43 @@
     return YES;
 
 }
+
+-(BOOL) setArchive:(NSString *)exptCode; {
+
+    NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
+    
+    // TODO: alert if firebaseURL is nil
+    
+    NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
+
+
+    [firebaseExptURLString appendString: exptCode];
+    [firebaseExptURLString appendString: @"/archived.json"];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [formatter setDateFormat:kDateWithDayFormatString];
+    NSDate *currentDate = [NSDate date];
+    NSString *dateString = [formatter stringFromDate:currentDate];
+   
+   NSError *error;
+   
+    NSDictionary *archiveDictionary = [[NSDictionary alloc] initWithObjects:@[dateString] forKeys:@[@"archive_date" ]];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:archiveDictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];   
+                                                         
+  NSURL *url = [NSURL URLWithString:firebaseExptURLString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"PATCH"];
+    [request setHTTPBody:jsonData];
+
+    NSData *responseData = [NSURLConnection  sendSynchronousRequest:request returningResponse:NULL error:NULL];
+    NSString *response = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+   //  NSLog(@"%@", response);
+
+    return YES;                                                        
+}
+
 
 @end

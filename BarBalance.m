@@ -9,7 +9,7 @@
 #import "BarBalance.h"
 #import "BCSerial.h"
 #import "BCAlert.h"
-#import "SerialPortNameController.h"
+#import "SettingsController.h"
 
 #define debug_log YES
 
@@ -170,16 +170,18 @@
      NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
      
      if (nil == serialPortName) {
+     
+        // TODO: post alert to get serial port from user in Settings, -or- post serialnamecontroller directly
         // get name from user
-        SerialPortNameController *newNameDialog =  [[SerialPortNameController alloc] initWithName:@"cu.usbserial"];
-        serialPortName = [newNameDialog dialogForWindow:[NSApp keyWindow]];
-        if (nil == serialPortName || 0 == [serialPortName length]) {
-            serialPortName = @"none";
-        }
-        else {
-            [[NSUserDefaults standardUserDefaults] setValue:serialPortName forKey:kBartenderSerialPortNameKey];
-        
-        }
+//        SettingsController *newNameDialog =  [[SettingsController alloc] initWithName:@"cu.usbserial"];
+//        serialPortName = [newNameDialog dialogForWindow:[NSApp keyWindow]];
+//        if (nil == serialPortName || 0 == [serialPortName length]) {
+//            serialPortName = @"none";
+//        }
+//        else {
+//            [[NSUserDefaults standardUserDefaults] setValue:serialPortName forKey:kBartenderSerialPortNameKey];
+//        
+//        }
      }
      
 

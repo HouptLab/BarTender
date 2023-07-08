@@ -15,7 +15,7 @@
 #import "BarDirectories.h"
 
 #import "BarUtilities.h"
-#import "SerialPortNameController.h"
+#import "SettingsController.h"
 
 @implementation BarDocument
 
@@ -418,9 +418,7 @@
 
     if (nil == [self selectedExpt]) return;
 
-    // ask user where they want to save the summary data?
-
-    
+    // ask user where they want to save the summary data?    
 
     BarSummaryData *summary = [[BarSummaryData alloc] initWithExperiment:[self selectedExpt]];
 

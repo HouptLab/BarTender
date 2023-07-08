@@ -86,7 +86,7 @@
 
 		NSString *lastDailyDataPath; // path the the last saved (weighed off) daily data
 	
-		NSString *backupSummaryPath; // path to summary file that is saved automatically after new weight info added
+	//	NSString *backupSummaryPath; // path to summary file that is saved automatically after new weight info added
 	
 
 }
@@ -133,7 +133,7 @@
 - (void) setGroups: (NSMutableArray *)nG;
 - (void) setPhases: (NSMutableArray *)nP;
 
--(void) setBackupSummaryPath:(NSString *)newPath; 
+// -(void) setBackupSummaryPath:(NSString *)newPath; 
 
 
 // **********************************************************************
@@ -160,7 +160,7 @@
 - (NSString *) status;
 - (BOOL) useGroups;
 
-- (NSString *) backupSummaryPath;
+// - (NSString *) backupSummaryPath;
 
 // **********************************************************************
 // DailyData Methods -- 
@@ -267,8 +267,8 @@
 - (NSUInteger) getGroupIndex:(BarGroup *)theGroup;	
 - (void) setBlockGroups;
 - (void) setAlternatingGroups;
-- (NSString *) nameOfGroupAtIndex:(NSUInteger)index;
-- (NSUInteger) indexOfGroupWithName:(NSString *)name;
+- (NSString *) codeOfGroupAtIndex:(NSUInteger)index;
+- (NSUInteger) indexOfGroupWithCode:(NSString *)groupCode;
 - (NSString *) codeOfGroupOfSubjectAtIndex:(NSUInteger)index;
 
 

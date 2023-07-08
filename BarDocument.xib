@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -192,7 +192,7 @@
                                             <action selector="saveExperimentToFirebase:" target="-2" id="bwz-SH-Ib6"/>
                                         </connections>
                                     </menuItem>
-                                    <menuItem title="Save to Xynk import..." id="v4l-dK-3HN" userLabel="Save to Firebase">
+                                    <menuItem title="Save to Xynk import..." id="v4l-dK-3HN" userLabel="Save to Xynk">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                         <connections>
                                             <action selector="saveExperimentToXynkImport:" target="-2" id="cMa-1G-29n"/>
@@ -223,8 +223,8 @@
     <resources>
         <image name="BarTenderWaiter" width="301.44000244140625" height="303.83999633789062"/>
         <image name="Experiments" width="132" height="24"/>
-        <image name="NSAddTemplate" width="14" height="13"/>
-        <image name="NSRemoveTemplate" width="14" height="4"/>
+        <image name="NSAddTemplate" width="18" height="17"/>
+        <image name="NSRemoveTemplate" width="18" height="5"/>
         <image name="WeighON" width="350" height="200"/>
         <image name="WeighOff" width="350" height="200"/>
         <image name="actionPopUp" width="38" height="19"/>

@@ -18,6 +18,8 @@
 #import "DailyDataDocument.h"
 #import "BarSummaryData.h"
 #import "BarDirectories.h"
+#import "FirebaseSummary.h"
+#import "Bartender_Constants.h"
 
 @implementation BarExperiment
 
@@ -80,7 +82,7 @@
 
 	
 	[self setDescription:@"Describe experiment here"];
-	[self setBackupSummaryPath:	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0]];
+//	[self setBackupSummaryPath:	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0]];
 	
 	
 	startTime = 0;
@@ -202,10 +204,10 @@
 -(void)setPhases: (NSMutableArray *)nP {phases = nP; }
 -(void)setDrugs: (NSMutableArray *)nD {drugs = nD; }
 
--(void) setBackupSummaryPath:(NSString *)newPath;  {
-	if (nil != newPath) { backupSummaryPath = [newPath copy]; }
-	else { backupSummaryPath = nil; }
-}
+//-(void) setBackupSummaryPath:(NSString *)newPath;  {
+//	if (nil != newPath) { backupSummaryPath = [newPath copy]; }
+//	else { backupSummaryPath = nil; }
+//}
 
 
 
@@ -245,7 +247,7 @@
 -(BOOL)useGroups { return useGroups; }
 
 
-- (NSString *) backupSummaryPath; { return backupSummaryPath; }
+// - (NSString *) backupSummaryPath; { return backupSummaryPath; }
 
 
 
@@ -279,6 +281,10 @@
 	BarSummaryData *summary = [[BarSummaryData alloc] initWithExperiment:self ];
 	
 	[summary update];
+ 
+     NSString *backupSummaryPath = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
+    
+    backupSummaryPath = (nil == backupSummaryPath) ? [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] : backupSummaryPath;   
 	
 	NSString *backupFilePath = [backupSummaryPath stringByAppendingPathComponent:[self getSummaryFileName]];
 	
@@ -907,8 +913,8 @@
 -(void) deleteGroup:(BarGroup *)theGroup{
 	
     BarGroup *theUnassignedGroup = [self unassignedGroup];
-    // NOTE: can't deleted "Unassigned" group
-    if (theGroup == theUnassignedGroup) { return; }
+    // TODO: should we be able to  delete "Unassigned" group
+    // if (theGroup == theUnassignedGroup) { return; }
 	[groups removeObject:theGroup];
     
     // NOTE: need to reassign all subjects assigned to this group to "Unassigned"
@@ -1049,16 +1055,16 @@
 
 
 
--(NSString *)nameOfGroupAtIndex:(NSUInteger)index {
+-(NSString *)codeOfGroupAtIndex:(NSUInteger)index {
 	
 	BarGroup *theGroup;
 	
 	theGroup = [groups objectAtIndex:index];
-	if (theGroup !=nil ) return [theGroup name];
+	if (theGroup !=nil ) return [theGroup code];
 	else return nil;
 
 }
-- (NSUInteger) indexOfGroupWithName:(NSString *)groupName; {
+- (NSUInteger) indexOfGroupWithCode:(NSString *)groupCode; {
     
     NSUInteger i;
     
@@ -1066,7 +1072,7 @@
         
         BarGroup *theGroup = (BarGroup *)groups[i];
         
-        if ([[theGroup name] isEqualToString:groupName]) {
+        if ([[theGroup code] isEqualToString:groupCode]) {
             return i;
         }
     }
@@ -1477,7 +1483,7 @@
     // NSStrings
     [copy setCurrentPhaseName:[self currentPhaseName]];
 	[copy setLastDailyDataPath:[self lastDailyDataPath]];
-	[copy setBackupSummaryPath:[self backupSummaryPath]];
+//	[copy setBackupSummaryPath:[self backupSummaryPath]];
 
 	
 	return copy;
@@ -1529,9 +1535,17 @@
 
 	// NOTE: check for errors and error handling?
 	
+ 
+ // TODO: set archive flag on firebase
+ 
+     FirebaseSummary *firebase = [[FirebaseSummary alloc] init]; 
+     
+     [firebase setArchive:[self code]];
+    
 	return YES;
 	
 }
+
 
 -(BOOL) trash; {
 	
@@ -1724,7 +1738,7 @@
 					 [NSNumber numberWithUnsignedLong:prefItemIndex],
 					 [NSNumber numberWithUnsignedLong:baseItemIndex],
 					 [NSNumber numberWithBool:usePreferenceOverTotal],
-					 backupSummaryPath,
+			//		 backupSummaryPath,
 					 nil]
 			 forKeys:
 				[NSArray arrayWithObjects:
@@ -1736,7 +1750,7 @@
 					 @"prefItemIndex", 
 					 @"baseItemIndex",
 					 @"usePreferenceOverTotal",
-					 @"backupSummaryPath",
+				//	 @"backupSummaryPath",
 					 nil]
 		 ];
 		
@@ -1777,7 +1791,7 @@
 
 	if ([dictionary objectForKey:@"usePreferenceOverTotal"]) [self setUsePreferenceOverTotal:[[dictionary objectForKey:@"usePreferenceOverTotal"] boolValue]];
 
-	if ([dictionary objectForKey:@"backupSummaryPath"]) [self setBackupSummaryPath:[dictionary objectForKey:@"backupSummaryPath"]];	
+//	if ([dictionary objectForKey:@"backupSummaryPath"]) [self setBackupSummaryPath:[dictionary objectForKey:@"backupSummaryPath"]];	
 
 	
 	
