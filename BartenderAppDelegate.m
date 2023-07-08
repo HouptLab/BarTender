@@ -7,8 +7,8 @@
 //
 
 #import "BartenderAppDelegate.h"
-#import "SerialPortNameController.h"
-#define kBartenderSerialPortNameKey @"BartenderSerialPortName"
+#import "SettingsController.h"
+#import "Bartender_Constants.h"
 
 @implementation BartenderAppDelegate
 
@@ -81,23 +81,30 @@
 -(IBAction)enterSerialDeviceName:(id)sender; {
 
     NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
+      NSString *localDataName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
+        NSString *firebaseName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
      
-     NSString *defaultName = (nil == serialPortName) ? @"cu.usbserial" : serialPortName;
+     NSString *defaultSerialName = (nil == serialPortName) ? @"cu.usbserial" : serialPortName;
      
+       NSString *defaultLocalDataName = (nil == localDataName) ? [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] : localDataName;
+            
+        NSString *defaultFirebaseName = (nil == firebaseName) ? kBartenderFirebaseURLString : firebaseName;   
     
         // get name from user
-        SerialPortNameController *newNameDialog =  [[SerialPortNameController alloc] initWithName:defaultName];
-        NSString *newSerialPortName = [newNameDialog dialogForWindow:[NSApp keyWindow]];
+        SettingsController *newNameDialog =  [[SettingsController alloc] initWithNameArray:@[defaultSerialName,defaultLocalDataName,defaultFirebaseName]];
+        NSArray<NSString *> *names = [newNameDialog dialogForWindow:[NSApp keyWindow]];
+        NSArray<NSString *> *keys = @[kBartenderSerialPortNameKey,kBartenderLocalBackupDirectoryKey,kBartenderFirebaseDirectoryKey];
         
-        if (nil == serialPortName || 0 == [serialPortName length]) {
-                 [[NSUserDefaults standardUserDefaults] setValue: nil forKey:kBartenderSerialPortNameKey];        
-        }
-        else {
-
-        [[NSUserDefaults standardUserDefaults] setValue: newSerialPortName forKey:kBartenderSerialPortNameKey];
-        }
-        
+        for (NSUInteger index = 0; index < [names count]; index++) {
+            if (nil == names[index] || 0 == [names[index] length]) {
+                     [[NSUserDefaults standardUserDefaults] setValue: nil forKey:keys[index]];        
+            }
+            else {
+                [[NSUserDefaults standardUserDefaults] setValue: names[index] forKey:keys[index]];
+            }
     
+        }
+     
       
 }
 

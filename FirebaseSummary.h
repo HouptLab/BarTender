@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)getExpt:(NSString *)exptCode;
 - (BOOL) saveExpt:(NSString *)exptCode withData:(NSData *)exptJSONData;
 
+-(BOOL) setArchive:(NSString *)exptCode;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

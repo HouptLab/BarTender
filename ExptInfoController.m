@@ -11,6 +11,7 @@
 #import "DailyDataDocument.h"
 
 #import "BCBarcodeLabelsWebView.h"
+#import "Bartender_Constants.h"
 
 @implementation ExptInfoController
 
@@ -264,8 +265,12 @@
 	[dailyDataTableView reloadData];
     
 	// set the back up data path
+ 
+     NSString *backupSummaryPath = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
+    
+    backupSummaryPath = (nil == backupSummaryPath) ? [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] : backupSummaryPath;   
 	
-	[backupSummaryPathView setStringValue: [theExperiment backupSummaryPath]];
+    [backupSummaryPathView setStringValue:backupSummaryPath];
 
 }
 
@@ -429,7 +434,7 @@
 	 
 	 [theExperiment setUsePreferenceOverTotal: (BOOL)[prefTypes selectedRow] ];
 	 
-	 [theExperiment setBackupSummaryPath:[backupSummaryPathView stringValue]];
+  //    [theExperiment setBackupSummaryPath:[backupSummaryPathView stringValue]];
 	 
 	 
 	 return theExperiment;
@@ -842,6 +847,12 @@
                 [aCell setTitle:title];
             }
         }
+        else if ([[aTableColumn identifier] isEqualToString:@"subjectName"]) {
+            
+                NSString *title = [theExperiment nameOfSubjectAtIndex:(NSUInteger)rowIndex];
+                [aCell setTitle:title];
+            
+        }
     }
     if (aTableView == dailyDataTableView) {
         if ([[aTableColumn identifier] isEqualToString:@"phaseName"]) {
@@ -866,50 +877,50 @@
 
 
 // data view
- -(IBAction)selectPath:(id)sender; {
-	 
-	 NSLog(@" ExptInfo selectPath Button pressed");
-	 
-	 
-	 NSOpenPanel *openPanel;
-	 NSInteger result;
-	 
-	 /* create or get the shared instance of NSSavePanel */
-	 openPanel = [NSOpenPanel openPanel];
-	 
-	 /* set up new attributes */
-	 [openPanel setAllowedFileTypes:[NSArray arrayWithObjects:@"txt",nil]];
-	 
-	 // set to the document directory
-
-	 NSString *docDirectoryPath = GetDocDirectoryPath();
-	 
-	 NSURL * docDirectoryURL = [NSURL fileURLWithPath:docDirectoryPath] ;
-	 [openPanel setDirectoryURL:docDirectoryURL ];
-	 
-	 // just select a directory
-	 [openPanel setCanChooseFiles:NO];
-	 [openPanel setCanChooseDirectories:YES];
-	 [openPanel setCanCreateDirectories:YES];
-	 
-	 
-	 /*prompt */
-	 [openPanel setPrompt:@"Location for Summary Data Backup"];
-	 	 
-	 /* display the NSSavePanel */
-	 result = [openPanel runModal];
-	 
-	 if (result == NSOKButton) {
-		 
-		 NSString *myFilePath = [[openPanel filename] copy];
-		 
-		 // save the experiment, but as a template...	
-		 [backupSummaryPathView setStringValue:myFilePath];
-		 
-	}
-	 
-	 
- }
+// -(IBAction)selectPath:(id)sender; {
+//	 
+//	 NSLog(@" ExptInfo selectPath Button pressed");
+//	 
+//	 
+//	 NSOpenPanel *openPanel;
+//	 NSInteger result;
+//	 
+//	 /* create or get the shared instance of NSSavePanel */
+//	 openPanel = [NSOpenPanel openPanel];
+//	 
+//	 /* set up new attributes */
+//	 [openPanel setAllowedFileTypes:[NSArray arrayWithObjects:@"txt",nil]];
+//	 
+//	 // set to the document directory
+//
+//	 NSString *docDirectoryPath = GetDocDirectoryPath();
+//	 
+//	 NSURL * docDirectoryURL = [NSURL fileURLWithPath:docDirectoryPath] ;
+//	 [openPanel setDirectoryURL:docDirectoryURL ];
+//	 
+//	 // just select a directory
+//	 [openPanel setCanChooseFiles:NO];
+//	 [openPanel setCanChooseDirectories:YES];
+//	 [openPanel setCanCreateDirectories:YES];
+//	 
+//	 
+//	 /*prompt */
+//	 [openPanel setPrompt:@"Location for Summary Data Backup"];
+//	 	 
+//	 /* display the NSSavePanel */
+//	 result = [openPanel runModal];
+//	 
+//	 if (result == NSOKButton) {
+//		 
+//		 NSString *myFilePath = [[openPanel filename] copy];
+//		 
+//		 // save the experiment, but as a template...	
+////		 [backupSummaryPathView setStringValue:myFilePath];
+//		 
+//	}
+//	 
+//	 
+// }
 
 
 -(void)handleDailyDataDoubleClick:(id)sender; {

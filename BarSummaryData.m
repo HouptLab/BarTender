@@ -10,9 +10,12 @@
 #import "DailyData.h"
 #import "BarItem.h"
 #import "BarSubject.h"
+#import "BarGroup.h"
+#import "BarDrug.h"
 #import "BCAlert.h"
 #import "FirebaseSummary.h"
 #import "BCMergeDictionary.h"
+#import "Bartender_Constants.h"
 
 /*
  
@@ -174,8 +177,10 @@
 
     NSMutableDictionary *drugs = [NSMutableDictionary dictionary];
     for (NSUInteger i=0;i< [experiment numberOfDrugs]; i++ ) {
-        [drugs setObject: [[[experiment drugs] objectAtIndex:i] description]
-                   forKey: [[[experiment drugs] objectAtIndex:i] name]];
+         [drugs setObject: [NSString stringWithFormat:@"%@: %@",
+                            [[[experiment drugs] objectAtIndex:i] name],
+                            [[[experiment drugs] objectAtIndex:i] description]]
+                   forKey: [(BarDrug *)[[experiment drugs] objectAtIndex:i] code]];
     }
 
     [exptDictionary setObject: drugs
@@ -183,8 +188,10 @@
 
     NSMutableDictionary *groups = [NSMutableDictionary dictionary];
     for (NSUInteger i=0;i< [experiment numberOfGroups]; i++ ) {
-        [groups setObject: [[[experiment groups] objectAtIndex:i] description]
-                   forKey: [[[experiment groups] objectAtIndex:i] name]];
+        [groups setObject: [NSString stringWithFormat:@"%@: %@",
+                            [[[experiment groups] objectAtIndex:i] name],
+                            [[[experiment groups] objectAtIndex:i] description]]
+                   forKey: [(BarGroup *)[[experiment groups] objectAtIndex:i] code]];
     }
     [exptDictionary setObject: groups
                        forKey:@"groups"];
@@ -347,7 +354,7 @@
 
         NSUInteger groupIndex = [(BarSubject *)[[experiment subjects] objectAtIndex:s] groupIndex];
 
-        [subject setObject: [[[experiment groups] objectAtIndex:groupIndex] name]
+        [subject setObject: [(BarGroup *)[[experiment groups] objectAtIndex:groupIndex] code]
                     forKey: @"group"];
 
         NSString *subjectName = [NSString stringWithFormat:@"%@%02ld",[experiment code],(s+1)];
@@ -382,8 +389,16 @@
     
     NSString *merged_code = [experiment code];
     
+    NSString *backupSummaryPath = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
+    
+    backupSummaryPath = (nil == backupSummaryPath) ? [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] : backupSummaryPath;
+    
+    NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@.json",backupSummaryPath,[experiment code] ];
+    
     if (NULL != jsonData) {
+        [jsonData writeToFile:jsonFilePath atomically:YES];
         [[[FirebaseSummary alloc] init] saveExpt:merged_code withData:jsonData];
+        
     }
 }
 
@@ -498,7 +513,7 @@
         } // has preference
         
         [group_means setObject: group_data
-                        forKey: [experiment nameOfGroupAtIndex:g]];
+                        forKey: [experiment codeOfGroupAtIndex:g]];
     } // next group
         
     return group_means;
