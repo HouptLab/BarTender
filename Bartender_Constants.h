@@ -9,8 +9,13 @@
 #define Bartender_Constants_h
 
 #define kBartenderSerialPortNameKey @"BartenderSerialPortName"
+#define  kBartenderDefaultSerialPortName @"/dev/cu.usbserial-1410"
+
 #define kBartenderLocalBackupDirectoryKey @"BartenderLocalBackupDirectory"
+
 #define kBartenderFirebaseDirectoryKey @"BartenderFirebaseDirectory"
-#define kBartenderFirebaseURLString @"https://bartenderdata.firebaseio.com/expts/"
+#define kBartenderDefaultFirebaseURLString @"https://bartenderdata.firebaseio.com/expts/"
+#define kBartenderBartabURLKey @"BartenderBartabURL"
+#define kBartenderDefaultBartabURLString @"https://houptlab.org/bartab"
 
 #endif /* Bartender_Constants_h */

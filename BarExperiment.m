@@ -284,7 +284,6 @@
  
      NSString *backupSummaryPath = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
     
-    backupSummaryPath = (nil == backupSummaryPath) ? [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] : backupSummaryPath;   
 	
 	NSString *backupFilePath = [backupSummaryPath stringByAppendingPathComponent:[self getSummaryFileName]];
 	

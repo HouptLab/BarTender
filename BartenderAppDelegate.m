@@ -22,6 +22,14 @@
 	
 	// intialize the about box
  NSBundle *main = [NSBundle mainBundle];
+ 
+ NSDictionary *appDefaults = @{
+kBartenderSerialPortNameKey : kBartenderDefaultSerialPortName ,  // all_graphs
+kBartenderLocalBackupDirectoryKey : [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] ,  // all_graphs
+kBartenderFirebaseDirectoryKey : kBartenderDefaultFirebaseURLString,  // all_graphs
+kBartenderBartabURLKey : kBartenderDefaultBartabURLString };
+ 
+ [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
     
     [self.versionLabel setStringValue:[NSString stringWithFormat:@"Version %@ (%@)",  [main objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [main objectForInfoDictionaryKey:@"CFBundleVersion"]] ];
 
@@ -83,21 +91,25 @@
     NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
       NSString *localDataName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
         NSString *firebaseName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
+             NSString *bartabName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
+
      
-     NSString *defaultSerialName = (nil == serialPortName) ? @"cu.usbserial" : serialPortName;
-     
-       NSString *defaultLocalDataName = (nil == localDataName) ? [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] : localDataName;
-            
-        NSString *defaultFirebaseName = (nil == firebaseName) ? kBartenderFirebaseURLString : firebaseName;   
-    
         // get name from user
-        SettingsController *newNameDialog =  [[SettingsController alloc] initWithNameArray:@[defaultSerialName,defaultLocalDataName,defaultFirebaseName]];
+        SettingsController *newNameDialog =  [[SettingsController alloc] initWithNameArray:@[serialPortName,localDataName,firebaseName,bartabName]];
+        
         NSArray<NSString *> *names = [newNameDialog dialogForWindow:[NSApp keyWindow]];
-        NSArray<NSString *> *keys = @[kBartenderSerialPortNameKey,kBartenderLocalBackupDirectoryKey,kBartenderFirebaseDirectoryKey];
+        
+        NSArray<NSString *> *keys = @[kBartenderSerialPortNameKey,kBartenderLocalBackupDirectoryKey,kBartenderFirebaseDirectoryKey,kBartenderBartabURLKey];
+        
+         NSArray<NSString *> *defaults = 
+         @[kBartenderDefaultSerialPortName, [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]  ,kBartenderDefaultFirebaseURLString,kBartenderDefaultBartabURLString];
+        
+        
+        //TODO: validate new defaults somehow?
         
         for (NSUInteger index = 0; index < [names count]; index++) {
-            if (nil == names[index] || 0 == [names[index] length]) {
-                     [[NSUserDefaults standardUserDefaults] setValue: nil forKey:keys[index]];        
+            if (nil != names[index] && 0 != [names[index] length]) {
+                     [[NSUserDefaults standardUserDefaults] setValue: defaults[index] forKey:keys[index]];        
             }
             else {
                 [[NSUserDefaults standardUserDefaults] setValue: names[index] forKey:keys[index]];

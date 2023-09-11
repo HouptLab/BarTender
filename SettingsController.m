@@ -20,6 +20,9 @@
 @synthesize firebaseField;
 @synthesize firebase;
 
+@synthesize bartabField;
+@synthesize bartab;
+
 -(id)initWithNameArray:(NSArray *)names; {
     
     self = [super init];
@@ -28,7 +31,8 @@
         serialname = names[0];
         localdata = names[1];
         firebase = names[2];
-
+        bartab = names[3];
+                
         if (!dialog) {
             
     #pragma clang diagnostic push
@@ -51,6 +55,7 @@
     [serialnameField setStringValue:serialname];
      [localdataField setStringValue:localdata];
       [firebaseField setStringValue:firebase];
+      [bartabField setStringValue:bartab];
 
     [NSApp beginSheet: dialog
        modalForWindow: ownerWindow
@@ -65,7 +70,7 @@
     [NSApp endSheet:  dialog];
     [dialog orderOut: dialog];
     
-    return @[serialname,localdata,firebase];
+    return @[serialname,localdata,firebase,bartab];
     
 }
 

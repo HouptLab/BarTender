@@ -21,6 +21,9 @@
 @property IBOutlet NSTextField *localdataField;
 @property (copy) NSString *localdata;
 
+@property IBOutlet NSTextField *bartabField;
+@property (copy) NSString *bartab;
+
 -(id)initWithNameArray:(NSArray *)names;
 -(NSArray *)dialogForWindow:(NSWindow *)ownerWindow; 
 -(IBAction)cancelButtonPressed:(id)sender;

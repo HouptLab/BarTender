@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SettingsController" customModule="Bartender" customModuleProvider="target">
             <connections>
+                <outlet property="bartabField" destination="JiU-qW-sa0" id="FlW-77-up9"/>
                 <outlet property="dialog" destination="F0z-JX-Cv5" id="imN-Fo-2l2"/>
                 <outlet property="firebaseField" destination="nJV-eY-O6z" id="Anz-ej-2wQ"/>
                 <outlet property="localdataField" destination="8fI-K6-OHB" id="kTL-FK-sSX"/>
@@ -20,14 +21,14 @@
         <window title="Bartender Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="584" height="208"/>
+            <rect key="contentRect" x="196" y="240" width="584" height="242"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1095"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="584" height="208"/>
+                <rect key="frame" x="0.0" y="0.0" width="584" height="242"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ay-dj-VBS">
-                        <rect key="frame" x="207" y="150" width="357" height="21"/>
+                        <rect key="frame" x="207" y="184" width="357" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Qxu-FZ-ojY">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -36,7 +37,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-Zy-3hW">
-                        <rect key="frame" x="43" y="155" width="158" height="16"/>
+                        <rect key="frame" x="43" y="189" width="158" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Serial Port Device Name: " id="MWa-pU-lEy">
                             <font key="font" metaFont="system"/>
@@ -45,7 +46,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fI-K6-OHB">
-                        <rect key="frame" x="207" y="112" width="357" height="21"/>
+                        <rect key="frame" x="207" y="146" width="357" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="yIB-eH-7eb">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -54,7 +55,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4S-fg-4vD">
-                        <rect key="frame" x="69" y="117" width="132" height="16"/>
+                        <rect key="frame" x="69" y="151" width="132" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Local Data Directory:" id="9Bd-Q3-oqg">
                             <font key="font" metaFont="system"/>
@@ -63,7 +64,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nJV-eY-O6z">
-                        <rect key="frame" x="207" y="74" width="357" height="21"/>
+                        <rect key="frame" x="207" y="108" width="357" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="2fr-vh-PNy">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -71,8 +72,17 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JiU-qW-sa0">
+                        <rect key="frame" x="207" y="70" width="357" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="zwY-qx-Yyy">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PXT-Io-eMm">
-                        <rect key="frame" x="82" y="79" width="119" height="16"/>
+                        <rect key="frame" x="82" y="113" width="119" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Firebase Directory:" id="CHU-P8-sCW">
                             <font key="font" metaFont="system"/>
@@ -81,7 +91,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6o0-1h-FTJ">
-                        <rect key="frame" x="518" y="20" width="53" height="32"/>
+                        <rect key="frame" x="518" y="19" width="53" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="slR-hF-faK">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -94,12 +104,21 @@ DQ
                             <action selector="OKButtonPressed:" target="-2" id="qZb-hT-afw"/>
                         </connections>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6S-4F-xMn">
+                        <rect key="frame" x="92" y="75" width="108" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Bartab Directory:" id="a0C-Vt-4DH">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="191" y="113"/>
+            <point key="canvasLocation" x="191" y="130"/>
         </window>
     </objects>
 </document>

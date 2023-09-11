@@ -391,7 +391,6 @@
     
     NSString *backupSummaryPath = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
     
-    backupSummaryPath = (nil == backupSummaryPath) ? [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] : backupSummaryPath;
     
     NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@.json",backupSummaryPath,[experiment code] ];
     
