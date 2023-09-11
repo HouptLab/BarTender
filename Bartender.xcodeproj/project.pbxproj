@@ -93,11 +93,6 @@
 		20E0D15C105C1F36007698BD /* Experiments.png in Resources */ = {isa = PBXBuildFile; fileRef = 20E0D15B105C1F36007698BD /* Experiments.png */; };
 		20E2A7460FE545A20047BD8A /* DailyDataDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E2A7450FE545A20047BD8A /* DailyDataDocument.m */; };
 		20E2A75E0FE552AF0047BD8A /* ExptInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E2A75C0FE552AF0047BD8A /* ExptInfoWindow.xib */; };
-		20F6462F164AC0CA0065D7BD /* BL_GM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462A164AC0CA0065D7BD /* BL_GM.pdf */; };
-		20F64630164AC0CA0065D7BD /* BL_Supplement.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462B164AC0CA0065D7BD /* BL_Supplement.pdf */; };
-		20F64631164AC0CA0065D7BD /* BP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462C164AC0CA0065D7BD /* BP.pdf */; };
-		20F64632164AC0CA0065D7BD /* WBP6006-e97075.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462D164AC0CA0065D7BD /* WBP6006-e97075.pdf */; };
-		20F64633164AC0CA0065D7BD /* YDO01BL.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20F6462E164AC0CA0065D7BD /* YDO01BL.pdf */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -228,11 +223,6 @@
 		20E2A7440FE545A20047BD8A /* DailyDataDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDataDocument.h; sourceTree = "<group>"; };
 		20E2A7450FE545A20047BD8A /* DailyDataDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataDocument.m; sourceTree = "<group>"; };
 		20E2A75D0FE552AF0047BD8A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ExptInfoWindow.xib; sourceTree = "<group>"; };
-		20F6462A164AC0CA0065D7BD /* BL_GM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BL_GM.pdf; sourceTree = "<group>"; };
-		20F6462B164AC0CA0065D7BD /* BL_Supplement.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BL_Supplement.pdf; sourceTree = "<group>"; };
-		20F6462C164AC0CA0065D7BD /* BP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BP.pdf; sourceTree = "<group>"; };
-		20F6462D164AC0CA0065D7BD /* WBP6006-e97075.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "WBP6006-e97075.pdf"; sourceTree = "<group>"; };
-		20F6462E164AC0CA0065D7BD /* YDO01BL.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = YDO01BL.pdf; sourceTree = "<group>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -354,7 +344,6 @@
 		206461750FF4021F00349949 /* Balance */ = {
 			isa = PBXGroup;
 			children = (
-				20F64629164AC0CA0065D7BD /* Sartorius Balance Manuals */,
 				20B70E3B15B63EA700BC4CA7 /* BarBalance.h */,
 				2092D64115E2BC3900572E35 /* BarBalance.m */,
 				206461EB0FF40B7000349949 /* BartenderNotes.rtf */,
@@ -383,18 +372,6 @@
 				206758EC0FE8349800B1B7B9 /* save64.png */,
 			);
 			name = Graphics;
-			sourceTree = "<group>";
-		};
-		20F64629164AC0CA0065D7BD /* Sartorius Balance Manuals */ = {
-			isa = PBXGroup;
-			children = (
-				20F6462A164AC0CA0065D7BD /* BL_GM.pdf */,
-				20F6462B164AC0CA0065D7BD /* BL_Supplement.pdf */,
-				20F6462C164AC0CA0065D7BD /* BP.pdf */,
-				20F6462D164AC0CA0065D7BD /* WBP6006-e97075.pdf */,
-				20F6462E164AC0CA0065D7BD /* YDO01BL.pdf */,
-			);
-			path = "Sartorius Balance Manuals";
 			sourceTree = "<group>";
 		};
 		2A37F4AAFDCFA73011CA2CEA /* Bartender */ = {
@@ -608,18 +585,13 @@
 				203BFBBC192E8AF1001B770B /* orange.png in Resources */,
 				203BFBBF192E8AF1001B770B /* silver.png in Resources */,
 				203BFBBA192E8AF1001B770B /* nofill.png in Resources */,
-				20F6462F164AC0CA0065D7BD /* BL_GM.pdf in Resources */,
 				203BFBC1192E8AF1001B770B /* white.png in Resources */,
 				203BFBC2192E8AF1001B770B /* yellow.png in Resources */,
-				20F64630164AC0CA0065D7BD /* BL_Supplement.pdf in Resources */,
 				203BFBB9192E8AF1001B770B /* navy.png in Resources */,
-				20F64631164AC0CA0065D7BD /* BP.pdf in Resources */,
-				20F64632164AC0CA0065D7BD /* WBP6006-e97075.pdf in Resources */,
 				203BFBB0192E8AF1001B770B /* blue.png in Resources */,
 				203BFBD4192E8AF1001B770B /* Markdown-BuildRule.sh in Resources */,
 				206C752F278CAFBE00EACDF8 /* Set-CFBundleVersion.sh in Resources */,
 				203BFBBB192E8AF1001B770B /* olive.png in Resources */,
-				20F64633164AC0CA0065D7BD /* YDO01BL.pdf in Resources */,
 				203BFBB2192E8AF1001B770B /* darkgray.png in Resources */,
 				203BFBAF192E8AF1001B770B /* black.png in Resources */,
 				203BFBBD192E8AF1001B770B /* purple.png in Resources */,

@@ -16,6 +16,7 @@
 
 #import "BarUtilities.h"
 #import "SettingsController.h"
+#import "Bartender_Constants.h"
 
 @implementation BarDocument
 
@@ -248,7 +249,10 @@
 	NSLog(@"edit Experiment Pressed\n");
 	
 	
-	if (nil == [self selectedExpt] ) return;
+		if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Edit Expt", @"Select an Experiment",@"OK");
+            return;
+    }
 	
 	// make sure the exptInfoController has been instantiated...
 	[self createExptInfoController];
@@ -268,7 +272,10 @@
 	
 	NSLog(@"Duplicate Expt  called");
 		
-	if (nil == [self selectedExpt]) return;
+	if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Duplicate Expt", @"Select an Experiment",@"OK");
+            return;
+    }
 
 	// get a copy of the selected experiment
 	BarExperiment *duplicateExpt = [[self selectedExpt] copy];
@@ -291,16 +298,22 @@
 
 -(IBAction)graphExperiment:(id)sender {
 		
-	NSLog(@"Graph Expt Info called");
+
+	if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Graph Expt", @"Select an Experiment",@"OK");
+            return;
+    }
+		
 	
-	NSLog(@"Graph Expt needs to be implemented");
-	
-	if (nil == [self selectedExpt]) return;
-	
-	// NOTE: pass the experiment info off to Xynk?
-	
-	
-	BCOneButtonAlert(NSInformationalAlertStyle,@"Graph Expt", @"This feature is not yet implemented.",@"OK");
+//	BCOneButtonAlert(NSInformationalAlertStyle,@"Graph Expt", @"This feature is not yet implemented.",@"OK");
+
+    NSString *bartabUrl = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
+    
+    NSString * exptGraphUrl = [NSString stringWithFormat:@"%@/expt/?id=%@",bartabUrl,[[self selectedExpt] code] ];
+
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:exptGraphUrl]];
+
+
 
 }
 
@@ -308,7 +321,10 @@
 	
 	NSLog(@"saveExptSummary Info called");
 	
-	if (nil == [self selectedExpt]) return;
+	if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Save Expt Summary", @"Select an Experiment",@"OK");
+            return;
+    }
 	
 	// ask user where they want to save the summary data?
 	
@@ -362,7 +378,10 @@
 
     NSLog(@"saveExptSummary Info called");
 
-    if (nil == [self selectedExpt]) return;
+    if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Save Xynk Export", @"Select an Experiment",@"OK");
+            return;
+    }
 
     // ask user where they want to save the summary data?
 
@@ -416,7 +435,10 @@
 
     NSLog(@"saveExpt to Firebase  called");
 
-    if (nil == [self selectedExpt]) return;
+    if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Save to Firebase", @"Select an Experiment",@"OK");
+            return;
+    }
 
     // ask user where they want to save the summary data?    
 
@@ -437,7 +459,10 @@
 	
 	NSLog(@"Remove Expt  called");
 	
-	if (nil == [self selectedExpt]) return;
+	if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Remove Expt", @"Select an Experiment",@"OK");
+            return;
+    }
 	
 	NSString *titleString = [NSString stringWithFormat:@"Remove Expt %@", [[self selectedExpt] code]];
 	
@@ -502,7 +527,10 @@
 	
 	NSLog(@"Weigh On Experiment Pressed\n");
 	
-	if (nil == [self selectedExpt]) return;
+	if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Weight On", @"Select an Experiment",@"OK");
+            return;
+    }
 	
 	// NOTE: check if waiting to weigh OFF 
 	// -- prompt to override current weights?
@@ -522,7 +550,10 @@
 	
 	NSLog(@"Weigh Off Experiment\n");
 	
-	if (nil == [self selectedExpt]) return;
+	if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Weigh Off", @"Select an Experiment",@"OK");
+            return;
+    }
 	
 	// NOTE: check if waiting to weigh ON 
 	//	-- prompt to start current off weights (w/o off) without on weights?
@@ -723,7 +754,9 @@
 	NSString *identifier = [aTableColumn identifier];
 	
 	
-	if (currentExpts == nil) return nil;
+	if (currentExpts == nil) {
+            return nil;
+    }
 	
 	if (aTableView == exptTableView)	{
 		objectAtIndex =  (NSObject *)[currentExpts objectAtIndex:(NSUInteger)rowIndex];
