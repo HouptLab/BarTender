@@ -305,8 +305,6 @@
     }
 		
 	
-//	BCOneButtonAlert(NSInformationalAlertStyle,@"Graph Expt", @"This feature is not yet implemented.",@"OK");
-
     NSString *bartabUrl = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
     
     NSString * exptGraphUrl = [NSString stringWithFormat:@"%@/expt/?id=%@",bartabUrl,[[self selectedExpt] code] ];
@@ -316,6 +314,24 @@
 
 
 }
+
+-(IBAction)wikiExperiment:(id)sender {
+        
+
+    if (nil == [self selectedExpt]) {
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Wiki Expt", @"Select an Experiment",@"OK");
+            return;
+    }
+        
+    
+    NSString * exptWikiUrl = [[self selectedExpt] wiki];
+
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:exptWikiUrl]];
+
+
+
+}
+
 
 -(IBAction)saveExperimentSummary:(id)sender {
 	
