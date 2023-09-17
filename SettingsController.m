@@ -53,9 +53,9 @@
 
     
     [serialnameField setStringValue:serialname];
-     [localdataField setStringValue:localdata];
-      [firebaseField setStringValue:firebase];
-      [bartabField setStringValue:bartab];
+    [localdataField setStringValue:localdata];
+    [firebaseField setStringValue:firebase];
+    [bartabField setStringValue:bartab];
 
     [NSApp beginSheet: dialog
        modalForWindow: ownerWindow
@@ -86,8 +86,9 @@
     
     [NSApp stopModal];
     serialname = [serialnameField stringValue];
-     localdata = [localdataField stringValue];
-      firebase = [firebaseField stringValue];
+    localdata = [localdataField stringValue];
+    firebase = [firebaseField stringValue];
+    bartab = [bartabField stringValue];
 
 }
 

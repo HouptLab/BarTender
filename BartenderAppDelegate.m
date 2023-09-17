@@ -94,8 +94,9 @@ kBartenderBartabURLKey : kBartenderDefaultBartabURLString };
              NSString *bartabName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
 
      
+    NSArray<NSString *> *oldNames = @[serialPortName,localDataName,firebaseName,bartabName];
         // get name from user
-        SettingsController *newNameDialog =  [[SettingsController alloc] initWithNameArray:@[serialPortName,localDataName,firebaseName,bartabName]];
+        SettingsController *newNameDialog =  [[SettingsController alloc] initWithNameArray:oldNames];
         
         NSArray<NSString *> *names = [newNameDialog dialogForWindow:[NSApp keyWindow]];
         
@@ -108,15 +109,15 @@ kBartenderBartabURLKey : kBartenderDefaultBartabURLString };
         //TODO: validate new defaults somehow?
         
         for (NSUInteger index = 0; index < [names count]; index++) {
-            if (nil != names[index] && 0 != [names[index] length]) {
-                     [[NSUserDefaults standardUserDefaults] setValue: defaults[index] forKey:keys[index]];        
-            }
-            else {
+            if (![names[index] isEqualToString:oldNames[index]]){
                 [[NSUserDefaults standardUserDefaults] setValue: names[index] forKey:keys[index]];
             }
-    
         }
      
+    if (![names[0] isEqualToString:oldNames[0]]){
+        // serial port has been resetterm
+    // TODO: ask the bardocument to reset the serial port
+    }
       
 }
 

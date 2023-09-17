@@ -131,19 +131,33 @@
 
 
 // get the weight
--(double) curr_weight; {return curr_weight; }
--(NSDate *) curr_weight_time; { return curr_weight_time; }
+-(double) curr_weight; {
+    return curr_weight;
+    
+}
+-(NSDate *) curr_weight_time; {
+    return curr_weight_time;
+    
+}
 
 -(NSString *) curr_weight_text; { 
 	
 	NSString * curr_text;
-	if (curr_weight_stable) {  curr_text = [NSString stringWithFormat:@"%.2lf g",curr_weight]; }
-	else {  curr_text = [NSString stringWithFormat:@"%.2lf",curr_weight]; }
+	if (curr_weight_stable) {
+        curr_text = [NSString stringWithFormat:@"%.2lf g",curr_weight];
+        
+    }
+	else {
+        curr_text = [NSString stringWithFormat:@"%.2lf",curr_weight];
+    }
 	return curr_text;
 
 }
 
--(BOOL) curr_weight_stable; {return curr_weight_stable; }
+-(BOOL) curr_weight_stable; {
+    return curr_weight_stable;
+    
+}
 
 
 // **********************************************************************
@@ -419,7 +433,9 @@
         
         readingCount++;
         
-        if (debug_log && (readingCount % 10 == 0)) { NSLog(@"ReadBalance: about to fakereading count: %lu", readingCount); }
+        if (debug_log && (readingCount % 10 == 0)) {
+            NSLog(@"ReadBalance: about to fakereading count: %lu", readingCount);
+        }
        
         [self makeFakeReading];
          numReadings++;
@@ -479,8 +495,14 @@
 		// if weight equal to zero, then no direction symbol "   %lf"
 		// if weight is stable, then unit symbol after weight: e.g., " + %lf g"
 		
-		if (last_entry[0] == '-') { sscanf(last_entry,"%s %lf", direction, &curr_weight); curr_weight *= -1.0; }
-		else if (last_entry[0] == '+') { sscanf(last_entry,"%s %lf", direction, &curr_weight); }
+		if (last_entry[0] == '-') {
+            sscanf(last_entry,"%s %lf", direction, &curr_weight);
+            curr_weight *= -1.0;
+            
+        }
+		else if (last_entry[0] == '+') {
+            sscanf(last_entry,"%s %lf", direction, &curr_weight);
+        }
 		else { sscanf(last_entry,"%lf", &curr_weight); }
 		
 		curr_weight_time = [NSDate date];
@@ -509,9 +531,13 @@
 	
 	for (i=0;i<strlen(last_entry);i++) {
 		
-		if (last_entry[i] == 'g') return(TRUE);
+        if (last_entry[i] == 'g') {
+            NSLog(@"stable weight");
+            return(TRUE);
+        }
 		
 	}
+    NSLog(@"unstable weight");
 	return(FALSE);
 	
 }

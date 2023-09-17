@@ -16,7 +16,7 @@
         <window title="BarTender" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" id="l7q-wI-GYP">
             <windowStyleMask key="styleMask" titled="YES" texturedBackground="YES"/>
             <rect key="contentRect" x="614" y="370" width="607" height="496"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1095"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2240" height="1235"/>
             <value key="minSize" type="size" width="607" height="496"/>
             <value key="maxSize" type="size" width="607" height="496"/>
             <view key="contentView" id="ZfR-kL-T3m">
@@ -27,11 +27,11 @@
                         <rect key="frame" x="24" y="50" width="503" height="265"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="q02-U7-mRc">
-                            <rect key="frame" x="1" y="1" width="486" height="263"/>
+                            <rect key="frame" x="1" y="1" width="501" height="263"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="utz-yt-DT4" id="Ucp-xh-2h0" userLabel="exptList">
-                                    <rect key="frame" x="0.0" y="0.0" width="486" height="238"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="501" height="238"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,16 +82,16 @@
                                 </tableView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bMQ-fd-7yr">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="bMQ-fd-7yr">
                             <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="915-3L-wr5">
-                            <rect key="frame" x="487" y="26" width="15" height="238"/>
+                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="915-3L-wr5">
+                            <rect key="frame" x="486" y="26" width="16" height="238"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" wantsLayer="YES" id="utz-yt-DT4">
-                            <rect key="frame" x="0.0" y="0.0" width="486" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="501" height="25"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
@@ -177,6 +177,11 @@
                                     <menuItem title="Graph..." id="6J1-F0-CT3">
                                         <connections>
                                             <action selector="graphExperiment:" target="-2" id="Dh1-nU-ihW"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Wiki..." id="S3n-Wo-glt">
+                                        <connections>
+                                            <action selector="wikiExperiment:" target="-2" id="qeV-2O-YXA"/>
                                         </connections>
                                     </menuItem>
                                     <menuItem title="Summary..." id="IBp-px-tWc">

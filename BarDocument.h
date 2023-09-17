@@ -43,6 +43,7 @@
 -(IBAction)duplicateExperiment:(id)sender;
 
 -(IBAction)graphExperiment:(id)sender;
+-(IBAction)wikiExperiment:(id)sender;
 -(IBAction)saveExperimentSummary:(id)sender;
 -(IBAction)removeExperiment:(id)sender;
 -(IBAction)weighOnExperiment:(id)sender;
