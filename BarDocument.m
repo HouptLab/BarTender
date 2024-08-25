@@ -17,6 +17,7 @@
 #import "BarUtilities.h"
 #import "SettingsController.h"
 #import "Bartender_Constants.h"
+#import "BartenderAppDelegate.h"
 
 @implementation BarDocument
 
@@ -40,6 +41,7 @@
         
         currentDailyDataDocuments = [[NSMutableArray alloc] init];
 				
+                    
     }
     return self;
 }
@@ -52,6 +54,8 @@
 -(void)awakeFromNib {
     [exptTableView setTarget:self];
     [exptTableView setDoubleAction:@selector(handleDoubleClick:)];
+    
+
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
@@ -711,6 +715,9 @@
 	
 	// update the table of experiments..
 	[exptTableView reloadData];	
+ 
+    // only now do we set self to bartender?
+     [(BartenderAppDelegate *)[[NSApplication sharedApplication] delegate] setBartender: self];   
 
 }
 

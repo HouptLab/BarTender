@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* DailyData.xib */; };
 		200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */; };
+		201437BB2C60F43500AC9C50 /* ExptQRCodePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 201437BA2C60F43500AC9C50 /* ExptQRCodePoster.m */; };
+		201437BD2C61096500AC9C50 /* ExptQRCodePoster.xib in Resources */ = {isa = PBXBuildFile; fileRef = 201437BC2C61096500AC9C50 /* ExptQRCodePoster.xib */; };
+		201437C02C610AE700AC9C50 /* CreateBitMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 201437BE2C610AE700AC9C50 /* CreateBitMap.m */; };
 		202BDEAE2A59A82000438432 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 202BDEAC2A59A82000438432 /* SettingsController.m */; };
 		202BDEAF2A59A82000438432 /* SettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202BDEAD2A59A82000438432 /* SettingsController.xib */; };
 		2030A62415A61AFB00233EA7 /* BarSummaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030A62315A61AFB00233EA7 /* BarSummaryData.m */; };
@@ -84,6 +87,7 @@
 		20D3A54114DB161C00C57F9A /* BartenderAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54014DB161C00C57F9A /* BartenderAbout.png */; };
 		20D3A54314DB162500C57F9A /* BarTenderWaiter.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54214DB162500C57F9A /* BarTenderWaiter.png */; };
 		20D3A54514DB1AD500C57F9A /* actionPopUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54414DB1AD500C57F9A /* actionPopUp.png */; };
+		20DDF08C2C45CAFE0062426F /* QRCodeMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDF08B2C45CAFE0062426F /* QRCodeMaker.m */; };
 		20DE82EE10025E6E005C772A /* BarDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE82ED10025E6E005C772A /* BarDocument.m */; };
 		20DE830D10026205005C772A /* BarDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DE830C10026205005C772A /* BarDocument.xib */; };
 		20DE84551002E42E005C772A /* BarExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE84541002E42E005C772A /* BarExperiment.m */; };
@@ -106,6 +110,11 @@
 		1DDD58290DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/DailyData.xib; sourceTree = "<group>"; };
 		200A742D16D0458D00C50838 /* DailyDataMeansHtmlFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDataMeansHtmlFormatter.h; sourceTree = "<group>"; };
 		200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataMeansHtmlFormatter.m; sourceTree = "<group>"; };
+		201437B92C60F43500AC9C50 /* ExptQRCodePoster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExptQRCodePoster.h; sourceTree = "<group>"; };
+		201437BA2C60F43500AC9C50 /* ExptQRCodePoster.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExptQRCodePoster.m; sourceTree = "<group>"; };
+		201437BC2C61096500AC9C50 /* ExptQRCodePoster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExptQRCodePoster.xib; sourceTree = "<group>"; };
+		201437BE2C610AE700AC9C50 /* CreateBitMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBitMap.m; sourceTree = "<group>"; };
+		201437BF2C610AE700AC9C50 /* CreateBitMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBitMap.h; sourceTree = "<group>"; };
 		202BDEAB2A59A81F00438432 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
 		202BDEAC2A59A82000438432 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
 		202BDEAD2A59A82000438432 /* SettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsController.xib; sourceTree = "<group>"; };
@@ -207,6 +216,8 @@
 		20D3A54014DB161C00C57F9A /* BartenderAbout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BartenderAbout.png; path = Graphics/BartenderAbout.png; sourceTree = "<group>"; };
 		20D3A54214DB162500C57F9A /* BarTenderWaiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BarTenderWaiter.png; path = Graphics/BarTenderWaiter.png; sourceTree = "<group>"; };
 		20D3A54414DB1AD500C57F9A /* actionPopUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = actionPopUp.png; path = Graphics/actionPopUp.png; sourceTree = "<group>"; };
+		20DDF08A2C45CAFE0062426F /* QRCodeMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeMaker.h; sourceTree = "<group>"; };
+		20DDF08B2C45CAFE0062426F /* QRCodeMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeMaker.m; sourceTree = "<group>"; };
 		20DE82EC10025E6E005C772A /* BarDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarDocument.h; sourceTree = "<group>"; };
 		20DE82ED10025E6E005C772A /* BarDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarDocument.m; sourceTree = "<group>"; };
 		20DE830C10026205005C772A /* BarDocument.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarDocument.xib; sourceTree = "<group>"; };
@@ -228,7 +239,6 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* Bartender_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bartender_Prefix.pch; sourceTree = "<group>"; };
-		3F98FC6D2AB0A9F100B0F698 /* Bartender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bartender.entitlements; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* Bartender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bartender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -295,6 +305,10 @@
 				203BFB4F192E8AF1001B770B /* BCTableHtmlFormatter.m */,
 				203BFB50192E8AF1001B770B /* BCTableWebView.h */,
 				203BFB51192E8AF1001B770B /* BCTableWebView.m */,
+				201437BF2C610AE700AC9C50 /* CreateBitMap.h */,
+				201437BE2C610AE700AC9C50 /* CreateBitMap.m */,
+				20DDF08A2C45CAFE0062426F /* QRCodeMaker.h */,
+				20DDF08B2C45CAFE0062426F /* QRCodeMaker.m */,
 				203BFB54192E8AF1001B770B /* Color Icons */,
 				203BFB8B192E8AF1001B770B /* Markdown-BuildRule.sh */,
 				203BFB8E192E8AF1001B770B /* Serial */,
@@ -378,7 +392,6 @@
 		2A37F4AAFDCFA73011CA2CEA /* Bartender */ = {
 			isa = PBXGroup;
 			children = (
-				3F98FC6D2AB0A9F100B0F698 /* Bartender.entitlements */,
 				203BFB2D192E8AF1001B770B /* BC Utilities */,
 				206461750FF4021F00349949 /* Balance */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
@@ -441,6 +454,9 @@
 				2096DE9216113CF100FFC0D2 /* BarDirectories.h */,
 				2096DE9316113CF100FFC0D2 /* BarDirectories.m */,
 				202BDEB02A59AE5300438432 /* Bartender_Constants.h */,
+				201437B92C60F43500AC9C50 /* ExptQRCodePoster.h */,
+				201437BC2C61096500AC9C50 /* ExptQRCodePoster.xib */,
+				201437BA2C60F43500AC9C50 /* ExptQRCodePoster.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -514,6 +530,7 @@
 				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					8D15AC270486D014006FF6A4 = {
+						DevelopmentTeam = F67L2YUZ54;
 						LastSwiftMigration = 1420;
 						ProvisioningStyle = Automatic;
 					};
@@ -575,6 +592,7 @@
 				203BFBB6192E8AF1001B770B /* lightgray.png in Resources */,
 				20E0D15C105C1F36007698BD /* Experiments.png in Resources */,
 				203BFBB4192E8AF1001B770B /* gray.png in Resources */,
+				201437BD2C61096500AC9C50 /* ExptQRCodePoster.xib in Resources */,
 				203BFBD8192E8AF1001B770B /* Serial Notes.rtf in Resources */,
 				20D3A54114DB161C00C57F9A /* BartenderAbout.png in Resources */,
 				20D3A54314DB162500C57F9A /* BarTenderWaiter.png in Resources */,
@@ -650,18 +668,21 @@
 				207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */,
 				203BFBA7192E8AF1001B770B /* BCProgressDialog.m in Sources */,
 				2092D64215E2BC3900572E35 /* BarBalance.m in Sources */,
+				20DDF08C2C45CAFE0062426F /* QRCodeMaker.m in Sources */,
 				208F8AA715F015FF009210FB /* BartenderAppDelegate.m in Sources */,
 				203BFBAC192E8AF1001B770B /* BCTableWebView.m in Sources */,
 				209095E22361065B00B9A94D /* FirebaseSummary.m in Sources */,
 				2096DE9416113CF100FFC0D2 /* BarDirectories.m in Sources */,
 				205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */,
 				203BFB9B192E8AF1001B770B /* BCAlert.m in Sources */,
+				201437C02C610AE700AC9C50 /* CreateBitMap.m in Sources */,
 				208787DB16C209FB004998D1 /* FadeOutText.m in Sources */,
 				208787E016C20F0A004998D1 /* BCBarcodeLabelsWebView.m in Sources */,
 				203BFBD7192E8AF1001B770B /* BCSerial.c in Sources */,
 				209D1E0D23F22AE70085E516 /* BCMergeDictionary.m in Sources */,
 				20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */,
 				200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */,
+				201437BB2C60F43500AC9C50 /* ExptQRCodePoster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,14 +738,13 @@
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Bartender.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1.6;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F67L2YUZ54;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -776,15 +796,14 @@
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Bartender.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1.6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F67L2YUZ54;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bartender_Prefix.pch;

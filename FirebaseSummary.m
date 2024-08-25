@@ -9,6 +9,8 @@
 #import "DailyData.h"
 #import "Bartender_Constants.h"
 
+// #import "Firebase.h"
+
 
 @implementation FirebaseSummary
 
@@ -36,14 +38,45 @@
 }
 - (BOOL) saveExpt:(NSString *)exptCode withData:(NSData *)exptJSONData; {
 
+
+/*[[FIRAuth auth] signInWithEmail:self->_emailField.text
+                       password:self->_passwordField.text
+                     completion:^(FIRAuthDataResult * _Nullable authResult,
+                                  NSError * _Nullable error) {
+  // ...
+}];
+*/
+
+
 //    NSLog(@"json: %@",exptDataJSON);
 
     // curl -X PUT -d "{\"name\":{\"last\": \"sparrow\"}}" https://samplechat.firebaseio-demo.com/users/jack.json
 
     NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
     
+    // https://firebase.google.com/docs/auth/ios/password-auth#objective-c_3
+    
+    
     // TODO: alert if firebaseURL is nil
     
+    // TODO: curl in with apikey, email and password from NSUserDefaults
+    // TODO: apikey in usrdefaults
+    // TODO: email in userdefaults
+    // TODO: password in userdefaults
+    // TODO: store password in more secure way, like in keychain
+    /*
+    https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
+    
+    curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]' \
+-H 'Content-Type: application/json' \
+--data-binary '{"email":"[user@example.com]","password":"[PASSWORD]","returnSecureToken":true}'
+    
+    */
+    
+/*
+curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="[AIzaSyD9YA8WzP9dDielksLXMeZNRWh3hi88Pf0]"' -H 'Content-Type: application/json' --data-binary '{"email":"[houpt@bio.fsu.edu]","password":"[thx1138]","returnSecureToken":true}'
+    
+*/
     NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
     
     [firebaseExptURLString appendString: exptCode];

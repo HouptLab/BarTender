@@ -9,6 +9,14 @@
 #import "BartenderAppDelegate.h"
 #import "SettingsController.h"
 #import "Bartender_Constants.h"
+#import "ExptQRCodePoster.h"
+#import "BarDocument.h"
+#import "BarExperiment.h"
+#import "BCAlert.h"
+
+// #import "Firebase.h"
+//#import "FirebaseCore.h"
+// #import "FirebaseAuth.h"
 
 @implementation BartenderAppDelegate
 
@@ -48,7 +56,13 @@ kBartenderBartabURLKey : kBartenderDefaultBartabURLString };
 	//(NSInvocation *)invocation // set this to [aboutWindow OrderOut:nil];
 	
 	[NSTimer scheduledTimerWithTimeInterval:displayTime  target:self selector:@selector(hideAboutBox:) userInfo:NULL repeats:NO];
-		
+ 
+
+		// initialize Firebase
+  
+  // Use Firebase library to configure APIs
+// [FIRApp configure];
+      
 }
 
 -(void)setSerialPortLabel; {
@@ -119,6 +133,42 @@ kBartenderBartabURLKey : kBartenderDefaultBartabURLString };
     // TODO: ask the bardocument to reset the serial port
     }
       
+}
+
+-(IBAction)qrExptPoster:(id)sender; {
+
+    if (nil == _bartender) { return; }
+    
+    BarExperiment *expt = [_bartender selectedExpt];
+    
+    if (nil == expt) {  
+            BCOneButtonAlert(NSInformationalAlertStyle,@"Edit Expt", @"Select an Experiment",@"OK");
+            return;
+    }
+    
+    if (nil == _poster) {
+       _poster = [[ExptQRCodePoster alloc] init]; 
+       
+    }
+   [_poster setTitle: [NSString stringWithFormat:@"%@: %@", [expt code], [expt name]]];
+     [_poster setWikiUrl: [expt wiki]];
+      NSString *bartabUrl = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
+
+    NSString * exptGraphUrl = [NSString stringWithFormat:@"%@/expt/?id=%@",bartabUrl,[expt code] ];
+
+    [_poster setGraphUrl:exptGraphUrl];
+    
+    [_poster setInvest:[expt investigators]];
+    
+     [_poster setProtocol:[expt protocol]];
+     
+     [[_poster posterView] setNeedsDisplay:YES];
+
+    
+   	[_poster makeWindowControllers];
+	
+	[_poster showWindows];
+    
 }
 
 @end
