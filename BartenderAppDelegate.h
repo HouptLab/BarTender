@@ -7,7 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ExptQRCodePoster.h"
 
+@class BarDocument;
 
 @interface BartenderAppDelegate : NSObject <NSApplicationDelegate> {
 	
@@ -31,5 +33,11 @@
 //- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender;
 
 -(IBAction)enterSerialDeviceName:(id)sender;
+
+-(IBAction)qrExptPoster:(id)sender;
+
+@property ExptQRCodePoster *poster;
+
+@property BarDocument *bartender;
 
 @end
