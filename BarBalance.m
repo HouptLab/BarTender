@@ -231,7 +231,7 @@
                 information = deviceString;
             }
             
-                BCOneButtonAlert(NSWarningAlertStyle, @"Serial Port not opened.", information, @"OK");
+                BCOneButtonAlert(NSAlertStyleWarning, @"Serial Port not opened.", information, @"OK");
                 
                 // erase the serialport name because it didn't work
                 [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];

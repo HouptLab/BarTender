@@ -441,8 +441,8 @@
 	
 	NSString *dateString, *hourString;
 	
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	NSDateComponents *mdyComponents = [gregorian components:(NSMinuteCalendarUnit | NSHourCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSYearCalendarUnit ) fromDate:myDate];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *mdyComponents = [gregorian components:(NSCalendarUnitMinute | NSCalendarUnitHour | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear ) fromDate:myDate];
 	NSInteger day = [mdyComponents day];
 	NSInteger month = [mdyComponents month];
 	NSInteger year = [mdyComponents year];

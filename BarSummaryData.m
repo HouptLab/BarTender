@@ -155,7 +155,7 @@
 		
 		NSString *alertMessage = [NSString stringWithFormat:@"There was an error saving the summary data file at %@",myFilePath];
 				
-		BCOneButtonAlert(NSWarningAlertStyle,alertMessage, [error localizedDescription], @"OK");
+		BCOneButtonAlert(NSAlertStyleWarning,alertMessage, [error localizedDescription], @"OK");
 
 		
 	}

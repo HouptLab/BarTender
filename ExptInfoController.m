@@ -127,7 +127,7 @@
 	/* display the NSSavePanel */
 	result = [savePanel runModal];
 	
-	if (result == NSOKButton) {
+    if (result == NSModalResponseOK) {
 	
 		NSString *myFilePath = [[savePanel filename] copy];
 			
@@ -179,7 +179,7 @@
 	
 	result = [openPanel runModal];
 			  
-	if (result == NSOKButton) {
+    if (result == NSModalResponseOK) {
 		
 		// load & apply the template experiment to current experiment
 		
