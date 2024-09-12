@@ -8,81 +8,265 @@
 #import "FirebaseSummary.h"
 #import "DailyData.h"
 #import "Bartender_Constants.h"
+#import "Firebase.h"
+@import FirebaseAuth;
+@import FirebaseCore;
 
-// #import "Firebase.h"
+/*
+codesigning crash:
 
+https://forums.developer.apple.com/forums/thread/739421
+
+https://stackoverflow.com/questions/74419883/firebase-does-not-support-mac-os
+https://stackoverflow.com/questions/54244720/issue-with-entitlements-in-ios-when-using-firebase
+ 
+ 
+ https://stackoverflow.com/questions/63044652/how-do-i-get-a-flutter-project-running-on-macos-to-successfully-use-firestore
+ */
 
 @implementation FirebaseSummary
 
-- (NSData *)getExpt:(NSString *)exptCode; {
+/*
+// add Keychain Sharing entitlement, because auth gets stored in keychain 
+// https://stackoverflow.com/questions/38456471/secitemadd-always-returns-error-34018-in-xcode-8-in-ios-10-simulator/38543243#38543243
 
+
+[[FIRAuth auth] signInWithEmail:firebaseEmail
+                       password:firebasePassword
+                     completion:^(FIRAuthDataResult * _Nullable authResult,
+                                  NSError * _Nullable signinerror) {
+    
+    
+    if (signinerror) {
+        NSLog([signinerror description]);
+        return;
+    }
+    
+    FIRUser *currentUser = [FIRAuth auth].currentUser;
+    [currentUser getIDTokenForcingRefresh:YES
+                               completion:^(NSString *_Nullable idToken,
+                                            NSError *_Nullable tokenerror) {
+        if (tokenerror) {
+            // Handle error
+            NSLog([tokenerror description]);
+            return;
+        }
+  
+        
+        NSError *_Nullable dataerror;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:@{@"test2": @"testdata2" }
+                                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                             error:&dataerror];
+        
+        
+        NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
+        
+        // TODO: alert if firebaseURL is nil
+        
+        
+        
+        NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
+        [firebaseExptURLString appendString: @"XXX"];
+        [firebaseExptURLString appendString: @".json"];
+        [firebaseExptURLString appendString: @"?auth="];
+        [firebaseExptURLString appendString: idToken];
+        
+        NSURL *url = [NSURL URLWithString:firebaseExptURLString];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"PATCH"];
+        [request setHTTPBody:jsonData];
+        
+        NSData *responseData = [NSURLConnection  sendSynchronousRequest:request returningResponse:NULL error:NULL];
+        NSString *response = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", response);
+        
+        
+        NSError *signOutError;
+        BOOL status = [[FIRAuth auth] signOut:&signOutError];
+        if (!status) {
+            NSLog(@"Error signing out: %@", signOutError);
+            return;
+        }
+        
+        // POST NOTIFICATION THAT OPERATION WAS COMPLETED
+        
+    }]; // get id Token
+    
+}]; // sign in to firebase
+
+*/
+
+/***************************************************************************************************/
+/**
+
+given an exptCode
+get firebaseURL, email, and password from user defaults
+login to firebase and get IDToken
+read the <firebaseURL>/expt/<exptCode> data using curl, authenticating with the IDToken
+sign out of firebase
+
+return the expt JSON as NSData
+
+*/
+
+- (NSData *)getExpt:(NSString *)exptCode; {
+    
     NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
     
-    // TODO: alert if firebaseURL is nil
+    if (nil == firebaseURL) {
+        
+        // TODO: alert if firebaseURL is nil
+        
+    }
     
+    NSString *firebaseEmail = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseEmailKey];
+    
+    if (nil == firebaseEmail) {
+        
+        // TODO: alert if firebaseEmail is nil
+        
+    }
+    
+    // TODO: store password in more secure way, eg. in keychain?
+    
+    NSString *firebasePassword = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebasePasswordKey];
+    
+    if (nil == firebasePassword) {
+        
+        // TODO: alert if firebasePassword is nil
+        
+    }
+    
+    // construct path down to expt data
     NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
     [firebaseExptURLString appendString: exptCode];
     [firebaseExptURLString appendString: @".json"];
     
     
-    NSURL *url = [NSURL URLWithString:firebaseExptURLString];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    // add Keychain Sharing entitlement, because auth gets stored in keychain 
+    // https://stackoverflow.com/questions/38456471/secitemadd-always-returns-error-34018-in-xcode-8-in-ios-10-simulator/38543243#38543243
     
-    NSData *responseData = [NSURLConnection  sendSynchronousRequest:request returningResponse:NULL error:NULL];
-   //  NSString *expDataJSON = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-  //  NSLog(@"%@", expDataJSON);
+    [[FIRAuth auth] signInWithEmail:firebaseEmail
+                           password:firebasePassword
+                         completion:^(FIRAuthDataResult * _Nullable authResult,
+                                      NSError * _Nullable signinerror) {
+        
+        
+        if (signinerror) {
+            NSLog(@"SignIn error:%@",[signinerror description]);
+            return;
+        }
+        
+        FIRUser *currentUser = [FIRAuth auth].currentUser;
+        [currentUser getIDTokenForcingRefresh:YES
+                                   completion:^(NSString *_Nullable idToken,
+                                                NSError *_Nullable tokenerror) {
+            if (tokenerror) {
+                // Handle error
+                NSLog(@"Get idToken error:%@",[tokenerror description]);
+                return;
+            }
+            
+            
+            // append the idToken to the firebase url
+            [firebaseExptURLString appendString: @"?auth="];
+            [firebaseExptURLString appendString: idToken];
+            
+            // set up the url request for curl
+            NSURL *url = [NSURL URLWithString:firebaseExptURLString];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+            
+            NSData *responseData = [NSURLConnection  sendSynchronousRequest:request returningResponse:NULL error:NULL];
+            
+            NSError *signOutError;
+            BOOL status = [[FIRAuth auth] signOut:&signOutError];
+            if (!status) {
+                NSLog(@"Error signing out: %@", signOutError);
+                return;
+            }
+            
+            // TODO: POST NOTIFICATION THAT responseData WAS received (or will be nil if problem?)
+            
+            // return responseData;
+            
+        }]; // getIDTokenForcingRefresh
+    }]; // firebase signin
     
-    return responseData;
-
+    return nil;
     
 }
+/***************************************************************************************************/
+/**
+
+given an exptCode and the expt data in json (ALL of the data, for all days)
+get firebaseURL, email, and password from user defaults
+login to firebase and get IDToken
+patch the <firebaseURL>/expt/<exptCode> data using curl, authenticating with the IDToken
+sign out of firebase
+
+*/
 - (BOOL) saveExpt:(NSString *)exptCode withData:(NSData *)exptJSONData; {
 
 
-/*[[FIRAuth auth] signInWithEmail:self->_emailField.text
-                       password:self->_passwordField.text
-                     completion:^(FIRAuthDataResult * _Nullable authResult,
-                                  NSError * _Nullable error) {
-  // ...
-}];
-*/
-
-
-//    NSLog(@"json: %@",exptDataJSON);
-
-    // curl -X PUT -d "{\"name\":{\"last\": \"sparrow\"}}" https://samplechat.firebaseio-demo.com/users/jack.json
-
-    NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
+        
+  NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
     
-    // https://firebase.google.com/docs/auth/ios/password-auth#objective-c_3
+    if (nil == firebaseURL) {
+        
+        // TODO: alert if firebaseURL is nil
+        
+    }
     
+    NSString *firebaseEmail = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseEmailKey];
     
-    // TODO: alert if firebaseURL is nil
+    if (nil == firebaseEmail) {
+        
+        // TODO: alert if firebaseEmail is nil
+        
+    }
     
-    // TODO: curl in with apikey, email and password from NSUserDefaults
-    // TODO: apikey in usrdefaults
-    // TODO: email in userdefaults
-    // TODO: password in userdefaults
-    // TODO: store password in more secure way, like in keychain
-    /*
-    https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
+    // TODO: store password in more secure way, eg. in keychain?
     
-    curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]' \
--H 'Content-Type: application/json' \
---data-binary '{"email":"[user@example.com]","password":"[PASSWORD]","returnSecureToken":true}'
+    NSString *firebasePassword = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebasePasswordKey];
     
-    */
+    if (nil == firebasePassword) {
+        
+        // TODO: alert if firebasePassword is nil
+        
+    }
     
-/*
-curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="[AIzaSyD9YA8WzP9dDielksLXMeZNRWh3hi88Pf0]"' -H 'Content-Type: application/json' --data-binary '{"email":"[houpt@bio.fsu.edu]","password":"[thx1138]","returnSecureToken":true}'
-    
-*/
+    // construct path down to expt data
     NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
-    
     [firebaseExptURLString appendString: exptCode];
     [firebaseExptURLString appendString: @".json"];
+   
 
-    // NSData *postData = [exptDataJSON dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+  [[FIRAuth auth] signInWithEmail:firebaseEmail
+                           password:firebasePassword
+                         completion:^(FIRAuthDataResult * _Nullable authResult,
+                                      NSError * _Nullable signinerror) {
+        
+        
+        if (signinerror) {
+            NSLog(@"SignIn error:%@",[signinerror description]);
+            return;
+        }
+        
+        FIRUser *currentUser = [FIRAuth auth].currentUser;
+        [currentUser getIDTokenForcingRefresh:YES
+                                   completion:^(NSString *_Nullable idToken,
+                                                NSError *_Nullable tokenerror) {
+            if (tokenerror) {
+                // Handle error
+                NSLog(@"Get idToken error:%@",[tokenerror description]);
+                return;
+            }
+            
+            
+            // append the idToken to the firebase url
+            [firebaseExptURLString appendString: @"?auth="];
+            [firebaseExptURLString appendString: idToken];
+            
 
     NSURL *url = [NSURL URLWithString:firebaseExptURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -93,21 +277,83 @@ curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=
     NSString *response = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
    //  NSLog(@"%@", response);
 
-    return YES;
 
+            NSError *signOutError;
+            BOOL status = [[FIRAuth auth] signOut:&signOutError];
+            if (!status) {
+                NSLog(@"Error signing out: %@", signOutError);
+                return;
+            }
+            
+            // TODO: POST NOTIFICATION THAT responseData WAS received (or will be nil if problem?)
+            
+            // return responseData;
+            
+        }]; // getIDTokenForcingRefresh
+    }]; // firebase signin
+    
+    return YES;
 }
 
 -(BOOL) setArchive:(NSString *)exptCode; {
-
-    NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
+        
+  NSString *firebaseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
     
-    // TODO: alert if firebaseURL is nil
+    if (nil == firebaseURL) {
+        
+        // TODO: alert if firebaseURL is nil
+        
+    }
     
+    NSString *firebaseEmail = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseEmailKey];
+    
+    if (nil == firebaseEmail) {
+        
+        // TODO: alert if firebaseEmail is nil
+        
+    }
+    
+    // TODO: store password in more secure way, eg. in keychain?
+    
+    NSString *firebasePassword = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebasePasswordKey];
+    
+    if (nil == firebasePassword) {
+        
+        // TODO: alert if firebasePassword is nil
+        
+    }
+    
+    // construct path down to expt data
     NSMutableString *firebaseExptURLString = [NSMutableString stringWithString:firebaseURL ];
-
-
     [firebaseExptURLString appendString: exptCode];
     [firebaseExptURLString appendString: @"/archived.json"];
+
+  [[FIRAuth auth] signInWithEmail:firebaseEmail
+                           password:firebasePassword
+                         completion:^(FIRAuthDataResult * _Nullable authResult,
+                                      NSError * _Nullable signinerror) {
+        
+        
+        if (signinerror) {
+            NSLog(@"SignIn error:%@",[signinerror description]);
+            return;
+        }
+        
+        FIRUser *currentUser = [FIRAuth auth].currentUser;
+        [currentUser getIDTokenForcingRefresh:YES
+                                   completion:^(NSString *_Nullable idToken,
+                                                NSError *_Nullable tokenerror) {
+            if (tokenerror) {
+                // Handle error
+                NSLog(@"Get idToken error:%@",[tokenerror description]);
+                return;
+            }
+            
+            
+            // append the idToken to the firebase url
+    
+    [firebaseExptURLString appendString: @"?auth="];
+            [firebaseExptURLString appendString: idToken];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
@@ -130,8 +376,25 @@ curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=
     NSData *responseData = [NSURLConnection  sendSynchronousRequest:request returningResponse:NULL error:NULL];
     NSString *response = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
    //  NSLog(@"%@", response);
+   
+    NSError *signOutError;
+            BOOL status = [[FIRAuth auth] signOut:&signOutError];
+            if (!status) {
+                NSLog(@"Error signing out: %@", signOutError);
+                return;
+            }
+            
+            // TODO: POST NOTIFICATION THAT responseData WAS received (or will be nil if problem?)
 
-    return YES;                                                        
+   
+   
+   
+}]; // get token id
+
+}]; // sign in to firebase
+
+    return YES;
+
 }
 
 

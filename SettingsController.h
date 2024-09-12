@@ -24,6 +24,12 @@
 @property IBOutlet NSTextField *bartabField;
 @property (copy) NSString *bartab;
 
+@property IBOutlet NSTextField *firebaseEmailField;
+@property (copy) NSString *firebaseEmail;
+
+@property IBOutlet NSTextField *firebasePasswordField;
+@property (copy) NSString *firebasePassword;
+
 -(id)initWithNameArray:(NSArray *)names;
 -(NSArray *)dialogForWindow:(NSWindow *)ownerWindow; 
 -(IBAction)cancelButtonPressed:(id)sender;

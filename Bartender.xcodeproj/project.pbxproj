@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,8 +62,6 @@
 		206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */; };
 		206C752F278CAFBE00EACDF8 /* Set-CFBundleVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */; };
 		206C977A295A24EA00FB0678 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 206C9779295A24EA00FB0678 /* GoogleService-Info.plist */; };
-		206C977C295A5E8E00FB0678 /* FirebaseDatabase in Resources */ = {isa = PBXBuildFile; fileRef = 206C977B295A5E8E00FB0678 /* FirebaseDatabase */; };
-		206C977E295A5E9700FB0678 /* FirebaseAnalytics in Resources */ = {isa = PBXBuildFile; fileRef = 206C977D295A5E9700FB0678 /* FirebaseAnalytics */; };
 		207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207458E015B4FE37008312B4 /* BCDailyDataWebView.m */; };
 		207AA6251610C8C1002FACB5 /* duplicate icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 207AA6241610C8C1002FACB5 /* duplicate icon.png */; };
 		208787DB16C209FB004998D1 /* FadeOutText.m in Sources */ = {isa = PBXBuildFile; fileRef = 208787DA16C209FB004998D1 /* FadeOutText.m */; };
@@ -83,10 +81,37 @@
 		20A5D37A1009408C00C00E6C /* BarPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D3791009408C00C00E6C /* BarPhase.m */; };
 		20A5D380100940CC00C00E6C /* BarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A5D37F100940CC00C00E6C /* BarGroup.m */; };
 		20B470AE15AC832E00BB7A8E /* DailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B470AD15AC832E00BB7A8E /* DailyData.m */; };
-		20CEC10C0FFA5B33005816D9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CEC10B0FFA5B33005816D9 /* IOKit.framework */; };
+		20B6A5522C7E3D3F00CFE58A /* FirebaseAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A54E2C7E3D0900CFE58A /* FirebaseAuth.xcframework */; };
+		20B6A5532C7E3D3F00CFE58A /* FirebaseAuth.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A54E2C7E3D0900CFE58A /* FirebaseAuth.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A5552C7E3D4100CFE58A /* FirebaseDatabase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5502C7E3D1B00CFE58A /* FirebaseDatabase.xcframework */; };
+		20B6A5562C7E3D4100CFE58A /* FirebaseDatabase.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5502C7E3D1B00CFE58A /* FirebaseDatabase.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A55A2C7E3E4500CFE58A /* FirebaseAuthInterop.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5582C7E3E3900CFE58A /* FirebaseAuthInterop.xcframework */; };
+		20B6A55B2C7E3E4500CFE58A /* FirebaseAuthInterop.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5582C7E3E3900CFE58A /* FirebaseAuthInterop.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A55E2C7E3E7300CFE58A /* FirebaseCoreExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A55C2C7E3E6E00CFE58A /* FirebaseCoreExtension.xcframework */; };
+		20B6A55F2C7E3E7300CFE58A /* FirebaseCoreExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A55C2C7E3E6E00CFE58A /* FirebaseCoreExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A5622C7E3EB700CFE58A /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5602C7E3EB300CFE58A /* FirebaseCore.xcframework */; };
+		20B6A5632C7E3EB700CFE58A /* FirebaseCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5602C7E3EB300CFE58A /* FirebaseCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A5652C7E3F2300CFE58A /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6A5642C7E3F2300CFE58A /* dummy.swift */; };
+		20B6A56A2C7E409000CFE58A /* GTMSessionFetcher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5682C7E408900CFE58A /* GTMSessionFetcher.xcframework */; };
+		20B6A56B2C7E409000CFE58A /* GTMSessionFetcher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5682C7E408900CFE58A /* GTMSessionFetcher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A56C2C7E409200CFE58A /* FirebaseSharedSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5662C7E404C00CFE58A /* FirebaseSharedSwift.xcframework */; };
+		20B6A56D2C7E409200CFE58A /* FirebaseSharedSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5662C7E404C00CFE58A /* FirebaseSharedSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A5742C7E40D500CFE58A /* FirebaseMessagingInterop.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5702C7E40C100CFE58A /* FirebaseMessagingInterop.xcframework */; };
+		20B6A5752C7E40D600CFE58A /* FirebaseMessagingInterop.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5702C7E40C100CFE58A /* FirebaseMessagingInterop.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A5762C7E40D800CFE58A /* FirebaseFunctions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A56E2C7E40B700CFE58A /* FirebaseFunctions.xcframework */; };
+		20B6A5772C7E40D800CFE58A /* FirebaseFunctions.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A56E2C7E40B700CFE58A /* FirebaseFunctions.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A57A2C7E411400CFE58A /* FirebaseCoreInternal.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5782C7E411000CFE58A /* FirebaseCoreInternal.xcframework */; };
+		20B6A57B2C7E411400CFE58A /* FirebaseCoreInternal.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5782C7E411000CFE58A /* FirebaseCoreInternal.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A5802C7E417100CFE58A /* leveldb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5722C7E40D300CFE58A /* leveldb.xcframework */; };
+		20B6A5812C7E417100CFE58A /* leveldb.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5722C7E40D300CFE58A /* leveldb.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20B6A5862C7E433800CFE58A /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5842C7E432100CFE58A /* GoogleUtilities.xcframework */; };
+		20B6A5872C7E433800CFE58A /* GoogleUtilities.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A5842C7E432100CFE58A /* GoogleUtilities.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20D3A54114DB161C00C57F9A /* BartenderAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54014DB161C00C57F9A /* BartenderAbout.png */; };
 		20D3A54314DB162500C57F9A /* BarTenderWaiter.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54214DB162500C57F9A /* BarTenderWaiter.png */; };
 		20D3A54514DB1AD500C57F9A /* actionPopUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D3A54414DB1AD500C57F9A /* actionPopUp.png */; };
+		20DA50462C8DFAA7002F00DA /* FirebaseAppCheckInterop.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A57E2C7E416000CFE58A /* FirebaseAppCheckInterop.xcframework */; };
+		20DA50472C8DFAA7002F00DA /* FirebaseAppCheckInterop.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A57E2C7E416000CFE58A /* FirebaseAppCheckInterop.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20DA50482C8DFAAB002F00DA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CEC10B0FFA5B33005816D9 /* IOKit.framework */; };
 		20DDF08C2C45CAFE0062426F /* QRCodeMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDF08B2C45CAFE0062426F /* QRCodeMaker.m */; };
 		20DE82EE10025E6E005C772A /* BarDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DE82ED10025E6E005C772A /* BarDocument.m */; };
 		20DE830D10026205005C772A /* BarDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DE830C10026205005C772A /* BarDocument.xib */; };
@@ -102,6 +127,32 @@
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		20B6A5542C7E3D3F00CFE58A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				20B6A55B2C7E3E4500CFE58A /* FirebaseAuthInterop.xcframework in Embed Frameworks */,
+				20B6A56D2C7E409200CFE58A /* FirebaseSharedSwift.xcframework in Embed Frameworks */,
+				20B6A55F2C7E3E7300CFE58A /* FirebaseCoreExtension.xcframework in Embed Frameworks */,
+				20B6A5772C7E40D800CFE58A /* FirebaseFunctions.xcframework in Embed Frameworks */,
+				20B6A5752C7E40D600CFE58A /* FirebaseMessagingInterop.xcframework in Embed Frameworks */,
+				20B6A5632C7E3EB700CFE58A /* FirebaseCore.xcframework in Embed Frameworks */,
+				20B6A57B2C7E411400CFE58A /* FirebaseCoreInternal.xcframework in Embed Frameworks */,
+				20DA50472C8DFAA7002F00DA /* FirebaseAppCheckInterop.xcframework in Embed Frameworks */,
+				20B6A5532C7E3D3F00CFE58A /* FirebaseAuth.xcframework in Embed Frameworks */,
+				20B6A5562C7E3D4100CFE58A /* FirebaseDatabase.xcframework in Embed Frameworks */,
+				20B6A5812C7E417100CFE58A /* leveldb.xcframework in Embed Frameworks */,
+				20B6A56B2C7E409000CFE58A /* GTMSessionFetcher.xcframework in Embed Frameworks */,
+				20B6A5872C7E433800CFE58A /* GoogleUtilities.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -177,10 +228,6 @@
 		206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = BartenderIcons.icns; path = Graphics/BartenderIcons.icns; sourceTree = "<group>"; };
 		206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Set-CFBundleVersion.sh"; sourceTree = "<group>"; };
 		206C9779295A24EA00FB0678 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		206C977B295A5E8E00FB0678 /* FirebaseDatabase */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FirebaseDatabase; path = Firebase/FirebaseDatabase; sourceTree = "<group>"; };
-		206C977D295A5E9700FB0678 /* FirebaseAnalytics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FirebaseAnalytics; path = Firebase/FirebaseAnalytics; sourceTree = "<group>"; };
-		206C977F295A5F9E00FB0678 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Firebase/Firebase.h; sourceTree = "<group>"; };
-		206C9780295A5FBA00FB0678 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = Firebase/module.modulemap; sourceTree = "<group>"; };
 		207458DF15B4FE37008312B4 /* BCDailyDataWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCDailyDataWebView.h; sourceTree = "<group>"; };
 		207458E015B4FE37008312B4 /* BCDailyDataWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCDailyDataWebView.m; sourceTree = "<group>"; };
 		207AA6241610C8C1002FACB5 /* duplicate icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "duplicate icon.png"; path = "Graphics/duplicate icon.png"; sourceTree = "<group>"; };
@@ -211,6 +258,24 @@
 		20A5D37F100940CC00C00E6C /* BarGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGroup.m; sourceTree = "<group>"; };
 		20B470AC15AC832E00BB7A8E /* DailyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyData.h; sourceTree = "<group>"; };
 		20B470AD15AC832E00BB7A8E /* DailyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyData.m; sourceTree = "<group>"; };
+		20B6A54D2C7E3CF000CFE58A /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Firebase/Firebase.h; sourceTree = "<group>"; };
+		20B6A54E2C7E3D0900CFE58A /* FirebaseAuth.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseAuth.xcframework; path = Firebase/FirebaseAuth/FirebaseAuth.xcframework; sourceTree = "<group>"; };
+		20B6A5502C7E3D1B00CFE58A /* FirebaseDatabase.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseDatabase.xcframework; path = Firebase/FirebaseDatabase/FirebaseDatabase.xcframework; sourceTree = "<group>"; };
+		20B6A5572C7E3DD600CFE58A /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = Firebase/module.modulemap; sourceTree = "<group>"; };
+		20B6A5582C7E3E3900CFE58A /* FirebaseAuthInterop.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseAuthInterop.xcframework; path = Firebase/FirebaseAuth/FirebaseAuthInterop.xcframework; sourceTree = "<group>"; };
+		20B6A55C2C7E3E6E00CFE58A /* FirebaseCoreExtension.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseCoreExtension.xcframework; path = Firebase/FirebaseAuth/FirebaseCoreExtension.xcframework; sourceTree = "<group>"; };
+		20B6A5602C7E3EB300CFE58A /* FirebaseCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseCore.xcframework; path = Firebase/FirebaseAnalytics/FirebaseCore.xcframework; sourceTree = "<group>"; };
+		20B6A5642C7E3F2300CFE58A /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
+		20B6A5662C7E404C00CFE58A /* FirebaseSharedSwift.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseSharedSwift.xcframework; path = Firebase/FirebaseFunctions/FirebaseSharedSwift.xcframework; sourceTree = "<group>"; };
+		20B6A5682C7E408900CFE58A /* GTMSessionFetcher.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = GTMSessionFetcher.xcframework; path = Firebase/FirebaseFunctions/GTMSessionFetcher.xcframework; sourceTree = "<group>"; };
+		20B6A56E2C7E40B700CFE58A /* FirebaseFunctions.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseFunctions.xcframework; path = Firebase/FirebaseFunctions/FirebaseFunctions.xcframework; sourceTree = "<group>"; };
+		20B6A5702C7E40C100CFE58A /* FirebaseMessagingInterop.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseMessagingInterop.xcframework; path = Firebase/FirebaseFunctions/FirebaseMessagingInterop.xcframework; sourceTree = "<group>"; };
+		20B6A5722C7E40D300CFE58A /* leveldb.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = leveldb.xcframework; path = Firebase/FirebaseDatabase/leveldb.xcframework; sourceTree = "<group>"; };
+		20B6A5782C7E411000CFE58A /* FirebaseCoreInternal.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseCoreInternal.xcframework; path = Firebase/FirebaseAnalytics/FirebaseCoreInternal.xcframework; sourceTree = "<group>"; };
+		20B6A57E2C7E416000CFE58A /* FirebaseAppCheckInterop.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = FirebaseAppCheckInterop.xcframework; path = Firebase/FirebaseFunctions/FirebaseAppCheckInterop.xcframework; sourceTree = "<group>"; };
+		20B6A5842C7E432100CFE58A /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = Firebase/FirebaseAnalytics/GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		20B6A5882C7E4A9900CFE58A /* BartenderRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BartenderRelease.entitlements; sourceTree = "<group>"; };
+		20B6A5892C7E4ABB00CFE58A /* Bartender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bartender.entitlements; sourceTree = "<group>"; };
 		20B70E3B15B63EA700BC4CA7 /* BarBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarBalance.h; sourceTree = "<group>"; };
 		20CEC10B0FFA5B33005816D9 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		20D3A54014DB161C00C57F9A /* BartenderAbout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BartenderAbout.png; path = Graphics/BartenderAbout.png; sourceTree = "<group>"; };
@@ -240,7 +305,7 @@
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* Bartender_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bartender_Prefix.pch; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D15AC370486D014006FF6A4 /* Bartender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bartender.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D15AC370486D014006FF6A4 /* BarTender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarTender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,9 +314,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				208787DD16C20E39004998D1 /* QuartzCore.framework in Frameworks */,
+				20B6A56A2C7E409000CFE58A /* GTMSessionFetcher.xcframework in Frameworks */,
+				20B6A5552C7E3D4100CFE58A /* FirebaseDatabase.xcframework in Frameworks */,
 				20913289164AEC97007EB75E /* WebKit.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
-				20CEC10C0FFA5B33005816D9 /* IOKit.framework in Frameworks */,
+				20B6A5622C7E3EB700CFE58A /* FirebaseCore.xcframework in Frameworks */,
+				20B6A5862C7E433800CFE58A /* GoogleUtilities.xcframework in Frameworks */,
+				20B6A5522C7E3D3F00CFE58A /* FirebaseAuth.xcframework in Frameworks */,
+				20B6A55E2C7E3E7300CFE58A /* FirebaseCoreExtension.xcframework in Frameworks */,
+				20B6A55A2C7E3E4500CFE58A /* FirebaseAuthInterop.xcframework in Frameworks */,
+				20B6A5802C7E417100CFE58A /* leveldb.xcframework in Frameworks */,
+				20B6A5762C7E40D800CFE58A /* FirebaseFunctions.xcframework in Frameworks */,
+				20B6A57A2C7E411400CFE58A /* FirebaseCoreInternal.xcframework in Frameworks */,
+				20DA50482C8DFAAB002F00DA /* IOKit.framework in Frameworks */,
+				20B6A56C2C7E409200CFE58A /* FirebaseSharedSwift.xcframework in Frameworks */,
+				20DA50462C8DFAA7002F00DA /* FirebaseAppCheckInterop.xcframework in Frameworks */,
+				20B6A5742C7E40D500CFE58A /* FirebaseMessagingInterop.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +347,19 @@
 		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				206C977D295A5E9700FB0678 /* FirebaseAnalytics */,
-				206C977B295A5E8E00FB0678 /* FirebaseDatabase */,
+				20B6A57E2C7E416000CFE58A /* FirebaseAppCheckInterop.xcframework */,
+				20B6A5702C7E40C100CFE58A /* FirebaseMessagingInterop.xcframework */,
+				20B6A56E2C7E40B700CFE58A /* FirebaseFunctions.xcframework */,
+				20B6A5682C7E408900CFE58A /* GTMSessionFetcher.xcframework */,
+				20B6A5662C7E404C00CFE58A /* FirebaseSharedSwift.xcframework */,
+				20B6A5582C7E3E3900CFE58A /* FirebaseAuthInterop.xcframework */,
+				20B6A55C2C7E3E6E00CFE58A /* FirebaseCoreExtension.xcframework */,
+				20B6A5502C7E3D1B00CFE58A /* FirebaseDatabase.xcframework */,
+				20B6A5722C7E40D300CFE58A /* leveldb.xcframework */,
+				20B6A54E2C7E3D0900CFE58A /* FirebaseAuth.xcframework */,
+				20B6A5602C7E3EB300CFE58A /* FirebaseCore.xcframework */,
+				20B6A5782C7E411000CFE58A /* FirebaseCoreInternal.xcframework */,
+				20B6A5842C7E432100CFE58A /* GoogleUtilities.xcframework */,
 				208787DC16C20E39004998D1 /* QuartzCore.framework */,
 				20913288164AEC97007EB75E /* WebKit.framework */,
 				20CEC10B0FFA5B33005816D9 /* IOKit.framework */,
@@ -284,7 +373,7 @@
 		19C28FB0FE9D524F11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D15AC370486D014006FF6A4 /* Bartender.app */,
+				8D15AC370486D014006FF6A4 /* BarTender.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -392,6 +481,10 @@
 		2A37F4AAFDCFA73011CA2CEA /* Bartender */ = {
 			isa = PBXGroup;
 			children = (
+				20B6A5892C7E4ABB00CFE58A /* Bartender.entitlements */,
+				20B6A5882C7E4A9900CFE58A /* BartenderRelease.entitlements */,
+				20B6A54D2C7E3CF000CFE58A /* Firebase.h */,
+				20B6A5642C7E3F2300CFE58A /* dummy.swift */,
 				203BFB2D192E8AF1001B770B /* BC Utilities */,
 				206461750FF4021F00349949 /* Balance */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
@@ -424,7 +517,6 @@
 				20DE84F71006B904005C772A /* ExptInfoController.m */,
 				202BDEAB2A59A81F00438432 /* SettingsController.h */,
 				202BDEAC2A59A82000438432 /* SettingsController.m */,
-				202BDEAD2A59A82000438432 /* SettingsController.xib */,
 				20DE82EC10025E6E005C772A /* BarDocument.h */,
 				20DE82ED10025E6E005C772A /* BarDocument.m */,
 				20DE84531002E42E005C772A /* BarExperiment.h */,
@@ -464,7 +556,6 @@
 		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				206C977F295A5F9E00FB0678 /* Firebase.h */,
 				32DBCF750370BD2300C91783 /* Bartender_Prefix.pch */,
 				2A37F4B0FDCFA73011CA2CEA /* main.m */,
 				206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */,
@@ -475,7 +566,8 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				206C9780295A5FBA00FB0678 /* module.modulemap */,
+				20B6A5572C7E3DD600CFE58A /* module.modulemap */,
+				202BDEAD2A59A82000438432 /* SettingsController.xib */,
 				20DE830C10026205005C772A /* BarDocument.xib */,
 				209095DE2361054F00B9A94D /* ExptSummaryDialog.xib */,
 				1DDD58280DA1D0D100B32029 /* DailyData.xib */,
@@ -510,6 +602,7 @@
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				206C7530278CAFE000EACDF8 /* Run Set CFBundleVersion Script */,
+				20B6A5542C7E3D3F00CFE58A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -518,7 +611,7 @@
 			name = Bartender;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Bartender;
-			productReference = 8D15AC370486D014006FF6A4 /* Bartender.app */;
+			productReference = 8D15AC370486D014006FF6A4 /* BarTender.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -531,7 +624,7 @@
 				TargetAttributes = {
 					8D15AC270486D014006FF6A4 = {
 						DevelopmentTeam = F67L2YUZ54;
-						LastSwiftMigration = 1420;
+						LastSwiftMigration = 1540;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -548,6 +641,7 @@
 				en,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Bartender */;
+			productRefGroup = 19C28FB0FE9D524F11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -571,13 +665,11 @@
 				206758EE0FE8349800B1B7B9 /* comment64.png in Resources */,
 				206758EF0FE8349800B1B7B9 /* phase.png in Resources */,
 				206758F00FE8349800B1B7B9 /* save64.png in Resources */,
-				206C977C295A5E8E00FB0678 /* FirebaseDatabase in Resources */,
 				203BFBA8192E8AF1001B770B /* BCProgressDialog.xib in Resources */,
 				206C977A295A24EA00FB0678 /* GoogleService-Info.plist in Resources */,
 				203BFBB7192E8AF1001B770B /* lime.png in Resources */,
 				206758F40FE836F500B1B7B9 /* BarTenderLogo.png in Resources */,
 				206759090FE8423600B1B7B9 /* ExptsToBeWeighedOff.png in Resources */,
-				206C977E295A5E9700FB0678 /* FirebaseAnalytics in Resources */,
 				203BFBD9192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */,
 				203BFBAE192E8AF1001B770B /* aqua.png in Resources */,
 				2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */,
@@ -682,6 +774,7 @@
 				209D1E0D23F22AE70085E516 /* BCMergeDictionary.m in Sources */,
 				20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */,
 				200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */,
+				20B6A5652C7E3F2300CFE58A /* dummy.swift in Sources */,
 				201437BB2C60F43500AC9C50 /* ExptQRCodePoster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,12 +831,12 @@
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Bartender.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.6;
 				DEVELOPMENT_TEAM = F67L2YUZ54;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -769,12 +862,21 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					/usr/lib/swift,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.6;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
-				PRODUCT_NAME = Bartender;
+				PRODUCT_NAME = BarTender;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -796,12 +898,12 @@
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = BartenderRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = F67L2YUZ54;
 				GCC_MODEL_TUNING = G5;
@@ -826,12 +928,22 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = Info.plist;
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = BarTender;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					/usr/lib/swift,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.6;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcybernetics.bartender;
-				PRODUCT_NAME = Bartender;
+				PRODUCT_NAME = BarTender;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -872,9 +984,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = ./;
 			};
 			name = Debug;
 		};
@@ -909,9 +1022,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = ./;
 			};
 			name = Release;
 		};

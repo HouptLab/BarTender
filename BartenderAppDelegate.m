@@ -14,9 +14,9 @@
 #import "BarExperiment.h"
 #import "BCAlert.h"
 
-// #import "Firebase.h"
-//#import "FirebaseCore.h"
-// #import "FirebaseAuth.h"
+#import "Firebase.h"
+@import FirebaseAuth;
+@import FirebaseCore;
 
 @implementation BartenderAppDelegate
 
@@ -25,71 +25,79 @@
 #define ABOUTBOX_SPLASH_DURATION_SECS 2 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
-	
-	
-	// intialize the about box
- NSBundle *main = [NSBundle mainBundle];
- 
- NSDictionary *appDefaults = @{
-kBartenderSerialPortNameKey : kBartenderDefaultSerialPortName ,  // all_graphs
-kBartenderLocalBackupDirectoryKey : [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] ,  // all_graphs
-kBartenderFirebaseDirectoryKey : kBartenderDefaultFirebaseURLString,  // all_graphs
-kBartenderBartabURLKey : kBartenderDefaultBartabURLString };
- 
- [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    // Insert code here to initialize your application 
+    
+    
+    // intialize the about box
+    NSBundle *main = [NSBundle mainBundle];
+    
+    NSDictionary *appDefaults = @{
+        kBartenderSerialPortNameKey : kBartenderDefaultSerialPortName ,  // all_graphs
+        kBartenderLocalBackupDirectoryKey : [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] ,  // all_graphs
+        kBartenderFirebaseDirectoryKey : kBartenderDefaultFirebaseURLString,  // all_graphs
+        kBartenderBartabURLKey : kBartenderDefaultBartabURLString ,
+        kBartenderFirebaseEmailKey:kBartenderDefaultFirebaseEmailString,
+        
+        kBartenderFirebasePasswordKey:kBartenderDefaultFirebasePasswordString
+        // don't set a default password, make sure we have one...
+        // kBartenderFirebasePasswordKey:kBartenderDefaultFirebasePasswordString
+        
+    };
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
     
     [self.versionLabel setStringValue:[NSString stringWithFormat:@"Version %@ (%@)",  [main objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [main objectForInfoDictionaryKey:@"CFBundleVersion"]] ];
-
+    
     [self.copyrightLabel setStringValue: [main objectForInfoDictionaryKey:@"NSHumanReadableCopyright"]];
     
     
-         [self setSerialPortLabel];
-	
-	[aboutWindow center];
-	[aboutWindow makeKeyAndOrderFront:nil];
-	
-	// hide the about window after some interval?
-	//	call [aboutWindow orderOut:nil] to hide the aboutWindow
-	
-	NSTimeInterval displayTime = ABOUTBOX_SPLASH_DURATION_SECS; // display for, e.g., 2 seconds
-	//(NSInvocation *)invocation // set this to [aboutWindow OrderOut:nil];
-	
-	[NSTimer scheduledTimerWithTimeInterval:displayTime  target:self selector:@selector(hideAboutBox:) userInfo:NULL repeats:NO];
- 
-
-		// initialize Firebase
-  
-  // Use Firebase library to configure APIs
-// [FIRApp configure];
-      
+    [self setSerialPortLabel];
+    
+    [aboutWindow center];
+    [aboutWindow makeKeyAndOrderFront:nil];
+    
+    // hide the about window after some interval?
+    //	call [aboutWindow orderOut:nil] to hide the aboutWindow
+    
+    NSTimeInterval displayTime = ABOUTBOX_SPLASH_DURATION_SECS; // display for, e.g., 2 seconds
+    //(NSInvocation *)invocation // set this to [aboutWindow OrderOut:nil];
+    
+    [NSTimer scheduledTimerWithTimeInterval:displayTime  target:self selector:@selector(hideAboutBox:) userInfo:NULL repeats:NO];
+    
+    
+    // initialize Firebase for entire app
+    
+    [FIRApp configure];
+    
+    
+    
 }
 
 -(void)setSerialPortLabel; {
- NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
-     
-     NSString *defaultName = (nil == serialPortName || 0 == [serialPortName length]) ? @"none" : serialPortName;
-     
+    NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
+    
+    NSString *defaultName = (nil == serialPortName || 0 == [serialPortName length]) ? @"none" : serialPortName;
+    
     [self.serialDeviceLabel setStringValue: defaultName];
-	
+    
     
 }
 -(IBAction)showAboutBox:(id)sender; {
-	
-  [self setSerialPortLabel];
-	
-       
-	[aboutWindow center];
-	[aboutWindow makeKeyAndOrderFront:nil];
+    
+    [self setSerialPortLabel];
+    
+    
+    [aboutWindow center];
+    [aboutWindow makeKeyAndOrderFront:nil];
 }
 
 -(void)hideAboutBox:(NSTimer *)aboutTimer; {
-	// hide the about window after some interval?
-	//	call [aboutWindow orderOut:nil] to hide the aboutWindow
-	
-	[aboutWindow orderOut:nil];
-	//	[aboutTimer release];
-	
+    // hide the about window after some interval?
+    //	call [aboutWindow orderOut:nil] to hide the aboutWindow
+    
+    [aboutWindow orderOut:nil];
+    //	[aboutTimer release];
+    
 }
 
 //- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
@@ -101,73 +109,88 @@ kBartenderBartabURLKey : kBartenderDefaultBartabURLString };
 
 
 -(IBAction)enterSerialDeviceName:(id)sender; {
-
+    
     NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
-      NSString *localDataName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
-        NSString *firebaseName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
-             NSString *bartabName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
-
-     
-    NSArray<NSString *> *oldNames = @[serialPortName,localDataName,firebaseName,bartabName];
-        // get name from user
-        SettingsController *newNameDialog =  [[SettingsController alloc] initWithNameArray:oldNames];
-        
-        NSArray<NSString *> *names = [newNameDialog dialogForWindow:[NSApp keyWindow]];
-        
-        NSArray<NSString *> *keys = @[kBartenderSerialPortNameKey,kBartenderLocalBackupDirectoryKey,kBartenderFirebaseDirectoryKey,kBartenderBartabURLKey];
-        
-         NSArray<NSString *> *defaults = 
-         @[kBartenderDefaultSerialPortName, [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]  ,kBartenderDefaultFirebaseURLString,kBartenderDefaultBartabURLString];
-        
-        
-        //TODO: validate new defaults somehow?
-        
-        for (NSUInteger index = 0; index < [names count]; index++) {
-            if (![names[index] isEqualToString:oldNames[index]]){
-                [[NSUserDefaults standardUserDefaults] setValue: names[index] forKey:keys[index]];
-            }
+    NSString *localDataName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
+    NSString *firebaseName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey];
+    NSString *bartabName = [[NSUserDefaults standardUserDefaults]  valueForKey:kBartenderBartabURLKey];
+    
+    NSString *firebaseEmail = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseEmailKey];
+    
+    NSString *firebasePassword = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebasePasswordKey];
+    
+    
+    
+    NSArray<NSString *> *oldNames = @[serialPortName,
+                                      localDataName,
+                                      firebaseName,
+                                      bartabName,
+                                      firebaseEmail,
+                                      firebasePassword];
+    
+    // get name from user
+    SettingsController *newNameDialog =  [[SettingsController alloc] initWithNameArray:oldNames];
+    
+    NSArray<NSString *> *names = [newNameDialog dialogForWindow:[NSApp keyWindow]];
+    
+    NSArray<NSString *> *keys = @[kBartenderSerialPortNameKey,
+                                  kBartenderLocalBackupDirectoryKey,
+                                  kBartenderFirebaseDirectoryKey,
+                                  kBartenderBartabURLKey,
+                                  kBartenderFirebaseEmailKey,
+                                  kBartenderFirebasePasswordKey];
+    
+    
+    
+    
+    //TODO: validate new defaults somehow?
+    
+    for (NSUInteger index = 0; index < [names count]; index++) {
+        if (![names[index] isEqualToString:oldNames[index]]){
+            [[NSUserDefaults standardUserDefaults] setValue: names[index] forKey:keys[index]];
         }
-     
+    }
+    
     if (![names[0] isEqualToString:oldNames[0]]){
         // serial port has been resetterm
-    // TODO: ask the bardocument to reset the serial port
+        // TODO: ask the bardocument to reset the serial port
     }
-      
+    
 }
 
 -(IBAction)qrExptPoster:(id)sender; {
-
+    
     if (nil == _bartender) { return; }
     
     BarExperiment *expt = [_bartender selectedExpt];
     
     if (nil == expt) {  
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Edit Expt", @"Select an Experiment",@"OK");
-            return;
+        BCOneButtonAlert(NSAlertStyleInformational,@"Edit Expt", @"Select an Experiment",@"OK");
+        return;
     }
     
     if (nil == _poster) {
-       _poster = [[ExptQRCodePoster alloc] init]; 
-       
+        _poster = [[ExptQRCodePoster alloc] init]; 
+        
     }
-   [_poster setTitle: [NSString stringWithFormat:@"%@: %@", [expt code], [expt name]]];
-     [_poster setWikiUrl: [expt wiki]];
-      NSString *bartabUrl = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
-
+    [_poster setTitle: [NSString stringWithFormat:@"%@: %@", [expt code], [expt name]]];
+    [_poster setWikiUrl: [expt wiki]];
+    NSString *bartabUrl = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey];
+    
     NSString * exptGraphUrl = [NSString stringWithFormat:@"%@/expt/?id=%@",bartabUrl,[expt code] ];
-
+    
     [_poster setGraphUrl:exptGraphUrl];
     
     [_poster setInvest:[expt investigators]];
     
-     [_poster setProtocol:[expt protocol]];
-     
-     [[_poster posterView] setNeedsDisplay:YES];
-
+    [_poster setProtocol:[expt protocol]];
     
-   	[_poster makeWindowControllers];
-	
-	[_poster showWindows];
+    [[_poster posterView] setNeedsDisplay:YES];
+    
+    
+    [_poster makeWindowControllers];
+    
+    [_poster showWindows];
     
 }
 

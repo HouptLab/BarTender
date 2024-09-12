@@ -20,6 +20,12 @@
 @synthesize firebaseField;
 @synthesize firebase;
 
+@synthesize firebaseEmailField;
+@synthesize firebaseEmail;
+
+@synthesize firebasePasswordField;
+@synthesize firebasePassword;
+
 @synthesize bartabField;
 @synthesize bartab;
 
@@ -32,6 +38,8 @@
         localdata = names[1];
         firebase = names[2];
         bartab = names[3];
+        firebaseEmail = names[4];
+        firebasePassword = names[5];
                 
         if (!dialog) {
             
@@ -56,6 +64,10 @@
     [localdataField setStringValue:localdata];
     [firebaseField setStringValue:firebase];
     [bartabField setStringValue:bartab];
+    
+        [firebaseEmailField setStringValue: firebaseEmail];
+    [firebasePasswordField setStringValue: firebasePassword];
+    
 
     [NSApp beginSheet: dialog
        modalForWindow: ownerWindow
@@ -70,7 +82,7 @@
     [NSApp endSheet:  dialog];
     [dialog orderOut: dialog];
     
-    return @[serialname,localdata,firebase,bartab];
+    return @[serialname,localdata,firebase,bartab,firebaseEmail,firebasePassword];
     
 }
 
@@ -89,6 +101,10 @@
     localdata = [localdataField stringValue];
     firebase = [firebaseField stringValue];
     bartab = [bartabField stringValue];
+
+    firebaseEmail = [firebaseEmailField stringValue];
+
+    firebasePassword = [firebasePasswordField stringValue];
 
 }
 
