@@ -29,7 +29,7 @@
 	
 	NSLog(@"BarItem setDefaults");
 	unit = @"g";
-	onOffType = NSOnState;
+    onOffType = NSControlStateValueOn;
 	
 	minWeight = 0;
 	maxWeight = 5000;

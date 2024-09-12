@@ -146,7 +146,7 @@
 		if ([[self selectedExpt] waitingForOff]) {
 			// can't weigh off if we haven't weighed on yet
 			NSString *infoText = [NSString stringWithFormat:@"Waiting to weigh OFF items for Experiment \"%@\".", [[self selectedExpt] codeName]];
-			BCOneButtonAlert(	NSWarningAlertStyle, @"Can't Weigh Items ON",  infoText,  @"OK");	
+			BCOneButtonAlert(	NSAlertStyleWarning, @"Can't Weigh Items ON",  infoText,  @"OK");	
 			return;
 		}
 		
@@ -179,7 +179,7 @@
 			
 			NSString *infoText = [NSString stringWithFormat:@"Items for Experiment \"%@\" have not been weighed ON.", [[self selectedExpt] codeName]];
 			
-			BCOneButtonAlert(	NSWarningAlertStyle,
+			BCOneButtonAlert(	NSAlertStyleWarning,
 						   @"Can't Weigh Items OFF", 
 						   infoText, 
 						   @"OK");	
@@ -254,7 +254,7 @@
 	
 	
 		if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Edit Expt", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Edit Expt", @"Select an Experiment",@"OK");
             return;
     }
 	
@@ -277,7 +277,7 @@
 	NSLog(@"Duplicate Expt  called");
 		
 	if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Duplicate Expt", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Duplicate Expt", @"Select an Experiment",@"OK");
             return;
     }
 
@@ -304,7 +304,7 @@
 		
 
 	if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Graph Expt", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Graph Expt", @"Select an Experiment",@"OK");
             return;
     }
 		
@@ -323,7 +323,7 @@
         
 
     if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Wiki Expt", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Wiki Expt", @"Select an Experiment",@"OK");
             return;
     }
         
@@ -342,7 +342,7 @@
 	NSLog(@"saveExptSummary Info called");
 	
 	if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Save Expt Summary", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Save Expt Summary", @"Select an Experiment",@"OK");
             return;
     }
 	
@@ -366,7 +366,7 @@
 	/* display the NSSavePanel */
 	runResult = [sp runModal];
 	
-	if (runResult != NSOKButton) return;
+    if (runResult != NSModalResponseOK) return;
 	
 	NSString *myFilePath = [[sp filename] copy];
 		
@@ -399,7 +399,7 @@
     NSLog(@"saveExptSummary Info called");
 
     if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Save Xynk Export", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Save Xynk Export", @"Select an Experiment",@"OK");
             return;
     }
 
@@ -423,7 +423,7 @@
     /* display the NSSavePanel */
     runResult = [sp runModal];
 
-    if (runResult != NSOKButton) return;
+    if (runResult != NSModalResponseOK) return;
 
     NSString *myFilePath = [[sp filename] copy];
 
@@ -456,7 +456,7 @@
     NSLog(@"saveExpt to Firebase  called");
 
     if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Save to Firebase", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Save to Firebase", @"Select an Experiment",@"OK");
             return;
     }
 
@@ -480,7 +480,7 @@
 	NSLog(@"Remove Expt  called");
 	
 	if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Remove Expt", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Remove Expt", @"Select an Experiment",@"OK");
             return;
     }
 	
@@ -488,7 +488,7 @@
 	
 	// NOTE: check for experiment still waiting to weigh bottles off?
 	
-	NSInteger flag = BCThreeButtonAlert(NSWarningAlertStyle,titleString, @"How do you want to remove this experiment?\n\n'Archive' will move expt and data files into archival folder.\n\n'Delete' will permanently delete expt and all of its data.\n\n",@"Archive",@"Delete", @"Cancel");
+	NSInteger flag = BCThreeButtonAlert(NSAlertStyleWarning,titleString, @"How do you want to remove this experiment?\n\n'Archive' will move expt and data files into archival folder.\n\n'Delete' will permanently delete expt and all of its data.\n\n",@"Archive",@"Delete", @"Cancel");
 	
 	if (NSAlertThirdButtonReturn == flag) return; //cancelled
 	
@@ -506,10 +506,10 @@
 		// delete
 
 		// check that user really wants to delete?
-		flag = BCTwoButtonAlert(NSWarningAlertStyle,titleString, @"Are you really sure you want to trash this experiment and all its data?",@"Delete", @"Cancel");
+		flag = BCTwoButtonAlert(NSAlertStyleWarning,titleString, @"Are you really sure you want to trash this experiment and all its data?",@"Delete", @"Cancel");
 		if (NSAlertSecondButtonReturn == flag)  return;
 		
-		flag = BCTwoButtonAlert(NSWarningAlertStyle,titleString, @"Deletion cannot be undone\nbut files will be in the Trash",@"Delete", @"Cancel");
+		flag = BCTwoButtonAlert(NSAlertStyleWarning,titleString, @"Deletion cannot be undone\nbut files will be in the Trash",@"Delete", @"Cancel");
 		if (NSAlertSecondButtonReturn == flag)  return;
 		
 		// move all the expt files into the trash....
@@ -529,10 +529,10 @@
 		[exptTableView reloadData];
 	
 		if (NSAlertFirstButtonReturn) {
-			BCOneButtonAlert(NSInformationalAlertStyle,titleString, @"The expt and its files have been moved to the Archives folder.",@"OK");
+			BCOneButtonAlert(NSAlertStyleInformational,titleString, @"The expt and its files have been moved to the Archives folder.",@"OK");
 		}
 		else {
-			BCOneButtonAlert(NSInformationalAlertStyle,titleString, @"The expt and its files have been moved to the Trash.",@"OK");
+			BCOneButtonAlert(NSAlertStyleInformational,titleString, @"The expt and its files have been moved to the Trash.",@"OK");
 
 		}
 		
@@ -548,7 +548,7 @@
 	NSLog(@"Weigh On Experiment Pressed\n");
 	
 	if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Weight On", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Weight On", @"Select an Experiment",@"OK");
             return;
     }
 	
@@ -571,7 +571,7 @@
 	NSLog(@"Weigh Off Experiment\n");
 	
 	if (nil == [self selectedExpt]) {
-            BCOneButtonAlert(NSInformationalAlertStyle,@"Weigh Off", @"Select an Experiment",@"OK");
+            BCOneButtonAlert(NSAlertStyleInformational,@"Weigh Off", @"Select an Experiment",@"OK");
             return;
     }
 	

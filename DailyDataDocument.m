@@ -486,7 +486,7 @@ BOOL useSpeech = NO;
 	
 	
 	if (nil == theExperiment) { // nothing to save or print
-		BCOneButtonAlert(	NSWarningAlertStyle,
+		BCOneButtonAlert(	NSAlertStyleWarning,
 					   @"Can't Save & Print: No experiment specified ",
 					   @"Scan an item to start weighing", 
 					   @"OK");		
@@ -506,7 +506,7 @@ BOOL useSpeech = NO;
         NSString *infoText = [[NSString alloc] initWithFormat:@"%ld items have not yet been weighed. Are you sure you want to save without weighing the remaining items?",[dailyData numberOfUnweighedItems]];
         
 
-		NSInteger button = BCTwoButtonAlert(NSWarningAlertStyle,
+		NSInteger button = BCTwoButtonAlert(NSAlertStyleWarning,
 									@"Save and Print Incomplete Weights?", 
 									infoText, 
 									@"Save and Print",
@@ -548,7 +548,7 @@ BOOL useSpeech = NO;
 	
 	if (nil == theExperiment) {
 		
-		BCOneButtonAlert(	NSWarningAlertStyle,
+		BCOneButtonAlert(	NSAlertStyleWarning,
 					   @"Can't Save: No experiment specified ",
 					   @"Scan an item to start weighing", 
 					   @"OK");		
@@ -576,7 +576,7 @@ BOOL useSpeech = NO;
 	NSLog(@"method: print");
 	if (nil == theExperiment) {
 		
-		BCOneButtonAlert(	NSWarningAlertStyle,
+		BCOneButtonAlert(	NSAlertStyleWarning,
 					   @"Can't Print: No experiment specified ",
 					   @"Scan an item to start weighing", 
 					   @"OK");		
@@ -656,7 +656,7 @@ BOOL useSpeech = NO;
 	
 	if (nil != theExperiment) {
 	
-		NSInteger button = BCTwoButtonAlert(	NSWarningAlertStyle,
+		NSInteger button = BCTwoButtonAlert(	NSAlertStyleWarning,
 										@"Cancel weighing session?",
 										@"Canceled weights will not be saved and cannot be restored.", 
 										@"Return to Weighing",
@@ -703,7 +703,7 @@ BOOL useSpeech = NO;
         
 	if (kWeighingOff == currentState) {
 		
-		BCOneButtonAlert(	NSWarningAlertStyle,
+		BCOneButtonAlert(	NSAlertStyleWarning,
 					   @"Can't Carry Over Data: Currently weighing off",
 					   @"Can only carry over data when weighing data on", 
 					   @"OK");		
@@ -715,7 +715,7 @@ BOOL useSpeech = NO;
 	
 	if (nil == theExperiment) {
 		
-		BCOneButtonAlert(	NSWarningAlertStyle,
+		BCOneButtonAlert(	NSAlertStyleWarning,
 					   @"Can't Carry Over Data: No experiment specified ",
 					   @"Scan an item to start weighing on", 
 					   @"OK");		
@@ -728,7 +728,7 @@ BOOL useSpeech = NO;
 	
 	if (nil == yesterdaysData) {
 		
-		BCOneButtonAlert(	NSWarningAlertStyle,
+		BCOneButtonAlert(	NSAlertStyleWarning,
 									@"Can't Carry Over Data: No Prior Data",
 									@"There are no previously collected data to carry over to today's weights", 
 									@"OK");		
@@ -852,7 +852,7 @@ BOOL useSpeech = NO;
             scannedLabelString = nil;
             needWeightForItem = NO;
             
-            BCOneButtonAlert(	NSWarningAlertStyle,
+            BCOneButtonAlert(	NSAlertStyleWarning,
                              @"Unstable Weight",
                              @"Balance could not read a stable weight. Please try item again.",
                              @"OK");
@@ -941,7 +941,7 @@ BOOL useSpeech = NO;
 	
 	if (matchExpt == nil) {
 		
-		BCOneButtonAlert(	NSWarningAlertStyle,
+		BCOneButtonAlert(	NSAlertStyleWarning,
 										@"Unknown Experiment", 
 										@"Did not recognize the experiment code within the label. Either the experiment has not been created yet, or the label is incorrect, or the label was not scanned properly.", 
 										@"OK");		
@@ -977,7 +977,7 @@ BOOL useSpeech = NO;
 			// trying to weigh bottles ON, but ".onweights" file already exists
 			// so can't overwrite
 						
-			BCOneButtonAlert(NSWarningAlertStyle,
+			BCOneButtonAlert(NSAlertStyleWarning,
 										@"Bottles already ON", 
 										@"The bottles for this experiment have already been weighed ON", 
 										@"OK");
@@ -993,7 +993,7 @@ BOOL useSpeech = NO;
 			
 			// trying to weigh bottles OFF, but ".onweights" file doesn't exist
 			
-			BCOneButtonAlert(NSWarningAlertStyle,
+			BCOneButtonAlert(NSAlertStyleWarning,
 										@"Bottles can't be weighed OFF", 
 										@"The bottles for this experiment have not been weighed ON, so they cannot be weighed OFF", 
 										@"OK");
@@ -1024,7 +1024,7 @@ BOOL useSpeech = NO;
 		// we matched the label to an experiment, 
 		// but its not the experiment we are currently assigned to
 
-		BCOneButtonAlert(NSWarningAlertStyle,
+		BCOneButtonAlert(NSAlertStyleWarning,
 									@"Mismatched Experiment", 
 									@"The experiment code of the label does not match the experiment currently being weighed.", 
 									@"OK");
@@ -1046,7 +1046,7 @@ BOOL useSpeech = NO;
 			// rat index is outside the range of rat numbers...
 			
 			
-			BCOneButtonAlert(	NSWarningAlertStyle,
+			BCOneButtonAlert(	NSAlertStyleWarning,
 											@"Unknown Subject Number", 
 											@"The number on the label is outside the range of subjects recognized by the experiment currently being weighed.", 
 											@"OK");
@@ -1059,7 +1059,7 @@ BOOL useSpeech = NO;
 		if ( (*itemIndex) == NSNotFound) {
 			// item code is not recognized by the experiment..
 
-			BCOneButtonAlert(NSWarningAlertStyle,
+			BCOneButtonAlert(NSAlertStyleWarning,
 											@"Unknown Item Code", 
 											@"The item code on the label is not recognized by the experiment currently being weighed.", 
 											@"OK");
@@ -1090,7 +1090,7 @@ BOOL useSpeech = NO;
 		NSString *alertText = [NSString stringWithFormat:@"Weight for %@ (%.2lf %@) is the same as preceding item: could be an erroneous double entry.", 
 							   labelString,currentWeight,[theItem unit]];
 		
-		BCOneButtonAlert(NSWarningAlertStyle,@"Warning: Same Weight Recorded Twice", 
+		BCOneButtonAlert(NSAlertStyleWarning,@"Warning: Same Weight Recorded Twice", 
 										alertText, 
 										@"OK");
 		
@@ -1104,7 +1104,7 @@ BOOL useSpeech = NO;
 		NSString *alertText = [NSString stringWithFormat:@"%@ items should be between %.2lf and %.2lf %@", 
 							   [theItem name],[theItem minWeight],[theItem maxWeight],[theItem unit]];
 		
-		BCOneButtonAlert(NSWarningAlertStyle,
+		BCOneButtonAlert(NSAlertStyleWarning,
 									@"Warning: Weight Outside Valid Range", 
 										alertText, 
 										@"OK");
