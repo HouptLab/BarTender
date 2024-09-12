@@ -1,2 +1,4 @@
 Firebase
 GoogleService-Info.plist
+UserInterfaceState.xcuserstate
+
