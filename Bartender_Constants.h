@@ -18,4 +18,11 @@
 #define kBartenderBartabURLKey @"BartenderBartabURL"
 #define kBartenderDefaultBartabURLString @"https://houptlab.org/bartab"
 
+
+#define kBartenderFirebaseEmailKey @"BartenderFirebaseEmail"
+#define kBartenderDefaultFirebaseEmailString @""
+
+#define kBartenderFirebasePasswordKey @"BartenderFirebasePassword"
+#define kBartenderDefaultFirebasePasswordString @""
+
 #endif /* Bartender_Constants_h */

@@ -25,8 +25,8 @@ REVISION=$(svnversion -n)
 
 # Report problems if the working directory isn't a completely clean single-revision checkout.
 # Use REPORT var to switch between warning and error ("Jerk Mode")
-# REPORT=warning
-REPORT=error
+REPORT=warning
+# REPORT=error
 
 if [[ ! "$REVISION" =~ ^[0-9]+$ ]]
 then
