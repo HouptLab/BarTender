@@ -26,6 +26,7 @@
 @synthesize firebasePasswordField;
 @synthesize firebasePassword;
 
+
 @synthesize bartabField;
 @synthesize bartab;
 
@@ -93,6 +94,9 @@
     serialname = nil;
 
 }
+
+
+
 
 -(IBAction)OKButtonPressed:(id)sender; {
     

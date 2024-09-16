@@ -27,8 +27,11 @@
 @property IBOutlet NSTextField *firebaseEmailField;
 @property (copy) NSString *firebaseEmail;
 
-@property IBOutlet NSTextField *firebasePasswordField;
+@property IBOutlet NSSecureTextField *firebasePasswordField;
 @property (copy) NSString *firebasePassword;
+
+
+
 
 -(id)initWithNameArray:(NSArray *)names;
 -(NSArray *)dialogForWindow:(NSWindow *)ownerWindow; 

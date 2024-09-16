@@ -141,9 +141,10 @@
 
 // data
 
+// not implemented
 // -(IBAction)selectPath:(id)sender;
--(IBAction)addDailyData:(id)sender;
--(IBAction)deleteDailyData:(id)sender;
--(IBAction)editDailyData:(id)sender;
+//-(IBAction)addDailyData:(id)sender;
+//-(IBAction)deleteDailyData:(id)sender;
+//-(IBAction)editDailyData:(id)sender;
 
 @end

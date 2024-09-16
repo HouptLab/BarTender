@@ -670,7 +670,7 @@
     NSUInteger tag_number;
     NSUInteger rat;
 
-    tag_number = [label_codes[kParseIndexSubjectIndex] intValue] - 1;
+    tag_number = [label_codes[kParseIndexSubjectIndex] unsignedIntValue] - 1;
     // rat indices are zero-indexed internally, so decrement the number on the label
 
 	if ( tag_number == NSNotFound || tag_number >= [self numberOfSubjects]) {

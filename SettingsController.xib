@@ -6,13 +6,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SettingsController" customModule="Bartender" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SettingsController" customModule="BarTender" customModuleProvider="target">
             <connections>
                 <outlet property="bartabField" destination="JiU-qW-sa0" id="FlW-77-up9"/>
                 <outlet property="dialog" destination="F0z-JX-Cv5" id="vgp-2O-D9w"/>
                 <outlet property="firebaseEmailField" destination="LxI-xS-b66" id="TnB-wb-a1F"/>
                 <outlet property="firebaseField" destination="nJV-eY-O6z" id="Anz-ej-2wQ"/>
-                <outlet property="firebasePasswordField" destination="M7O-3y-p1J" id="a2s-ef-Fga"/>
+                <outlet property="firebasePasswordField" destination="3vW-rF-zgf" id="W82-dO-A2c"/>
                 <outlet property="localdataField" destination="8fI-K6-OHB" id="kTL-FK-sSX"/>
                 <outlet property="serialnameField" destination="3ay-dj-VBS" id="zoY-5t-bOi"/>
             </connections>
@@ -132,15 +132,6 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M7O-3y-p1J">
-                        <rect key="frame" x="207" y="60" width="357" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="B1R-BM-CBE">
-                            <font key="font" usesAppearanceFont="YES"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ulu-Dt-EF2">
                         <rect key="frame" x="78" y="65" width="122" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -150,6 +141,18 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <secureTextField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vW-rF-zgf">
+                        <rect key="frame" x="207" y="58" width="357" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="dSX-ur-7Xc">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
                 </subviews>
             </view>
             <connections>
