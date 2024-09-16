@@ -184,18 +184,13 @@
      NSString *serialPortName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey];
      
      if (nil == serialPortName) {
-     
-        // TODO: post alert to get serial port from user in Settings, -or- post serialnamecontroller directly
-        // get name from user
-//        SettingsController *newNameDialog =  [[SettingsController alloc] initWithName:@"cu.usbserial"];
-//        serialPortName = [newNameDialog dialogForWindow:[NSApp keyWindow]];
-//        if (nil == serialPortName || 0 == [serialPortName length]) {
-//            serialPortName = @"none";
-//        }
-//        else {
-//            [[NSUserDefaults standardUserDefaults] setValue:serialPortName forKey:kBartenderSerialPortNameKey];
-//        
-//        }
+
+         BCOneButtonAlert(NSAlertStyleInformational, @"Serial Device not specified",
+                            @"The location of the serial device has not been specified in Settings, so we can't connect to the balance. Please enter device location in settings, (i.e., look in '/dev' directory for device like '/dev/cu.usbserial-8324110'), then quit and restart BarTender",
+                            @"OK");
+         return;
+
+
      }
      
 
