@@ -37,7 +37,6 @@
         kBartenderFirebaseDirectoryKey : kBartenderDefaultFirebaseURLString,  // all_graphs
         kBartenderBartabURLKey : kBartenderDefaultBartabURLString ,
         kBartenderFirebaseEmailKey:kBartenderDefaultFirebaseEmailString,
-        
         kBartenderFirebasePasswordKey:kBartenderDefaultFirebasePasswordString
         // don't set a default password, make sure we have one...
         // kBartenderFirebasePasswordKey:kBartenderDefaultFirebasePasswordString
@@ -70,7 +69,31 @@
     [FIRApp configure];
     
     
+
+    [self checkUserDefaults];
+}
+-(void)checkUserDefaults; {
     
+    BOOL allGood = YES;
+
+    allGood &= (nil != [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderSerialPortNameKey]);
+    allGood &= (nil != [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey]);
+    allGood &= (nil != [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderBartabURLKey]);
+
+    allGood &= (nil != [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseDirectoryKey]);
+    allGood &= (nil != [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebaseEmailKey]);
+    allGood &= (nil != [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderFirebasePasswordKey]);
+
+    if (!allGood) {
+
+        BCOneButtonAlert(NSAlertStyleInformational, @"Settings incomplete",
+                           @"Not all of the Settings have been specified (e.g., serial port location, firebase account info, etc. For full functionality, be sure to fill in the Settings.",
+                           @"OK");
+
+        [self enterSerialDeviceName:self];
+    }
+
+
 }
 
 -(void)setSerialPortLabel; {
