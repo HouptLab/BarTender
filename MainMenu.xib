@@ -24,11 +24,11 @@
         </customObject>
         <menu title="MainMenu" systemMenu="main" id="04s-Tp-mZG" userLabel="MainMenu">
             <items>
-                <menuItem title="Bartender" id="S0x-nO-uRh">
+                <menuItem title="BarTender" id="S0x-nO-uRh">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Bartender" systemMenu="apple" id="aWw-tI-29J">
+                    <menu key="submenu" title="BarTender" systemMenu="apple" id="aWw-tI-29J">
                         <items>
-                            <menuItem title="About Bartender" id="EeX-j6-tij">
+                            <menuItem title="About BarTender" id="EeX-j6-tij">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showAboutBox:" target="0of-PT-W48" id="zGj-Ov-jLI"/>

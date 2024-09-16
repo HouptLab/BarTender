@@ -258,7 +258,7 @@
     // maybe because printView is not associated with an actual NSDocument
     
    // [self setPrintInfo:[NSPrintInfo sharedPrintInfo]];
-    [[NSPrintInfo sharedPrintInfo] setVerticalPagination:NSAutoPagination];
+    [[NSPrintInfo sharedPrintInfo] setVerticalPagination:NSPrintingPaginationModeAutomatic];
     float horizontalMargin, verticalMargin;
 
     horizontalMargin = 0;

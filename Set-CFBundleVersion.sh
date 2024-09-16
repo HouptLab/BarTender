@@ -30,14 +30,19 @@ REPORT=warning
 
 if [[ ! "$REVISION" =~ ^[0-9]+$ ]]
 then
-	echo "$REPORT: working directory is not a single unmodified revision. svnversion reports: $REVISION (note: X:Y means mixed-revision, so update work-dir. 'M' means modified, so commit work-dir changes)"
-	[ $REPORT == 'warning' ]
+        echo "$REPORT: working directory is not a single unmodified revision. svnversion reports: $REVISION (note: X:Y means mixed-revision, so update work-dir. 'M' means modified, so commit work-dir changes)"
+        [ $REPORT == 'warning' ]
 elif [[ $(svn status) ]]
 then
-	echo "warning: working directory is not a completely clean checkout with no extranious files. svn status reports:"
-	svn status
+        echo "warning: working directory is not a completely clean checkout with no extranious files. svn status reports:"
+        svn status
 fi
 
 # Modify CFBundleVersion in the product's compiled Info.plist
 
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $REVISION" "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"
+if grep --quiet 'CFBundleVersion' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"
+then
+        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $REVISION" "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"
+else
+        /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string $REVISION" "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"
+fi
