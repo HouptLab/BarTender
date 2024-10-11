@@ -276,6 +276,7 @@
 	// no longer waiting to weigh bottles off
 	// update the experiment with the name of the last saved daily data
 	// and with the current phase & phase day...
+    // saves experiment summary to backup path and to firebase
 	[theExperiment updateWithOffWeightsAtPath:dailyDataFilePath andPhaseName:phaseName andPhaseDay:phaseDayIndex];
 	
 }

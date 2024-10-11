@@ -9,10 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class BarSummaryData;
+
 @interface FirebaseSummary : NSObject
 
-- (NSData *)getExpt:(NSString *)exptCode;
-- (BOOL) saveExpt:(NSString *)exptCode withData:(NSData *)exptJSONData;
+- (NSData *)getAndMergeExpt:(NSString *)exptCode withSummaryData: (BarSummaryData *)summary;
+//- (BOOL) saveExpt:(NSString *)exptCode withData:(NSData *)exptJSONData;
 
 -(BOOL) setArchive:(NSString *)exptCode;
 

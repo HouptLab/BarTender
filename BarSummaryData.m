@@ -162,17 +162,21 @@
 		
 }
 
--(void) writeToFirebase; {
+// put experiment data into a dictionary which we can then serialize as json
+-(NSMutableDictionary *)makeLocalExptDictionary; {
 
-      FirebaseSummary *firebase = [[FirebaseSummary alloc] init]; 
-    
-    // put experiment data into a dictionary which we can then serialize as json
+ // put experiment data into a dictionary which we can then serialize as json
     NSMutableDictionary *exptDictionary = [NSMutableDictionary dictionary];
 
-    NSDictionary *contacts = @{ @"Tom Houpt" : @{ @"email" : @"[EMAIL]",  @"phone" : @"[PHONE]" }};
+    // TODO: make settings box for contacts into NSUserDefaults, or make it part of experiment metadata?
 
-    [exptDictionary setObject: contacts
-                       forKey:@"contacts"];
+    
+    NSString *contactName = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderContactNameKey];
+    NSString *contactEmail = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderContactEmailKey];
+    NSString *contactPhone = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderContactPhoneKey];
+    
+    NSDictionary *contacts = @{ contactName : @{ @"email" : contactEmail,  @"phone" : contactPhone }};
+    [exptDictionary setObject: contacts forKey:@"contacts"];
 
 
     NSMutableDictionary *drugs = [NSMutableDictionary dictionary];
@@ -220,15 +224,6 @@
      NSNumber *lastMS =  [NSNumber numberWithInteger: (NSInteger)([[experiment last_data_update] timeIntervalSince1970] * 1000.0)];
      [exptDictionary setObject: lastMS
                        forKey:@"last_updated_ms"];
-
-
-
-//    NSMutableString *measures = [NSMutableString string];
-//
-//    for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
-//        [measures appendString: [[[experiment items] objectAtIndex:i] name]];
-//        [measures appendString: @","];
-//    }
 
     NSMutableDictionary *measures = [NSMutableDictionary dictionary];
     for (NSUInteger i=0;i< [experiment numberOfItems]; i++ ) {
@@ -367,38 +362,45 @@
 
     [exptDictionary setObject: [self getMeans]
                        forKey:@"group_means"];
-    
+
+
+    return exptDictionary;
+}
+
+-(NSData *)mergedJsonData: (NSData *)currentExptJSONData; {
+
     NSError *error;
-    NSData *currentExptJSONData = [firebase getExpt:[experiment code]];
-   //  NSData *targetExptJSONData = [targetExptJSON dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSMutableDictionary *localExptDictionary = [self makeLocalExptDictionary];
     NSDictionary *currentExptDictionary = [NSJSONSerialization JSONObjectWithData:currentExptJSONData options:kNilOptions error:&error];
     
-    [exptDictionary mergeWithSourceDictionary: currentExptDictionary];
+    [localExptDictionary mergeWithSourceDictionary: currentExptDictionary];
   
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:exptDictionary
+    NSData *mergedJsonData = [NSJSONSerialization dataWithJSONObject:localExptDictionary
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
-//    NSString *jsonString = NULL;
-//    if (! jsonData) {
-//        NSLog(@"Got an error: %@", error);
-//    } else {
-//        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//    }
 
-    // NSString *merged_code = [NSString stringWithFormat:@"%@_merged",[experiment code] ];
-    
-    NSString *merged_code = [experiment code];
-    
     NSString *backupSummaryPath = [[NSUserDefaults standardUserDefaults] valueForKey:kBartenderLocalBackupDirectoryKey];
     
     
     NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@.json",backupSummaryPath,[experiment code] ];
     
-    if (NULL != jsonData) {
-        [jsonData writeToFile:jsonFilePath atomically:YES];
-        [[[FirebaseSummary alloc] init] saveExpt:merged_code withData:jsonData];
-        
+    if (NULL != mergedJsonData) {
+        [mergedJsonData writeToFile:jsonFilePath atomically:YES];
     }
+    
+    return mergedJsonData;
+
+}
+
+
+-(void) writeToFirebase; {
+
+    FirebaseSummary *firebase = [[FirebaseSummary alloc] init]; 
+    
+    [firebase getAndMergeExpt:[experiment code] withSummaryData: self];
+    
+    
 }
 
 -(NSDictionary *)getMeans; {
