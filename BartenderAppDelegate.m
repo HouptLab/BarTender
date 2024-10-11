@@ -37,10 +37,10 @@
         kBartenderFirebaseDirectoryKey : kBartenderDefaultFirebaseURLString,  // all_graphs
         kBartenderBartabURLKey : kBartenderDefaultBartabURLString ,
         kBartenderFirebaseEmailKey:kBartenderDefaultFirebaseEmailString,
-        kBartenderFirebasePasswordKey:kBartenderDefaultFirebasePasswordString
-        // don't set a default password, make sure we have one...
-        // kBartenderFirebasePasswordKey:kBartenderDefaultFirebasePasswordString
-        
+        kBartenderFirebasePasswordKey:kBartenderDefaultFirebasePasswordString,
+        kBartenderContactNameKey:kBartenderDefaultContactName,
+        kBartenderContactEmailKey:kBartenderDefaultContactEmail,
+        kBartenderContactPhoneKey:kBartenderDefaultContactPhone
     };
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];

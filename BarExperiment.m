@@ -271,11 +271,15 @@
 	[self setCurrentPhaseDay:day];
 	[self setCurrentPhaseName:phaseName];	
 	[self save];
-	[self saveBackupSummary];
+	[self saveBackupSummary]; // this also writes to firebase
 
 }
 
+/**
 
+saves all expt data to local backup path, and merges with firebase
+
+ */
 -(void) saveBackupSummary; {
 	
 	BarSummaryData *summary = [[BarSummaryData alloc] initWithExperiment:self ];
@@ -1612,11 +1616,18 @@
 	
 	[rootDictionary setObject:@"Bartender" forKey:@"creator"];
 
+    NSString *shortVersion =  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    
+    NSString *bundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    
     NSMutableString *version = [NSMutableString string];
-    [version appendString: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    if (nil != shortVersion) {
+        [version appendString: shortVersion];
+    }
     [version appendString:@"."];
-    [version appendString: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-
+    if (nil != bundleVersion) {
+        [version appendString: bundleVersion];
+    }
 	[rootDictionary setObject:version forKey:@"version"];
 	[rootDictionary setObject:[self makeExptParametersDictionary] forKey:@"ExptParameters"];
 	[rootDictionary setObject:[self makeSubjectDictionary] forKey:@"Subjects"];
@@ -2157,10 +2168,16 @@
 
         DailyData *dailyData = [self dailyDataForDay:d];
 
-        if (NULL == last_data_update) { last_data_update = [dailyData offTime]; }
+        if (NULL == last_data_update) { 
+            last_data_update = [dailyData offTime]; }
         else if ([[dailyData offTime] compare:last_data_update] == NSOrderedDescending) {
             last_data_update = [dailyData offTime];
         }
+    }
+    
+    // TODO: store a default last_data_update, such as creation time of experiment record?
+    if (NULL == last_data_update) { 
+        last_data_update = [NSDate date];
     }
     return last_data_update;
 }

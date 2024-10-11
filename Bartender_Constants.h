@@ -25,4 +25,14 @@
 #define kBartenderFirebasePasswordKey @"BartenderFirebasePassword"
 #define kBartenderDefaultFirebasePasswordString @""
 
+
+#define kBartenderContactNameKey @"BartenderContactName"
+#define kBartenderDefaultContactName @"Lab Contact"
+
+#define kBartenderContactEmailKey @"BartenderContactEmail"
+#define kBartenderDefaultContactEmail @"contact email"
+
+#define kBartenderContactPhoneKey  @"BartenderContactPhone"
+#define kBartenderDefaultContactPhone @"contact phone"
+
 #endif /* Bartender_Constants_h */

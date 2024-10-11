@@ -62,6 +62,7 @@
 @interface BarSummaryData : NSObject {
 	
 	BarExperiment *experiment;
+ 
         
     NSUInteger numDataDays;
     NSMutableArray *dailyDataArray;
@@ -83,6 +84,7 @@
 
 - (void) writeToFileAtPath:(NSString *)myFilePath;
 - (void) writeToFirebase;
+-(NSData *)mergedJsonData: (NSData *)currentExptJSONData;
 - (void) update;
 - (void) writeHeaderRows;
 - (void) writeDataRows;
