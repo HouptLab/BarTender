@@ -15,6 +15,8 @@
 
 set -eu
 
+exit
+
 # Only run on release builds, since debug builds are by definition based on un-commmited code changes.
 if [ $CONFIGURATION != 'Release' ] ; then exit ; fi
 
