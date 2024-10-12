@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "03616051-223E-43D1-9733-D1BC97D0C914"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5DB9FE7C-CE6C-490F-A2E7-81ACA230DE38"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BartenderAppDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-enterSerialDeviceName:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5DB9FE7C-CE6C-490F-A2E7-81ACA230DE38 - a74b6c8cb20f5156"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BartenderAppDelegate enterSerialDeviceName:]"
+                  moduleName = "Bartender"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brf115/Developer/Bartender/BartenderAppDelegate.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "656">
+               </Location>
+               <Location
+                  uuid = "5DB9FE7C-CE6C-490F-A2E7-81ACA230DE38 - a74b6c8cb20f5118"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BartenderAppDelegate enterSerialDeviceName:]"
+                  moduleName = "Bartender"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brf115/Developer/Bartender/BartenderAppDelegate.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "5DB9FE7C-CE6C-490F-A2E7-81ACA230DE38 - a74b6c8cb20f5156"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BartenderAppDelegate enterSerialDeviceName:]"
+                  moduleName = "Bartender"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brf115/Developer/Bartender/BartenderAppDelegate.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0E23680-2F2F-4C1A-9652-3BC995A58EE7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BartenderAppDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-enterSerialDeviceName:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A0E23680-2F2F-4C1A-9652-3BC995A58EE7 - a74b6c8cb20f5139"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BartenderAppDelegate enterSerialDeviceName:]"
+                  moduleName = "Bartender"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brf115/Developer/Bartender/BartenderAppDelegate.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "604">
+               </Location>
+               <Location
+                  uuid = "A0E23680-2F2F-4C1A-9652-3BC995A58EE7 - a74b6c8cb20f5eda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BartenderAppDelegate enterSerialDeviceName:]"
+                  moduleName = "Bartender"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brf115/Developer/Bartender/BartenderAppDelegate.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

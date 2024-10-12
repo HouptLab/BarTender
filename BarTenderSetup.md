@@ -108,3 +108,10 @@ curl 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?"key=[API_KEY]"'
 
 ```
 
+
+# On MAc Installation
+
+Under privacy and security in system settings, give BarTender full disc access to files and folders
+
+When building archive, "Direct Distribution" -> "notarize"
+

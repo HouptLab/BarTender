@@ -210,7 +210,7 @@
             
             NSString *deviceString = [NSString stringWithFormat:kSerialDeviceNotFoundString, serialPortName];
             
-            NSString *information;
+            NSString *information = @"SerialErrReturn";
             
             if (!serialPortFound && !deviceFound) {
                 
