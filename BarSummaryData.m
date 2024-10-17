@@ -505,7 +505,9 @@
                 } // next s
                 if (0 == count) { mean = -32000; }
                 if (count >= 2) { sem = sqrt( M2/(count-1))/ sqrt(count); }
-                [item_data setObject: @{ @"mean":[NSNumber numberWithDouble:mean], @"sem": [NSNumber numberWithDouble:sem]}
+                [item_data setObject: @{ @"mean":[NSNumber numberWithDouble:mean],
+                                         @"n": [NSNumber numberWithUnsignedInteger:(unsigned long)count],
+                                         @"sem": [NSNumber numberWithDouble:sem]}
                               forKey: [offDateFormatter stringFromDate:[dailyData offTime]]];
             } // next day
             
