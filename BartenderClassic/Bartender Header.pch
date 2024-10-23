@@ -1,1 +1,0 @@
-//#ifndef OLDROUTINENAMES	#define OBSOLETE	1	#define	OLDROUTINENAMES 		1//#endif//	Now just include the "MacHeaders.c" source file ...#include "MacHeaders.c"#include "OOIncludes.hpp"	// source for my kernal and objects	#define MACINTOSH
