@@ -50,7 +50,6 @@
 		20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */; };
 		205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F2244164EEA7700975B47 /* DailyDataTableView.m */; };
 		2062071E24C4BE5A00422FE5 /* BarUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2062071D24C4BE5A00422FE5 /* BarUtilities.m */; };
-		206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 206461EB0FF40B7000349949 /* BartenderNotes.rtf */; };
 		206758ED0FE8349800B1B7B9 /* cancel64.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758E90FE8349800B1B7B9 /* cancel64.png */; };
 		206758EE0FE8349800B1B7B9 /* comment64.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758EA0FE8349800B1B7B9 /* comment64.png */; };
 		206758EF0FE8349800B1B7B9 /* phase.png in Resources */ = {isa = PBXBuildFile; fileRef = 206758EB0FE8349800B1B7B9 /* phase.png */; };
@@ -216,7 +215,6 @@
 		205F2244164EEA7700975B47 /* DailyDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDataTableView.m; sourceTree = "<group>"; };
 		2062071C24C4BE5A00422FE5 /* BarUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarUtilities.h; sourceTree = "<group>"; };
 		2062071D24C4BE5A00422FE5 /* BarUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarUtilities.m; sourceTree = "<group>"; };
-		206461EB0FF40B7000349949 /* BartenderNotes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = BartenderNotes.rtf; sourceTree = "<group>"; };
 		206758E90FE8349800B1B7B9 /* cancel64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel64.png; path = Graphics/cancel64.png; sourceTree = "<group>"; };
 		206758EA0FE8349800B1B7B9 /* comment64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = comment64.png; path = Graphics/comment64.png; sourceTree = "<group>"; };
 		206758EB0FE8349800B1B7B9 /* phase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase.png; path = Graphics/phase.png; sourceTree = "<group>"; };
@@ -450,7 +448,6 @@
 			children = (
 				20B70E3B15B63EA700BC4CA7 /* BarBalance.h */,
 				2092D64115E2BC3900572E35 /* BarBalance.m */,
-				206461EB0FF40B7000349949 /* BartenderNotes.rtf */,
 			);
 			name = Balance;
 			sourceTree = "<group>";
@@ -675,7 +672,6 @@
 				203BFBBE192E8AF1001B770B /* red.png in Resources */,
 				209095DF2361054F00B9A94D /* ExptSummaryDialog.xib in Resources */,
 				206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */,
-				206461EC0FF40B7000349949 /* BartenderNotes.rtf in Resources */,
 				209095D92360F84800B9A94D /* MainMenu.xib in Resources */,
 				20DE830D10026205005C772A /* BarDocument.xib in Resources */,
 				202BDEAF2A59A82000438432 /* SettingsController.xib in Resources */,
