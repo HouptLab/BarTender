@@ -10,21 +10,23 @@ TODO: setup a "sandbox" to allow users to play with BarTender in firebase sandbo
 
 # Required Hardware
 
+Specific item numbers and links are listed at https://wiki.houptlab.org/wiki/BarTender.
+
 1. Macintosh, e.g. iMac of just about any capacity.
 
 2. serial to USB-c adapter, and serial 9-pin to 25-pin D cable
 
 3. Unitech BMS340 barcode scanner (or similar)
 
-4. Sartorius BP6100 scale
+4. Sartorius BP-3100S
 
-5. printer (e.g. Brother xxxx) for daily hardcopy
+5. printer (e.g. Brother HL-L2400D Compact Monochrome Laser Printer) for daily hardcopy
 
 # Software on Mac
 
 1. Latest drivers for serial to USB-c adapter (check manufacturer's website)
 
-2. free3of9 TrueType font for generating barcodes (check website)
+2. free3of9 TrueType font for generating barcodes (included in this repository)
 
 3. Download pre-built binary of BarTender, or build from source
 
@@ -83,7 +85,7 @@ In console -> "Project settings" -> "General" tab:
     add user with email and password 
    
 4. enter this email and password in "Settings" of BarTender and PointOfScale apps.
-    [NOTE: the way password is stored in the apps is not as secure as it could be...]
+
 
 
 4. copy GoogleService-Info.plist into BarTender (TODO: include at build time, can it be put into package/contents/resources?)
