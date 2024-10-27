@@ -56,11 +56,11 @@ follow Firebase README.md for install frameworks, and set to "Embed & Sign":
 
 Be sure to clean the build folder often when installing new frameworks.
 
-## modify some project setting:
+## modify some project settings:
 
 - add "dummy.swift" file WITHOUT BRIDGING HEADER (prevents lots of swift undefined symbol errors)
 
-- add link path "usr/lib/swift" to T"arget/Build Settings/Linking - General/Runpath Search Paths", as per https://stackoverflow.com/questions/52536380/why-do-i-get-ios-linker-errors-with-my-static-libraries/52939037#52939037
+- add link path "usr/lib/swift" to "Target/Build Settings/Linking - General/Runpath Search Paths", as per https://stackoverflow.com/questions/52536380/why-do-i-get-ios-linker-errors-with-my-static-libraries/52939037#52939037
 
 - to allow Firebase Authentication: add "Keychain Sharing" capability to project, because user gets stored as "firebase_auth_1___FIRAPP_DEFAULT_firebase_user"
 
@@ -88,50 +88,7 @@ In console -> "Project settings" -> "General" tab:
 
 
 
-4. copy GoogleService-Info.plist into BarTender (TODO: include at build time, can it be put into package/contents/resources?)
-
-4. how to copy into PointOfScale?
+4. copy GoogleService-Info.plist into the BarTender project *(TODO: currently include at build time, can it be put into package/contents/resources to include at runtime?)*
 
 
-# Notes:
-
-# Using curl to get/write data from firebase
-
-## BarTender log into database
-
-https://firebase.google.com/docs/auth/ios/password-auth#objective-c_3
-
-## authenticate with email and password?
-
-https://firebase.google.com/docs/database/rest/auth
-
-1. get id token for user: 
-
-https://firebase.google.com/docs/auth/admin/verify-id-tokens#retrieve_id_tokens_on_clients
-
-after logging in with FIRAuth, then get currentUser and their IDToken
-
-[FIRAuth auth].currentUser -> [currentUser getIDTokenForcingRefresh]
-
-
-2. authenticate request with the id token:
-
-e.g. to read data from field in the database:
-
-```curl "https://\<DATABASE_NAME\>.firebaseio.com/users/ada/name.json?auth=\<ID_TOKEN\>"```
-
-post url request with e.g. "PATCH" to write new data to the database
-
-https://firebase.google.com/docs/reference/rest/auth
-
-## Could not get these curl commands to work, need to pass in "auth=\<ID_TOKEN\>"
-
-```
-
-curl 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[AIzaSyD9YA8WzP9dDielksLXMeZNRWh3hi88Pf0]' -H 'Content-Type: application/json' --data-binary '{"email":"[houpt@bio.fsu.edu]","password":"[XXXX]","returnSecureToken":true}'
-
-
-curl 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?"key=[AIzaSyD9YA8WzP9dDielksLXMeZNRWh3hi88Pf0]"' -H 'Content-Type: application/json' --data-binary '{"returnSecureToken":true}'
-
-```
 
