@@ -1,4 +1,4 @@
-# Bartender Setup
+# BarTender Setup
 
 TODO: instructions for integrating firebase into BarTender code
 
