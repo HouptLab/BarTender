@@ -1,71 +1,42 @@
 # BarTender Setup
 
-TODO: instructions for integrating firebase into BarTender code
-
-TODO: instructions for integrating firebase into PointOfScale code
-
-TODO: user instructions for setting up their own firebase database
-
-TODO: setup a "sandbox" to allow users to play with BarTender in firebase sandbox without overwriting lab data?
-
 # Required Hardware
 
 Specific item numbers and links are listed at https://wiki.houptlab.org/wiki/BarTender.
 
 1. Macintosh, e.g. iMac of just about any capacity.
 
-2. serial to USB-c adapter, and serial 9-pin to 25-pin D cable
-
 3. Unitech BMS340 barcode scanner (or similar)
 
-4. Sartorius BP-3100S
+4. Sartorius BP-3100S (or equivalent modern version)
+
+2. if needed, serial to USB-c adapter, and serial 9-pin to 25-pin D cable
 
 5. printer (e.g. Brother HL-L2400D Compact Monochrome Laser Printer) for daily hardcopy
 
 # Software on Mac
 
-1. Latest drivers for serial to USB-c adapter (check manufacturer's website)
+1. free3of9 TrueType font for generating barcodes (included in this repository)
 
-2. free3of9 TrueType font for generating barcodes (included in this repository)
+2. Latest drivers for serial to USB-c adapter (check manufacturer's website)
 
 3. Download pre-built binary of BarTender, or build from source
 
+# Item Labels
 
-# Building BarTender from Source:
+Items to be weighed should be labeled with barcodes in 3of9 font, in the format `*<expt_code><nnn><item_code>*`, e.g. `*CTA005W` for the #5 water bottle in expt 'CTA'.
+ 
+# Building BarTender from Source
 
-# integrating firebase into macos app
+(Note that you can follow the github workflow specified in the BarTender repo in `.github/workflows/objective-c-xcode.yaml`)
 
-## install Firebase SDKs as downloaded
+1. Clone the BarTender repo from Github.
 
-https://firebase.google.com/docs/ios/setup
+2. Get the Firebase SDK frameworks. At https://firebase.google.com/docs/ios/setup, see "Integrate without using Swift Package Manager" on downloading Frameworks directly, in particular "Download the framework SDK zip."  When it is downloaded and un-zipped, copy the "Firebase" folder into the Bartender project folder.
 
-see "Integrate without using Swift Package Manager" on downloading Frameworks directly
+3. Copy your `GoogleService-Info.plist` into the BarTender project folder , under the Resources folder. (see Firebase setup below). (To get the project to compile, you can create a dummy `GoogleService-Info.plist` -- but Firebase features won't work, of course.)
 
-follow Firebase README.md for install frameworks, and set to "Embed & Sign":
-
-1. need to drag frameworks from folders:
-
-- Firebase Analytics
-- FirebaseAuth
-- FirebaseFunctions
-- FirebaseDatabase 
-
-1. some redundancies, so don't need to drag duplicate frameworks. 
-
-1. Symlinked into Firebase Analytics, so must keep that folder in the project (but don't have to drag in all the Analytics frameworks)
-
-Be sure to clean the build folder often when installing new frameworks.
-
-## modify some project settings:
-
-- add "dummy.swift" file WITHOUT BRIDGING HEADER (prevents lots of swift undefined symbol errors)
-
-- add link path "usr/lib/swift" to "Target/Build Settings/Linking - General/Runpath Search Paths", as per https://stackoverflow.com/questions/52536380/why-do-i-get-ios-linker-errors-with-my-static-libraries/52939037#52939037
-
-- to allow Firebase Authentication: add "Keychain Sharing" capability to project, because user gets stored as "firebase_auth_1___FIRAPP_DEFAULT_firebase_user"
-
-- to allow connections, add App Sandbox capability, and check "Incoming Connections (Server)" and "Outgoing Connections (client)""
-
+4. Distribute via `Product` -> `Archiving`.
 
 # Firebase setup
 
@@ -87,8 +58,7 @@ In console -> "Project settings" -> "General" tab:
 4. enter this email and password in "Settings" of BarTender and PointOfScale apps.
 
 
-
-4. copy GoogleService-Info.plist into the BarTender project *(TODO: currently include at build time, can it be put into package/contents/resources to include at runtime?)*
+4. copy `GoogleService-Info.plist` into the BarTender project folder, under the Resources folder. *(TODO: currently include at build time, can it be put into package/contents/resources to include at runtime?)*
 
 
 
