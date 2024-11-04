@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13F3DDD32CD96E0C007E1362 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20406D792CD7F5A200DB64ED /* GoogleService-Info.plist */; };
 		1DDD582C0DA1D0D100B32029 /* DailyData.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* DailyData.xib */; };
 		200A742F16D045F300C50838 /* DailyDataMeansHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 200A742E16D045F300C50838 /* DailyDataMeansHtmlFormatter.m */; };
 		201437BB2C60F43500AC9C50 /* ExptQRCodePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 201437BA2C60F43500AC9C50 /* ExptQRCodePoster.m */; };
@@ -46,7 +47,6 @@
 		203BFBD8192E8AF1001B770B /* Serial Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB91192E8AF1001B770B /* Serial Notes.rtf */; };
 		203BFBD9192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 203BFB92192E8AF1001B770B /* Serial Programming Guide for POSIX Operating Systems.pdf */; };
 		203C38021ED1DFA900CEA61E /* BCMeanValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 203C38011ED1DFA900CEA61E /* BCMeanValue.m */; };
-		20406D7A2CD7F5A600DB64ED /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 20406D792CD7F5A200DB64ED /* GoogleService-Info.plist */; };
 		20443B5415E569EF00C7338E /* scale64.png in Resources */ = {isa = PBXBuildFile; fileRef = 20443B5315E569EF00C7338E /* scale64.png */; };
 		20538C6616CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20538C6416CD91C1006CA557 /* BCBarcodeLabelsHtmlFormatter.m */; };
 		205F2245164EEA7700975B47 /* DailyDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F2244164EEA7700975B47 /* DailyDataTableView.m */; };
@@ -678,6 +678,7 @@
 				203BFBB4192E8AF1001B770B /* gray.png in Resources */,
 				201437BD2C61096500AC9C50 /* ExptQRCodePoster.xib in Resources */,
 				203BFBD8192E8AF1001B770B /* Serial Notes.rtf in Resources */,
+				13F3DDD32CD96E0C007E1362 /* GoogleService-Info.plist in Resources */,
 				20D3A54114DB161C00C57F9A /* BartenderAbout.png in Resources */,
 				20D3A54314DB162500C57F9A /* BarTenderWaiter.png in Resources */,
 				20D3A54514DB1AD500C57F9A /* actionPopUp.png in Resources */,
@@ -738,7 +739,6 @@
 				20DE82EE10025E6E005C772A /* BarDocument.m in Sources */,
 				202BDEAE2A59A82000438432 /* SettingsController.m in Sources */,
 				20DE84551002E42E005C772A /* BarExperiment.m in Sources */,
-				20406D7A2CD7F5A600DB64ED /* GoogleService-Info.plist in Sources */,
 				203C38021ED1DFA900CEA61E /* BCMeanValue.m in Sources */,
 				2062071E24C4BE5A00422FE5 /* BarUtilities.m in Sources */,
 				203BFBAB192E8AF1001B770B /* BCTableHtmlFormatter.m in Sources */,
