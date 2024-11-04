@@ -45,7 +45,11 @@
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
     
-    [self.versionLabel setStringValue:[NSString stringWithFormat:@"Version %@ (%@)",  [main objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [main objectForInfoDictionaryKey:@"CFBundleVersion"]] ];
+    [self.versionLabel setStringValue:[NSString stringWithFormat:@"Version %@ (%@) [%@]",
+				       [main objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+				       [main objectForInfoDictionaryKey:@"CFBundleVersion"],
+				       [main objectForInfoDictionaryKey:@"BCGitDescribe"]
+				      ]];
     
     [self.copyrightLabel setStringValue: [main objectForInfoDictionaryKey:@"NSHumanReadableCopyright"]];
     
