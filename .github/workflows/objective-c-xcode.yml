@@ -22,4 +22,4 @@ jobs:
            unzip ios 'Firebase/Firebase.h' 'Firebase/FirebaseAuth/*' 'Firebase/FirebaseFunctions/*' 'Firebase/FirebaseAnalytics/*' 'Firebase/FirebaseDatabase/*'
            rm ios
            touch GoogleService-Info.plist
-           xcodebuild clean build -project Bartender.xcodeproj -scheme Bartender ONLY_ACTIVE_ARCH=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
+           xcodebuild clean analyze archive -project Bartender.xcodeproj -scheme Bartender ONLY_ACTIVE_ARCH=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
