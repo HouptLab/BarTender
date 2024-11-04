@@ -60,7 +60,6 @@
 		2067590F0FE847A800B1B7B9 /* WeighOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2067590D0FE847A800B1B7B9 /* WeighOff.png */; };
 		206759100FE847A800B1B7B9 /* WeighON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2067590E0FE847A800B1B7B9 /* WeighON.png */; };
 		206759160FE9C49E00B1B7B9 /* BartenderIcons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 206759150FE9C49E00B1B7B9 /* BartenderIcons.icns */; };
-		206C752F278CAFBE00EACDF8 /* Set-CFBundleVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 206C752E278CAFBE00EACDF8 /* Set-CFBundleVersion.sh */; };
 		207458E115B4FE37008312B4 /* BCDailyDataWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207458E015B4FE37008312B4 /* BCDailyDataWebView.m */; };
 		207AA6251610C8C1002FACB5 /* duplicate icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 207AA6241610C8C1002FACB5 /* duplicate icon.png */; };
 		208787DB16C209FB004998D1 /* FadeOutText.m in Sources */ = {isa = PBXBuildFile; fileRef = 208787DA16C209FB004998D1 /* FadeOutText.m */; };
@@ -598,8 +597,8 @@
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
-				206C7530278CAFE000EACDF8 /* Run Set CFBundleVersion Script */,
 				20B6A5542C7E3D3F00CFE58A /* Embed Frameworks */,
+				206C7530278CAFE000EACDF8 /* Run Set CFBundleVersion Script */,
 			);
 			buildRules = (
 			);
@@ -696,7 +695,6 @@
 				203BFBB9192E8AF1001B770B /* navy.png in Resources */,
 				203BFBB0192E8AF1001B770B /* blue.png in Resources */,
 				203BFBD4192E8AF1001B770B /* Markdown-BuildRule.sh in Resources */,
-				206C752F278CAFBE00EACDF8 /* Set-CFBundleVersion.sh in Resources */,
 				203BFBBB192E8AF1001B770B /* olive.png in Resources */,
 				203BFBB2192E8AF1001B770B /* darkgray.png in Resources */,
 				203BFBAF192E8AF1001B770B /* black.png in Resources */,
@@ -709,12 +707,14 @@
 /* Begin PBXShellScriptBuildPhase section */
 		206C7530278CAFE000EACDF8 /* Run Set CFBundleVersion Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			name = "Run Set CFBundleVersion Script";
 			outputFileListPaths = (
